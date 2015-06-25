@@ -1,0 +1,295 @@
+# Copyright (C) 2013 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Forms\n"
+"Report-Msgid-Bugs-To: http://pojo.me/\n"
+"POT-Creation-Date: 2014-01-13 22:55-0000\n"
+"PO-Revision-Date: 2014-01-13 22:55-0000\n"
+"Last-Translator: Yakir Sitbon <kingyes1@gmail.com>\n"
+"Language-Team: Pojo Them <aryodigital@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_n:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../classes/class-pojo-forms-ajax.php:25
+#: ../classes/class-pojo-forms-ajax.php:30
+#: ../classes/class-pojo-forms-ajax.php:36
+msgid "Invalid form."
+msgstr ""
+
+#: ../classes/class-pojo-forms-ajax.php:44
+msgid "This field is required"
+msgstr ""
+
+#: ../classes/class-pojo-forms-ajax.php:52
+msgid "Problem with Form setting."
+msgstr ""
+
+#: ../classes/class-pojo-forms-ajax.php:67
+#, php-format
+msgid "Sent on: %s"
+msgstr ""
+
+#: ../classes/class-pojo-forms-ajax.php:68
+#, php-format
+msgid "via <a href=\"%s\">%s</a> / %s"
+msgstr ""
+
+#: ../classes/class-pojo-forms-ajax.php:71
+#, php-format
+msgid "Powered by <a style=\"color:#B40B51;\" href=\"%s\">Pojo.me</a>"
+msgstr ""
+
+#: ../classes/class-pojo-forms-ajax.php:79
+msgid "Your details were sent successfully!"
+msgstr ""
+
+#: ../classes/class-pojo-forms-ajax.php:87
+msgid "This form has an error, please fix it."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:9
+#: ../classes/class-pojo-forms-cpt.php:21
+#: ../classes/class-pojo-forms-widget.php:49
+#: ../classes/class-pojo-forms-widget.php:50
+msgid "Forms"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:10
+#: ../classes/class-pojo-forms-cpt.php:248
+msgid "Form"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:11
+msgid "Add New"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:12
+msgid "Add New Form"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:13
+#: ../classes/class-pojo-forms-shortcode.php:91
+msgid "Edit Form"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:14
+msgid "New Form"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:15
+#: ../classes/class-pojo-forms-widget.php:43
+msgid "All Forms"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:16
+msgid "View Form"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:17
+msgid "Search Form"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:18
+msgid "No forms found"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:19
+msgid "No forms found in Trash"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:50
+#: ../classes/class-pojo-forms-cpt.php:53
+msgid "Form updated."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:51
+msgid "Custom field updated."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:52
+msgid "Custom field deleted."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:55
+#, php-format
+msgid "Form restored to revision from %s"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:56
+msgid "Form published."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:57
+msgid "Form saved."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:58
+msgid "Form submitted."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:59
+#, php-format
+msgid "Post scheduled for: <strong>%1$s</strong>."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:61
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:62
+msgid "Form draft updated."
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:76
+msgid "Slider Form"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:77
+msgid "Preview Form"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:78
+msgid "Fields"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:79
+msgid "Shortcode"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:80
+msgid "Date"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:89
+#: ../classes/class-pojo-forms-cpt.php:280
+msgid "Preview"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:106
+#, php-format
+msgid "%s Form"
+msgid_plural "%s Forms"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../classes/class-pojo-forms-cpt.php:118
+msgid "Email to"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:124
+msgid "Align Text"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:127
+msgid "Top"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:128
+msgid "Inside"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:129
+msgid "Side - Alignright"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:130
+msgid "Side - Alignleft‬"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:137
+msgid "Send Button Text"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:138
+msgid "Send"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:172
+msgid "Send Button Color"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:180
+msgid "Email Subject"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:181
+#, php-format
+msgid "New massage from \"%s\""
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:186
+msgid "After submitting redirect to"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:187
+msgid "(Optional) http://www.pojo.me/"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:193
+msgid "Form Options"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:208
+msgid "Name"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:214
+msgid "Field Type"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:217
+msgid "Text"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:218
+msgid "Textarea"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:219
+msgid "Email"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:220
+msgid "Telephone Number"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:221
+msgid "Url"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:228
+msgid "Placeholder"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:234
+msgid "Required"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:242
+msgid "+ Add Field"
+msgstr ""
+
+#: ../classes/class-pojo-forms-cpt.php:276
+msgid ""
+"Copy and paste this shortcode into your Text editor or use with Form Widget."
+msgstr ""
+
+#: ../classes/class-pojo-forms-widget.php:16
+msgid "Title:"
+msgstr ""
+
+#: ../classes/class-pojo-forms-widget.php:27
+msgid "Choose Form:"
+msgstr ""
+
+#: ../classes/class-pojo-forms-widget.php:36
+msgid "Create a Form"
+msgstr ""
