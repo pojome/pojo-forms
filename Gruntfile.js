@@ -15,6 +15,7 @@ module.exports = function(grunt) {
 			standard: {
 				options:{
 					text_domain: 'pojo-forms',
+					correct_domain: true,
 					keywords: [
 						// WordPress keywords
 						'__:1,2d',
@@ -82,6 +83,85 @@ module.exports = function(grunt) {
 			}
 		},
 
+		jshint: {
+			options: {
+				jshintrc: '.jshintrc'
+			},
+			all: [
+				'Gruntfile.js',
+				'assets/js/dev/app.dev.js',
+				'assets/js/dev/admin.dev.js'
+			]
+		},
+
+		uglify: {
+			pkg: grunt.file.readJSON( 'package.json' ),
+			options: {},
+			dist: {
+				files: {
+					'assets/js/app.min.js': [
+						'assets/js/dev/app.dev.js'
+					],
+					'assets/js/admin.min.js': [
+						'assets/js/dev/admin.dev.js'
+					]
+				}
+			}
+		},
+
+		less: {
+			dist: {
+				options: {
+					cleancss: true
+				},
+				files: {
+					'assets/css/style.css': 'assets/less/style.less'
+				}
+			}
+		},
+
+		watch: {
+			js: {
+				files: [
+					'**/*.js',
+					'!**/*.min.js'
+				],
+				tasks: [
+					'jshint',
+					'uglify',
+					'usebanner'
+				],
+				options: {}
+			},
+
+			less: {
+
+				files: [
+					'**/*.less'
+				],
+				tasks: [
+					'less'
+				],
+				options: {}
+			}
+		},
+
+		usebanner: {
+			dist: {
+				options: {
+					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+					'<%= grunt.template.today("dd-mm-yyyy") %> */'
+				},
+				files: {
+					src: [
+						'assets/css/style.css',
+						'assets/js/app.min.js',
+						'assets/js/admin.min.js'
+					]
+				}
+			}
+		},
+
 		bumpup: {
 			options: {
 				updateProps: {
@@ -93,7 +173,7 @@ module.exports = function(grunt) {
 
 		replace: {
 			plugin_main: {
-				src: [ 'linker.php' ],
+				src: [ 'pojo-forms.php' ],
 				overwrite: true,
 				replacements: [
 					{
@@ -138,7 +218,7 @@ module.exports = function(grunt) {
 		wp_readme_to_markdown: {
 			github: {
 				options: {
-					gruntDependencyStatusUrl: 'https://david-dm.org/KingYes/wp-linker'
+					gruntDependencyStatusUrl: 'https://david-dm.org/pojome/pojo-forms'
 				},
 				files: {
 					'README.md': 'readme.txt'
@@ -182,6 +262,10 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [
 		'checktextdomain',
 		'pot',
+		'less',
+		'jshint',
+		'uglify',
+		'usebanner',
 		'wp_readme_to_markdown'
 	] );
 

@@ -4,8 +4,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Pojo_Forms_Ajax {
 	
 	public function preview_shortcode() {
-		global $pojo_forms;
-		
 		if ( empty( $_POST['id'] ) ) {
 			echo 'No found.';
 			die();
@@ -13,50 +11,55 @@ class Pojo_Forms_Ajax {
 		
 		$embed = new Pojo_Embed_Template();
 		echo $embed->get_header();
-		echo do_shortcode( $pojo_forms->helpers->get_shortcode_text( $_POST['id'] ) );
+		echo do_shortcode( POJO_FORMS()->helpers->get_shortcode_text( $_POST['id'] ) );
 		echo $embed->get_footer();
 		
 		die();
 	}
 	
-	public function contact_form_submit() {
-		$ajax_request = new ATMC_AJAX_Requests();
-		if ( empty( $_POST['form_id'] ) || ! $form = get_post( absint( $_POST['form_id'] ) ) ) {
-			$ajax_request->set_message( __( 'Invalid form.', 'forms' ) );
-			$ajax_request->print_json( true );
-		}
+	public function form_contact_submit() {
+		$return_array = array(
+			'fields' => array(),
+			'link' => '',
+		);
 		
-		if ( 'pojo_forms' !== $form->post_type || ! isset( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'contact-form-send-' . $form->ID ) ) {
-			$ajax_request->set_message( __( 'Invalid form.', 'forms' ) );
-			$ajax_request->print_json( true );
+		if ( empty( $_POST['form_id'] ) ) {
+			$return_array['message'] = __( 'Invalid form.', 'pojo-forms' );
+			wp_send_json_error( $return_array );
+		}
+
+		$form = get_post( absint( $_POST['form_id'] ) );
+		
+		if ( ! $form || 'pojo_forms' !== $form->post_type || ! isset( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'contact-form-send-' . $form->ID ) ) {
+			$return_array['message'] = __( 'Invalid form.', 'pojo-forms' );
+			wp_send_json_error( $return_array );
 		}
 
 		$repeater_fields = atmb_get_field_without_type( 'fields', 'form_',  $form->ID );
 		if ( empty( $repeater_fields ) ) {
-			$ajax_request->set_message( __( 'Invalid form.', 'forms' ) );
-			$ajax_request->print_json( true );
+			$return_array['message'] = __( 'Invalid form.', 'pojo-forms' );
+			wp_send_json_error( $return_array );
 		}
 
 		foreach ( $repeater_fields as $field_index => $field ) {
-			$field_name = 'form_field_' . $field_index;
+			$field_name = 'form_field_' . ( $field_index + 1 );
 			// TODO: Valid by field type
 			if ( $field['required'] && empty( $_POST[ $field_name ] ) ) {
-				$ajax_request->set_field_error( $field_name, __( 'This field is required', 'forms' ) );
+				$return_array['fields'][ $field_name ] = __( 'This field is required', 'pojo-forms' );
 			}
 		}
 
-		if ( ! $ajax_request->is_have_field_errors() ) {
+		if ( empty( $return_array['fields'] ) ) {
 			$email_to = trim( atmb_get_field( 'form_email_to', $form->ID ) );
 			$email_subject = trim( atmb_get_field( 'form_email_subject', $form->ID ) );
 			if ( ! is_email( $email_to ) || empty( $email_subject ) ) {
-				$ajax_request->set_message( __( 'Problem with Form setting.', 'forms' ) );
-				$ajax_request->print_json( true );
+				$return_array['message'] = __( 'Problem with Form setting.', 'pojo-forms' );
+				wp_send_json_error( $return_array );
 			}
-			
 			
 			$email_html = '';
 			foreach ( $repeater_fields as $field_index => $field ) {
-				$field_name = 'form_field_' . $field_index;
+				$field_name = 'form_field_' . ( $field_index + 1 );
 				$email_html .= sprintf(
 					'<div><strong>%s:</strong> %s</div>',
 					$field['name'],
@@ -64,37 +67,79 @@ class Pojo_Forms_Ajax {
 				);
 			}
 			
-			$email_html .= '<div><br /><br />' . sprintf( __( 'Sent on: %s', 'forms' ), date( 'H:i // d/m/Y', current_time( 'timestamp' ) ) ) . '</div>';
-			$email_html .= '<div>' . sprintf( __( 'via <a href="%s">%s</a> / %s' ), home_url( '/' ), get_bloginfo( 'name' ), home_url( $_POST['_wp_http_referer'] ) ) . '</div>';
+			$metadata_types = atmb_get_field( 'form_metadata', $form->ID, Pojo_MetaBox::FIELD_CHECKBOX_LIST );
+			$tmpl_line_html = '<div><strong>%s:</strong> %s</div>';
+			foreach ( $metadata_types as $metadata_type ) {
+				switch ( $metadata_type ) {
+					case 'time' :
+						$email_html .= sprintf( $tmpl_line_html, __( 'Time', 'pojo-forms' ), date( 'H:i', current_time( 'timestamp' ) ) );
+						break;
+					
+					case 'date' :
+						$email_html .= sprintf( $tmpl_line_html, __( 'Date', 'pojo-forms' ), date( 'd/m/Y', current_time( 'timestamp' ) ) );
+						break;
+					
+					case 'page_title' :
+						$email_html .= sprintf( $tmpl_line_html, __( 'Page Title', 'pojo-forms' ), '' );
+						break;
+					
+					case 'page_url' :
+						$email_html .= sprintf( $tmpl_line_html, __( 'Page URL', 'pojo-forms' ), '' );
+						break;
+					
+					case 'user_agent' :
+						$email_html .= sprintf( $tmpl_line_html, __( 'User Agent', 'pojo-forms' ), $_SERVER['HTTP_USER_AGENT'] );
+						break;
+					
+					case 'remote_ip' :
+						$email_html .= sprintf( $tmpl_line_html, __( 'Remote IP', 'pojo-forms' ), $_SERVER['REMOTE_ADDR'] );
+						break;
+					
+					case 'credit' :
+						$email_html .= sprintf( $tmpl_line_html, __( 'Credit', 'pojo-forms' ), '' );
+						break;
+				}
+			}
+			
+			$email_html .= '<div>' . sprintf( __( 'via <a href="%s">%s</a> / %s', 'pojo-forms' ), home_url( '/' ), get_bloginfo( 'name' ), home_url( $_POST['_wp_http_referer'] ) ) . '</div>';
 			
 			$email_html .= '<div style="color:#999999;"><hr style="height: 1px; border: 0; border-top: 1px solid #eeeeee;">' .
-				sprintf( __( 'Powered by <a style="color:#B40B51;" href="%s">Pojo.me</a>', 'forms' ), 'http://pojo.me/' ) .
+				sprintf( __( 'Powered by <a style="color:#B40B51;" href="%s">Pojo.me</a>', 'pojo-forms' ), 'http://pojo.me/' ) .
 			'</div>';
 
-			$headers = sprintf( 'From: %s <%s>' . "\r\n".'content-type: text/html' . "\r\n", get_bloginfo( 'name' ), get_bloginfo( 'admin_email' ) );
+			$email_from_name = atmb_get_field( 'form_email_form_name', $form->ID );
+			if ( empty( $email_from_name ) )
+				$email_from_name = get_bloginfo( 'name' );
+			
+			$email_from = atmb_get_field( 'form_email_form', $form->ID );
+			if ( empty( $email_from ) )
+				$email_from = get_bloginfo( 'admin_email' );
+
+			$headers = sprintf( 'From: %s <%s>;' . "\r\n" . 'content-type: text/html;' . "\r\n", $email_from_name, $email_from );
 			
 			wp_mail( $email_to, $email_subject, $email_html, $headers );
 			
-			$ajax_request->set_status( ATMC_AJAX_Requests::STATUS_SUCCESS );
-			$ajax_request->set_message( __( 'Your details were sent successfully!', 'forms' ) );
 			$redirect_to = atmb_get_field( 'form_redirect_to', $form->ID );
 			if ( empty( $redirect_to ) || ! filter_var( $redirect_to, FILTER_VALIDATE_URL ) ) {
 				$redirect_to = '';
 			}
-			$ajax_request->set_link( $redirect_to );
 			
+			$return_array['link'] = $redirect_to;
+			$return_array['message'] = __( 'Your details were sent successfully!', 'pojo-forms' );
+			wp_send_json_success( $return_array );
 		} else {
-			$ajax_request->set_message( __( 'This form has an error, please fix it.', 'forms' ) );
+			$return_array['message'] = __( 'This form has an error, please fix it.', 'pojo-forms' );
+			wp_send_json_error( $return_array );
 		}
-		$ajax_request->print_json( true );
 		
+		wp_send_json_error( $return_array );
 		die();
 	}
 	
 	public function __construct() {
 		add_action( 'wp_ajax_form_preview_shortcode', array( &$this, 'preview_shortcode' ) );
-		add_action( 'wp_ajax_contact_form_submit', array( &$this, 'contact_form_submit' ) );
-		add_action( 'wp_ajax_nopriv_contact_form_submit', array( &$this, 'contact_form_submit' ) );
+		add_action( 'wp_ajax_pojo_form_contact_submit', array( &$this, 'form_contact_submit' ) );
+		add_action( 'wp_ajax_nopriv_pojo_form_contact_submit', array( &$this, 'form_contact_submit' ) );
 	}
 	
 }

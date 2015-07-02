@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 define( 'POJO_FORMS__FILE__', __FILE__ );
 define( 'POJO_FORMS_PLUGIN_BASE', plugin_basename( POJO_FORMS__FILE__ ) );
+define( 'POJO_FORMS_URL', plugins_url( '/', POJO_FORMS__FILE__ ) );
+define( 'POJO_FORMS_ASSETS_URL', POJO_FORMS_URL . 'assets/' );
 
 final class Pojo_Forms {
 
@@ -76,18 +78,39 @@ final class Pojo_Forms {
 		load_plugin_textdomain( 'pojo-forms', false, basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 	
-	public function widgets_init() {
+	public function register_widget() {
 		if ( ! class_exists( 'Pojo_Widget_Base' ) )
 			return;
 
 		include( 'classes/class-pojo-forms-widget.php' );
 		register_widget( 'Pojo_Forms_Widget' );
 	}
+
+	public function register_widget_builder( $widgets ) {
+		$widgets[] = 'Pojo_Forms_Widget';
+		return $widgets;
+	}
+
+	public function enqueue_scripts() {
+		wp_enqueue_style( 'pojo-forms', POJO_FORMS_ASSETS_URL . 'css/style.css' );
+		wp_register_script( 'pojo-forms', POJO_FORMS_ASSETS_URL . 'js/app.min.js', array( 'jquery' ), false, true );
+		wp_enqueue_script( 'pojo-forms' );
+	}
+
+	public function admin_enqueue_scripts() {
+		wp_register_script( 'pojo-admin-forms', POJO_FORMS_ASSETS_URL . 'js/admin.min.js', array( 'jquery' ), false, true );
+		wp_enqueue_script( 'pojo-admin-forms' );
+	}
 	
 	public function bootstrap() {
 		// This plugin for Pojo Themes..
 		if ( ! class_exists( 'Pojo_Maintenance' ) ) {
 			add_action( 'admin_notices', array( &$this, 'admin_notices' ) );
+			return;
+		}
+
+		if ( version_compare( '1.5.1', Pojo_Core::instance()->get_version(), '>' ) ) {
+			add_action( 'admin_notices', array( &$this, 'print_update_error' ) );
 			return;
 		}
 
@@ -100,23 +123,34 @@ final class Pojo_Forms {
 		$this->shortcode = new Pojo_Forms_Shortcode();
 		$this->helpers   = new Pojo_Forms_Helpers();
 		$this->ajax      = new Pojo_Forms_Ajax();
-		
-		add_action( 'widgets_init', array( &$this, 'widgets_init' ), 100 );
+
+		add_action( 'pojo_widgets_registered', array( &$this, 'register_widget' ) );
+		add_action( 'pojo_builder_widgets', array( &$this, 'register_widget_builder' ) );
+
+		add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts' ) );
 	}
 
 	public function admin_notices() {
-		echo '<div class="error"><p>' . __( 'You must install and activate Pojo theme.', 'pojo-forms' ) . '</p></div>';
+		echo '<div class="error"><p>' . sprintf( __( '<a href="%s" target="_blank">Pojo Framework</a> is not active. Please activate any theme by Pojo before you are using "Pojo Forms" plugin.', 'pojo-forms' ), 'http://pojo.me/' ) . '</p></div>';
+	}
+
+	public function print_update_error() {
+		echo '<div class="error"><p>' . sprintf( __( 'Your <a href="%s" target="_blank">Pojo Framework</a> isn\'t updated, please upgrade.', 'pojo-forms' ), 'http://pojo.me/' ) . '</p></div>';
 	}
 
 	protected function __construct() {
-		add_action( 'after_setup_theme', array( &$this, 'bootstrap' ) );
+		add_action( 'after_setup_theme', array( &$this, 'bootstrap' ), 100 );
 		add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ) );
 	}
 	
 }
-global $pojo_forms;
-$pojo_forms = Pojo_Forms::instance();
 
-//Pojo_Forms::instance();
+/**
+ * @return Pojo_Forms
+ */
+function POJO_FORMS() {
+	return Pojo_Forms::instance();
+}
 
-// EOF
+POJO_FORMS();
