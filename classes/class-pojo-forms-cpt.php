@@ -171,7 +171,7 @@ class Pojo_Forms_CPT {
 
 		$repeater_fields[] = array(
 			'id' => 'shortcode',
-			'title' => __( 'Shortcode', 'pojo-forms' ),
+			'title' => __( 'Shortcode ID', 'pojo-forms' ),
 			'std' => '',
 			'readonly' => 'readonly',
 		);
