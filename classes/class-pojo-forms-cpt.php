@@ -147,13 +147,6 @@ class Pojo_Forms_CPT {
 		);
 
 		$repeater_fields[] = array(
-			'id' => 'field_id',
-			'title' => __( 'ID', 'pojo-forms' ),
-			'std' => 'TEMP-ID',
-			'readonly' => 'readonly',
-		);
-
-		$repeater_fields[] = array(
 			'id' => 'size',
 			'title' => __( 'Width', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
@@ -166,6 +159,13 @@ class Pojo_Forms_CPT {
 				'6' => __( '6 Columns', 'pojo-forms' ),
 			),
 			'std' => '',
+		);
+
+		$repeater_fields[] = array(
+			'id' => 'field_id',
+			'title' => __( 'ID', 'pojo-forms' ),
+			'std' => 'TEMP-ID',
+			'readonly' => 'readonly',
 		);
 
 		$repeater_fields[] = array(
