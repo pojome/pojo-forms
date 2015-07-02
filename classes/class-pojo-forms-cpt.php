@@ -164,7 +164,15 @@ class Pojo_Forms_CPT {
 		$repeater_fields[] = array(
 			'id' => 'field_id',
 			'title' => __( 'ID', 'pojo-forms' ),
-			'std' => 'TEMP-ID',
+			'type' => Pojo_MetaBox::FIELD_HIDDEN,
+			'std' => '',
+			'readonly' => 'readonly',
+		);
+
+		$repeater_fields[] = array(
+			'id' => 'shortcode',
+			'title' => __( 'Shortcode', 'pojo-forms' ),
+			'std' => '',
 			'readonly' => 'readonly',
 		);
 

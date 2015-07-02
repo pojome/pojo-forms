@@ -22,7 +22,14 @@
 			var $self = this;
 
 			$( document ).on( 'pojo_metabox_repeater_new_item', '.atmb-repeater-row', function() {
-				$( this ).find( '.atmb-field-row.atmb-field_id .atmb-field-text' ).val( $self._getNewFieldID() );
+				var id = $self._getNewFieldID();
+				$( this )
+					.find( 'input.atmb-field-hidden.atmb-field_id' )
+					.val( id );
+				
+				$( this )
+					.find( 'div.atmb-field-row.atmb-shortcode input.atmb-field-text' )
+					.val( $self._getFieldShortcode( id ) );
 			} );
 		},
 		
@@ -30,10 +37,14 @@
 			return this.lastRepeaterFieldID++;
 		},
 		
+		_getFieldShortcode: function( id ) {
+			return '[form-field-' + id + ']';
+		},
+		
 		_storeLastRepeaterID: function() {
 			var $self = this;
 			
-			var $allRepeaterIDs = $( '.atmb-field-row.atmb-field_id .atmb-field-text' );
+			var $allRepeaterIDs = $( '#pojo-forms-form' ).find( 'input.atmb-field-hidden.atmb-field_id' );
 			
 			// Store the last
 			$allRepeaterIDs.each( function() {
@@ -50,8 +61,14 @@
 			$allRepeaterIDs.each( function() {
 				var currentID = $( this ).val();
 				if ( '' === currentID ) {
-					$( this ).val( $self._getNewFieldID() );
+					currentID = $self._getNewFieldID();
+					$( this ).val( currentID );
 				}
+				
+				$( this )
+					.closest( 'div.atmb-button-collapse' )
+					.find( 'div.atmb-field-row.atmb-shortcode input.atmb-field-text' )
+					.val( $self._getFieldShortcode( currentID ) );
 			} );
 		},
 
