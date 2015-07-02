@@ -7,24 +7,22 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
-		global $pojo_forms;
-		
 		$this->_form_fields = array();
 
 		$this->_form_fields[] = array(
 			'id' => 'title',
-			'title' => __( 'Title:', 'forms' ),
+			'title' => __( 'Title:', 'pojo-forms' ),
 			'std' => '',
 			'filter' => 'sanitize_text_field',
 		);
 		
-		$options = $pojo_forms->helpers->get_all_forms();
+		$options = POJO_FORMS()->helpers->get_all_forms();
 		if ( ! empty( $options ) ) {
 			$std = array_keys( $options );
-			$std = $std[0];
+			$std = array_shift( $std );
 			$this->_form_fields[] = array(
 				'id' => 'form',
-				'title' => __( 'Choose Form:', 'forms' ),
+				'title' => __( 'Choose Form:', 'pojo-forms' ),
 				'type' => 'select',
 				'std' => $std,
 				'options' => $options,
@@ -33,21 +31,21 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 		} else {
 			$this->_form_fields[] = array(
 				'id' => 'lbl_no_found',
-				'title' => sprintf( '<a href="%s">%s</a>', admin_url( 'post-new.php?post_type=pojo_forms' ), __( 'Create a Form', 'forms' ) ),
+				'title' => sprintf( '<a href="%s">%s</a>', admin_url( 'post-new.php?post_type=pojo_forms' ), __( 'Create a Form', 'pojo-forms' ) ),
 				'type' => 'label',
 			);
 		}
 
 		$this->_form_fields[] = array(
 			'id' => 'lbl_no_found',
-			'title' => sprintf( '<a href="%s">%s</a>', admin_url( 'edit.php?post_type=pojo_forms' ), __( 'All Forms', 'forms' ) ),
+			'title' => sprintf( '<a href="%s">%s</a>', admin_url( 'edit.php?post_type=pojo_forms' ), __( 'All Forms', 'pojo-forms' ) ),
 			'type' => 'label',
 		);
 		
 		parent::__construct(
 			'pojo_form_widget',
-			__( 'Forms', 'forms' ),
-			array( 'description' => __( 'Forms', 'forms' ), )
+			__( 'Pojo Forms', 'pojo-forms' ),
+			array( 'description' => __( 'Pojo Forms', 'pojo-forms' ), )
 		);
 	}
 
@@ -70,16 +68,9 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 		if ( ! empty( $instance['title'] ) )
 			echo $args['before_title'] . $instance['title'] . $args['after_title'];
 		
-		echo do_shortcode( sprintf( '[form id="%d"]', $instance['form'] ) );
+		echo do_shortcode( POJO_FORMS()->helpers->get_shortcode_text( $instance['form'] ) );
 
 		echo $args['after_widget'];
 	}
 
 }
-
-// Register this widget in Page Builder
-function pojo_forms_page_builder_register_widget( $widgets ) {
-	$widgets[] = 'Pojo_Forms_Widget';
-	return $widgets;
-}
-add_action( 'pb_page_builder_widgets', 'pojo_forms_page_builder_register_widget' );

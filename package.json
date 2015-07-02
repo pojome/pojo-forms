@@ -6,15 +6,20 @@
 	"version": "1.0.0",
 	"devDependencies": {
 		"grunt": "~0.4.1",
-		"grunt-checktextdomain": "~0.1.1",
+		"grunt-checktextdomain": "~1.0.0",
 		"grunt-pot": "~0.1.2",
+		"grunt-contrib-jshint": "~0.11.0",
+		"grunt-contrib-watch": "~0.6.1",
+		"grunt-contrib-uglify": "~0.9.1",
+		"grunt-contrib-less": "~1.0.1",
+		"grunt-banner": "~0.4.0",
 		"grunt-wp-readme-to-markdown-with-extra": "~0.6.0",
-		"grunt-bumpup": "~0.5.2",
-		"grunt-shell": "~0.6.4",
-		"grunt-text-replace": "~0.3.6",
-		"grunt-release": "~0.7.0",
-		"grunt-contrib-copy": "~0.5.0",
-		"grunt-contrib-clean": "~0.5.0",
+		"grunt-bumpup": "~0.6.1",
+		"grunt-shell": "~1.1.1",
+		"grunt-text-replace": "~0.4.0",
+		"grunt-release": "~0.13.0",
+		"grunt-contrib-copy": "~0.8.0",
+		"grunt-contrib-clean": "~0.6.0",
 		"matchdep": "~0.3.0"
 	}
 }
