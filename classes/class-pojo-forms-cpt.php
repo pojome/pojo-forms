@@ -311,7 +311,7 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_COLOR,
 			'placeholder' => '#ffffff',
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
-			'std' => '',
+			'std' => '#ffffff',
 		);
 
 		$fields[] = array(
@@ -331,7 +331,7 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_COLOR,
 			'placeholder' => '#cccccc',
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
-			'std' => '',
+			'std' => '#cccccc',
 		);
 
 		$fields[] = array(
@@ -340,7 +340,7 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_COLOR,
 			'placeholder' => '#ffffff',
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
-			'std' => '',
+			'std' => '#ffffff',
 		);
 		
 		$fields[] = array(
@@ -383,7 +383,7 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_COLOR,
 			'placeholder' => '#ffffff',
 			'show_on' => array( 'form_style_button_style' => 'custom' ),
-			'std' => '',
+			'std' => '#ffffff',
 		);
 		
 		$fields[] = array(
@@ -403,7 +403,7 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_COLOR,
 			'placeholder' => '#cccccc',
 			'show_on' => array( 'form_style_button_style' => 'custom' ),
-			'std' => '',
+			'std' => '#cccccc',
 		);
 		
 		$fields[] = array(
@@ -412,7 +412,7 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_COLOR,
 			'placeholder' => '#ffffff',
 			'show_on' => array( 'form_style_button_style' => 'custom' ),
-			'std' => '',
+			'std' => '#ffffff',
 		);
 		// End button custom style
 
