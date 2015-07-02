@@ -184,8 +184,10 @@ class Pojo_Forms_Shortcode {
 		// No found any fields, so return empty string
 		if ( empty( $rows ) )
 			return '';
-		
-		$forms_html = implode( "\n", $rows );
+
+		$forms_html = '<div class="columns">';
+		$forms_html .= implode( "\n", $rows );
+		$forms_html .= '</div>';
 
 		$forms_html .= $this->_get_button_html( $form->ID );
 		
