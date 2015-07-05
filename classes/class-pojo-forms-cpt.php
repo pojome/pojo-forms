@@ -151,12 +151,12 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Width', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
-				'' => __( 'One Column', 'pojo-forms' ),
-				'2' => __( '2 Columns', 'pojo-forms' ),
-				'3' => __( '3 Columns', 'pojo-forms' ),
-				'4' => __( '4 Columns', 'pojo-forms' ),
-				'5' => __( '5 Columns', 'pojo-forms' ),
-				'6' => __( '6 Columns', 'pojo-forms' ),
+				'' => __( '100%', 'pojo-forms' ),
+				'2' => __( '50%', 'pojo-forms' ),
+				'3' => __( '33%', 'pojo-forms' ),
+				'4' => __( '25%', 'pojo-forms' ),
+				'5' => __( '20%', 'pojo-forms' ),
+				'6' => __( '16%', 'pojo-forms' ),
 			),
 			'std' => '',
 		);
