@@ -128,6 +128,12 @@ class Pojo_Forms_CPT {
 		);
 
 		$repeater_fields[] = array(
+			'id'      => 'advanced',
+			'title'   => __( 'Settings', 'pojo-forms' ),
+			'type'    => Pojo_MetaBox::FIELD_BUTTON_COLLAPSE,
+		);
+
+		$repeater_fields[] = array(
 			'id' => 'placeholder',
 			'title' => __( 'Placeholder', 'pojo-forms' ),
 			'std' => '',
@@ -138,12 +144,6 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Required', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => true,
-		);
-
-		$repeater_fields[] = array(
-			'id'      => 'advanced',
-			'title'   => __( 'Advanced', 'pojo-forms' ),
-			'type'    => Pojo_MetaBox::FIELD_BUTTON_COLLAPSE,
 		);
 
 		$repeater_fields[] = array(
