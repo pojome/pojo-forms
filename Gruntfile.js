@@ -128,8 +128,7 @@ module.exports = function(grunt) {
 				],
 				tasks: [
 					'jshint',
-					'uglify',
-					'usebanner'
+					'uglify'
 				],
 				options: {}
 			},

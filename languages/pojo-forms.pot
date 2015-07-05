@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-02 17:56+0300\n"
+"POT-Creation-Date: 2015-07-02 19:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,32 +31,32 @@ msgstr ""
 msgid "Problem with Form setting."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:75 classes/class-pojo-forms-cpt.php:250
+#: classes/class-pojo-forms-ajax.php:75 classes/class-pojo-forms-cpt.php:258
 msgid "Time"
 msgstr ""
 
 #: classes/class-pojo-forms-ajax.php:79 classes/class-pojo-forms-cpt.php:75
-#: classes/class-pojo-forms-cpt.php:251
+#: classes/class-pojo-forms-cpt.php:259
 msgid "Date"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:83 classes/class-pojo-forms-cpt.php:252
+#: classes/class-pojo-forms-ajax.php:83 classes/class-pojo-forms-cpt.php:260
 msgid "Page Title"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:87 classes/class-pojo-forms-cpt.php:253
+#: classes/class-pojo-forms-ajax.php:87 classes/class-pojo-forms-cpt.php:261
 msgid "Page URL"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:91 classes/class-pojo-forms-cpt.php:254
+#: classes/class-pojo-forms-ajax.php:91 classes/class-pojo-forms-cpt.php:262
 msgid "User Agent"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:95 classes/class-pojo-forms-cpt.php:255
+#: classes/class-pojo-forms-ajax.php:95 classes/class-pojo-forms-cpt.php:263
 msgid "Remote IP"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:99 classes/class-pojo-forms-cpt.php:256
+#: classes/class-pojo-forms-ajax.php:99 classes/class-pojo-forms-cpt.php:264
 msgid "Credit"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Forms"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:10 classes/class-pojo-forms-cpt.php:193
+#: classes/class-pojo-forms-cpt.php:10 classes/class-pojo-forms-cpt.php:201
 msgid "Form"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgid "Add New Form"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:13
-#: classes/class-pojo-forms-shortcode.php:212
+#: classes/class-pojo-forms-shortcode.php:214
 msgid "Edit Form"
 msgstr ""
 
@@ -178,11 +178,11 @@ msgstr ""
 msgid "Fields"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:74
+#: classes/class-pojo-forms-cpt.php:74 classes/class-pojo-forms-cpt.php:174
 msgid "Shortcode"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:84 classes/class-pojo-forms-cpt.php:480
+#: classes/class-pojo-forms-cpt.php:84 classes/class-pojo-forms-cpt.php:492
 msgid "Preview"
 msgstr ""
 
@@ -229,229 +229,229 @@ msgstr ""
 msgid "Required"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:145 classes/class-pojo-forms-cpt.php:179
+#: classes/class-pojo-forms-cpt.php:145 classes/class-pojo-forms-cpt.php:187
 msgid "Advanced"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:151
-msgid "ID"
+msgid "Width"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:158
-msgid "CSS Classes"
-msgstr ""
-
-#: classes/class-pojo-forms-cpt.php:164
-msgid "Size"
-msgstr ""
-
-#: classes/class-pojo-forms-cpt.php:167
+#: classes/class-pojo-forms-cpt.php:154
 msgid "One Column"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:168
+#: classes/class-pojo-forms-cpt.php:155
 msgid "2 Columns"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:169
+#: classes/class-pojo-forms-cpt.php:156
 msgid "3 Columns"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:170
+#: classes/class-pojo-forms-cpt.php:157
 msgid "4 Columns"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:171
+#: classes/class-pojo-forms-cpt.php:158
 msgid "5 Columns"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:172
+#: classes/class-pojo-forms-cpt.php:159
 msgid "6 Columns"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:187
+#: classes/class-pojo-forms-cpt.php:166
+msgid "ID"
+msgstr ""
+
+#: classes/class-pojo-forms-cpt.php:181
+msgid "CSS Classes"
+msgstr ""
+
+#: classes/class-pojo-forms-cpt.php:195
 msgid "+ Add Field"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:209
+#: classes/class-pojo-forms-cpt.php:217
 msgid "Email to"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:215
+#: classes/class-pojo-forms-cpt.php:223
 msgid "Email Subject"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:216
+#: classes/class-pojo-forms-cpt.php:224
 #, php-format
 msgid "New massage from \"%s\""
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:221
+#: classes/class-pojo-forms-cpt.php:229
 msgid "Email form name"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:227
+#: classes/class-pojo-forms-cpt.php:235
 msgid "Email form"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:233
+#: classes/class-pojo-forms-cpt.php:241
 msgid "Email Reply-To"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:234
+#: classes/class-pojo-forms-cpt.php:242
 msgid "Optional"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:240
+#: classes/class-pojo-forms-cpt.php:248
 msgid "After submitting redirect to"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:241
+#: classes/class-pojo-forms-cpt.php:249
 msgid "(Optional) http://pojo.me/"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:248
+#: classes/class-pojo-forms-cpt.php:256
 msgid "Metadata"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:263
+#: classes/class-pojo-forms-cpt.php:271
 msgid "Form Options"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:278
+#: classes/class-pojo-forms-cpt.php:286
+msgid "Field Settings"
+msgstr ""
+
+#: classes/class-pojo-forms-cpt.php:292
 msgid "Align Text"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:281
+#: classes/class-pojo-forms-cpt.php:295
 msgid "Top"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:282
+#: classes/class-pojo-forms-cpt.php:296
 msgid "Inside"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:283
+#: classes/class-pojo-forms-cpt.php:297
 msgid "Side - Alignright"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:284
+#: classes/class-pojo-forms-cpt.php:298
 msgid "Side - Alignleft"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:291
-msgid "Fields Settings"
-msgstr ""
-
-#: classes/class-pojo-forms-cpt.php:297
+#: classes/class-pojo-forms-cpt.php:305
 msgid "fields Style"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:301 classes/class-pojo-forms-cpt.php:373
+#: classes/class-pojo-forms-cpt.php:309 classes/class-pojo-forms-cpt.php:413
 msgid "Default"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:302 classes/class-pojo-forms-cpt.php:374
+#: classes/class-pojo-forms-cpt.php:310 classes/class-pojo-forms-cpt.php:414
 msgid "Custom Style"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:310 classes/class-pojo-forms-cpt.php:382
-msgid "Background Color"
-msgstr ""
-
-#: classes/class-pojo-forms-cpt.php:319 classes/class-pojo-forms-cpt.php:391
-msgid "Background Opacity"
-msgstr ""
-
-#: classes/class-pojo-forms-cpt.php:330 classes/class-pojo-forms-cpt.php:402
-msgid "Border Color"
-msgstr ""
-
-#: classes/class-pojo-forms-cpt.php:339 classes/class-pojo-forms-cpt.php:411
-msgid "Text Color"
-msgstr ""
-
-#: classes/class-pojo-forms-cpt.php:348
+#: classes/class-pojo-forms-cpt.php:319
 msgid "Text Size"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:349
+#: classes/class-pojo-forms-cpt.php:320
 msgid "13px"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:356
+#: classes/class-pojo-forms-cpt.php:327 classes/class-pojo-forms-cpt.php:422
+msgid "Background Color"
+msgstr ""
+
+#: classes/class-pojo-forms-cpt.php:336 classes/class-pojo-forms-cpt.php:431
+msgid "Background Opacity"
+msgstr ""
+
+#: classes/class-pojo-forms-cpt.php:347 classes/class-pojo-forms-cpt.php:442
+msgid "Border Color"
+msgstr ""
+
+#: classes/class-pojo-forms-cpt.php:356 classes/class-pojo-forms-cpt.php:451
+msgid "Text Color"
+msgstr ""
+
+#: classes/class-pojo-forms-cpt.php:367
 msgid "Button Settings"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:362
+#: classes/class-pojo-forms-cpt.php:373
 msgid "Button Text"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:363 classes/class-pojo-forms-cpt.php:364
+#: classes/class-pojo-forms-cpt.php:374 classes/class-pojo-forms-cpt.php:375
 msgid "Send"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:369
-msgid "Button Style"
-msgstr ""
-
-#: classes/class-pojo-forms-cpt.php:421
+#: classes/class-pojo-forms-cpt.php:381
 msgid "Button Size"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:424
+#: classes/class-pojo-forms-cpt.php:384
 msgid "Small"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:425
+#: classes/class-pojo-forms-cpt.php:385
 msgid "Medium"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:426
+#: classes/class-pojo-forms-cpt.php:386
 msgid "Large"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:427
+#: classes/class-pojo-forms-cpt.php:387
 msgid "XL"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:428
+#: classes/class-pojo-forms-cpt.php:388
 msgid "XXL"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:435
+#: classes/class-pojo-forms-cpt.php:395
 msgid "Button Align"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:438
+#: classes/class-pojo-forms-cpt.php:398
 msgctxt "button-align"
 msgid "None"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:439
+#: classes/class-pojo-forms-cpt.php:399
 msgctxt "button-align"
 msgid "Center"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:440
+#: classes/class-pojo-forms-cpt.php:400
 msgctxt "button-align"
 msgid "Right"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:441
+#: classes/class-pojo-forms-cpt.php:401
 msgctxt "button-align"
 msgid "Left"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:442
+#: classes/class-pojo-forms-cpt.php:402
 msgctxt "button-align"
 msgid "Block"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:449
+#: classes/class-pojo-forms-cpt.php:409
+msgid "Button Style"
+msgstr ""
+
+#: classes/class-pojo-forms-cpt.php:461
 msgid "Form Style"
 msgstr ""
 
-#: classes/class-pojo-forms-cpt.php:476
+#: classes/class-pojo-forms-cpt.php:488
 msgid ""
 "Copy and paste this shortcode into your Text editor or use with Form Widget."
 msgstr ""
