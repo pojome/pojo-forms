@@ -147,7 +147,7 @@ class Pojo_Forms_CPT {
 		);
 
 		$repeater_fields[] = array(
-			'id' => 'size',
+			'id' => 'width',
 			'title' => __( 'Width', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
@@ -387,6 +387,21 @@ class Pojo_Forms_CPT {
 				'xxl' => __( 'XXL', 'pojo-forms' ),
 			),
 			'std' => 'medium',
+		);
+
+		$fields[] = array(
+			'id' => 'button_width',
+			'title' => __( 'Button Width', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'' => __( '100%', 'pojo-forms' ),
+				'2' => __( '50%', 'pojo-forms' ),
+				'3' => __( '33%', 'pojo-forms' ),
+				'4' => __( '25%', 'pojo-forms' ),
+				'5' => __( '20%', 'pojo-forms' ),
+				'6' => __( '16%', 'pojo-forms' ),
+			),
+			'std' => '',
 		);
 
 		$fields[] = array(

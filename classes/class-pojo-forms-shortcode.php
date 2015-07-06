@@ -4,6 +4,20 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Pojo_Forms_Shortcode {
 	
 	protected $_form_index = 1;
+
+	protected function _get_column_class( $width ) {
+		switch ( $width ) {
+			case '5' :
+				$column_class = 'column-2-5';
+				break;
+
+			default :
+				$column_class = 'column-' . ( 12 / $width );
+				break;
+		}
+		
+		return $column_class;
+	}
 	
 	protected function _get_field_html( $form_id, $field_index, $field ) {
 		$field_classes = array( 'field' );
@@ -15,19 +29,10 @@ class Pojo_Forms_Shortcode {
 		if ( empty( $field['type'] ) )
 			$field['type'] = 'text';
 		
-		$column_class = '';
-		if ( empty( $field['size'] ) )
-			$field['size'] = 1;
-		
-		switch ( $field['size'] ) {
-			case '5' :
-				$column_class = 'column-2-5';
-				break;
-			
-			default :
-				$column_class = 'column-' . ( 12 / $field['size'] );
-				break;
-		}
+		if ( empty( $field['width'] ) )
+			$field['width'] = 1;
+
+		$column_class = $this->_get_column_class( $field['width'] );
 
 		$field_style_inline = array();
 
@@ -147,10 +152,11 @@ class Pojo_Forms_Shortcode {
 		}
 
 		$forms_html = sprintf(
-			'<div class="form-actions columns pojo-button-%1$s">
-				<button %2$s>%3$s</button>
+			'<div class="form-actions pojo-button-%1$s %2%s">
+				<button %3$s>%4$s</button>
 			</div>',
 			atmb_get_field( 'form_style_button_align', $form_id ),
+			$this->_get_column_class( atmb_get_field( 'form_style_button_width', $form_id ) ),
 			pojo_array_to_attributes( $button_attributes ),
 			atmb_get_field( 'form_style_button_text', $form_id )
 		);
@@ -187,9 +193,8 @@ class Pojo_Forms_Shortcode {
 
 		$forms_html = '<div class="columns">';
 		$forms_html .= implode( "\n", $rows );
-		$forms_html .= '</div>';
-
 		$forms_html .= $this->_get_button_html( $form->ID );
+		$forms_html .= '</div>';
 		
 		$form_align_text = atmb_get_field( 'form_style_align_text', $form->ID );
 		if ( empty( $form_align_text ) || ! in_array( $form_align_text, array( 'top', 'inside', 'right', 'left' ) ) )
