@@ -32,6 +32,7 @@ class Pojo_Forms_Shortcode {
 				'class' => '',
 				'choices' => '',
 				'inline' => false,
+				'checked' => false,
 				'multiple' => false,
 				'first_blank_item' => false,
 				'textarea_rows' => 5,
@@ -76,6 +77,11 @@ class Pojo_Forms_Shortcode {
 			if ( ! empty( $border_color ) ) {
 				$field_style_inline[] = 'border-color:' . $border_color;
 			}
+			
+			$input_color = atmb_get_field( 'form_style_fields_input_color', $form_id );
+			if ( ! empty( $input_color ) ) {
+				$field_style_inline[] = 'color:' . $input_color;
+			}
 		}
 		
 		$container_classes = array(
@@ -112,7 +118,7 @@ class Pojo_Forms_Shortcode {
 	
 				$field_html = sprintf(
 					'<div class="%2$s">
-							<label for="%1$s">%3$s</label>
+							<label for="%1$s" class="label-field">%3$s</label>
 							<input %4$s />
 						</div>',
 					$field_id,
@@ -152,7 +158,7 @@ class Pojo_Forms_Shortcode {
 
 				$field_html = sprintf(
 					'<div class="%2$s">
-							<label for="%1$s">%3$s</label>
+							<label for="%1$s" class="label-field">%3$s</label>
 							<select %4$s>
 							%5$s
 							</select>
@@ -190,6 +196,13 @@ class Pojo_Forms_Shortcode {
 				$options = array();
 				foreach ( $choices as $choice_index => $choice ) {
 					$field_attributes['id'] = $field_id . '-' . ( $choice_index + 1 );
+
+					$checked = false;
+					if ( 'radio' === $field['type'] && 0 === $choice_index )
+						$checked = true;
+
+					if ( 'checkbox' === $field['type'] && $field['checked'] )
+						$checked = true;
 					
 					$options[] = sprintf(
 						'<div class="field-list-item">
@@ -199,14 +212,14 @@ class Pojo_Forms_Shortcode {
 						$field_attributes['id'],
 						$choice,
 						pojo_array_to_attributes( $field_attributes ), 
-						( 'radio' === $field['type'] && 0 === $choice_index ) ? ' checked' : ''
+						( $checked ) ? ' checked' : ''
 					);
 				}
 
 				$field_html = sprintf(
 					'<div class="%1$s">
-						<label>%2$s</label>
-						%3$s
+						<label class="label-field">%2$s</label>
+						<div class="field-list-items">%3$s</div>
 					</div>',
 					implode( ' ', $container_classes ),
 					$field['name'],
@@ -234,7 +247,7 @@ class Pojo_Forms_Shortcode {
 
 				$field_html = sprintf(
 					'<div class="%2$s">
-						<label for="%1$s">%3$s</label>
+						<label for="%1$s" class="label-field">%3$s</label>
 						<textarea %4$s></textarea>
 					</div>',
 					$field_id,
@@ -345,14 +358,14 @@ class Pojo_Forms_Shortcode {
 		$form_style_inline = array();
 		$fields_style = atmb_get_field( 'form_style_fields_style', $form->ID );
 		if ( 'custom' === $fields_style ) {
-			$text_color = atmb_get_field( 'form_style_fields_text_color', $form->ID );
-			if ( ! empty( $text_color ) ) {
-				$form_style_inline[] = 'color:' . $text_color;
+			$label_size = atmb_get_field( 'form_style_fields_lbl_size', $form->ID );
+			if ( ! empty( $text_size ) ) {
+				$form_style_inline[] = 'font-size:' . $label_size;
 			}
 			
-			$text_size = atmb_get_field( 'form_style_fields_text_size', $form->ID );
-			if ( ! empty( $text_size ) ) {
-				$form_style_inline[] = 'font-size:' . $text_size;
+			$label_color = atmb_get_field( 'form_style_fields_lbl_color', $form->ID );
+			if ( ! empty( $label_color ) ) {
+				$form_style_inline[] = 'color:' . $label_color;
 			}
 		}
 

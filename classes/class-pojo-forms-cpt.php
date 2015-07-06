@@ -137,12 +137,20 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Choices', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_TEXTAREA,
 			'classes_field' => array( 'large-text' ),
+			'desc' => __( 'One option per line.', 'pojo-forms' ),
 			'std' => '',
 		);
 		
 		$repeater_fields[] = array(
 			'id' => 'inline',
 			'title' => __( 'Inline', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
+			'std' => false,
+		);
+		
+		$repeater_fields[] = array(
+			'id' => 'checked',
+			'title' => __( 'Checked', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
@@ -370,16 +378,25 @@ class Pojo_Forms_CPT {
 
 		// Fields custom style
 		$fields[] = array(
-			'id' => 'fields_text_size',
-			'title' => __( 'Text Size', 'pojo-forms' ),
+			'id' => 'fields_lbl_size',
+			'title' => __( 'Label Size', 'pojo-forms' ),
 			'placeholder' => __( '13px', 'pojo-forms' ),
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
 			'std' => '',
 		);
 
 		$fields[] = array(
-			'id' => 'fields_text_color',
-			'title' => __( 'Text Color', 'pojo-forms' ),
+			'id' => 'fields_lbl_color',
+			'title' => __( 'Label Color', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_COLOR,
+			'placeholder' => '#ffffff',
+			'show_on' => array( 'form_style_fields_style' => 'custom' ),
+			'std' => '#ffffff',
+		);
+		
+		$fields[] = array(
+			'id' => 'fields_input_color',
+			'title' => __( 'Input Color', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_COLOR,
 			'placeholder' => '#ffffff',
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
@@ -528,7 +545,7 @@ class Pojo_Forms_CPT {
 			'id'         => 'pojo-forms-style',
 			'title'      => __( 'Form Style', 'pojo-forms' ),
 			'post_types' => array( 'pojo_forms' ),
-			'context'   => 'side',
+			'context'    => 'normal',
 			'prefix'     => 'form_style_',
 			'fields'     => $fields,
 		);
