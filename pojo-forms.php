@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Pojo Forms
-Description: ...
+Description: Pojo Forms allows you to create any form you want with a simple drag and drop interface.
 Plugin URI: http://pojo.me/
 Author: Pojo Team
 Version: 1.0.0

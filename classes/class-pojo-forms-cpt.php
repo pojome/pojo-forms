@@ -253,7 +253,7 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'metadata',
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX_LIST,
-			'title' => __( 'Metadata', 'pojo-forms' ),
+			'title' => __( 'Form data', 'pojo-forms' ),
 			'options' => array(
 				'time' => __( 'Time', 'pojo-forms' ),
 				'date' => __( 'Date', 'pojo-forms' ),
@@ -289,7 +289,7 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'align_text',
-			'title' => __( 'Align Text', 'pojo-forms' ),
+			'title' => __( 'Label Align', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'top' => __( 'Top', 'pojo-forms' ),
@@ -323,6 +323,15 @@ class Pojo_Forms_CPT {
 		);
 
 		$fields[] = array(
+			'id' => 'fields_text_color',
+			'title' => __( 'Text Color', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_COLOR,
+			'placeholder' => '#ffffff',
+			'show_on' => array( 'form_style_fields_style' => 'custom' ),
+			'std' => '#ffffff',
+		);
+
+		$fields[] = array(
 			'id' => 'fields_bg_color',
 			'title' => __( 'Background Color', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_COLOR,
@@ -349,15 +358,6 @@ class Pojo_Forms_CPT {
 			'placeholder' => '#cccccc',
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
 			'std' => '#cccccc',
-		);
-
-		$fields[] = array(
-			'id' => 'fields_text_color',
-			'title' => __( 'Text Color', 'pojo-forms' ),
-			'type' => Pojo_MetaBox::FIELD_COLOR,
-			'placeholder' => '#ffffff',
-			'show_on' => array( 'form_style_fields_style' => 'custom' ),
-			'std' => '#ffffff',
 		);
 
 		// End fields custom style
