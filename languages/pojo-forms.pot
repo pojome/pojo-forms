@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-06 19:38+0300\n"
+"POT-Creation-Date: 2015-07-06 22:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -224,27 +224,27 @@ msgid "Name"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:137
-msgid "Choices"
+msgid "Options"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:140
-msgid "One option per line."
+msgid "One option per line"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:146
-msgid "Inline"
+msgid "List Inline"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:153
-msgid "Checked"
+msgid "Default Value"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:160
-msgid "Allow multiple selections?"
+msgid "Allow multiple selections"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:167
-msgid "Insert a blank item as the first option?"
+msgid "Insert a first option as blank"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:174
@@ -312,7 +312,7 @@ msgid "+ Add Field"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:270
-msgid "Email to"
+msgid "Email To"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:276
@@ -325,27 +325,27 @@ msgid "New massage from \"%s\""
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:282
-msgid "Email form name"
+msgid "From Name"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:288
-msgid "Email form"
+msgid "From Email"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:294
-msgid "Email Reply-To"
+msgid "Email Reply-To (Optional)"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:295
-msgid "Optional"
+msgid "Email field by Shortcode ID"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:301
-msgid "After submitting redirect to"
+msgid "Redirect To (Optional)"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:302
-msgid "(Optional) http://pojo.me/"
+msgid "http://pojo.me/"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:309
@@ -473,7 +473,7 @@ msgid "XXL"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:481
-msgid "Button Width"
+msgid "Button Area Width"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:496
