@@ -147,7 +147,7 @@ class Pojo_Forms_Shortcode {
 		}
 
 		$forms_html = sprintf(
-			'<div class="form-actions pojo-button-%1$s">
+			'<div class="form-actions columns pojo-button-%1$s">
 				<button %2$s>%3$s</button>
 			</div>',
 			atmb_get_field( 'form_style_button_align', $form_id ),
