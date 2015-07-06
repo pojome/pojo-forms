@@ -109,17 +109,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		less: {
-			dist: {
-				options: {
-					cleancss: true
-				},
-				files: {
-					'assets/css/style.css': 'assets/less/style.less'
-				}
-			}
-		},
-
 		watch: {
 			js: {
 				files: [
@@ -129,17 +118,6 @@ module.exports = function(grunt) {
 				tasks: [
 					'jshint',
 					'uglify'
-				],
-				options: {}
-			},
-
-			less: {
-
-				files: [
-					'**/*.less'
-				],
-				tasks: [
-					'less'
 				],
 				options: {}
 			}
@@ -154,7 +132,6 @@ module.exports = function(grunt) {
 				},
 				files: {
 					src: [
-						'assets/css/style.css',
 						'assets/js/app.min.js',
 						'assets/js/admin.min.js'
 					]
@@ -262,7 +239,6 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [
 		'checktextdomain',
 		'pot',
-		'less',
 		'jshint',
 		'uglify',
 		'usebanner',
