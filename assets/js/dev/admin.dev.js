@@ -3,7 +3,7 @@
  */
 /* global jQuery */
 
-;( function( $ ) {
+;( function( $, undefined ) {
 	'use strict';
 
 	var Pojo_Forms_Admin_App = {
@@ -19,17 +19,61 @@
 		buildElements: function() {},
 
 		bindEvents: function() {
-			var $self = this;
+			var self = this;
 
 			$( document ).on( 'pojo_metabox_repeater_new_item', '.atmb-repeater-row', function() {
-				var id = $self._getNewFieldID();
+				var id = self._getNewFieldID();
 				$( this )
 					.find( 'input.atmb-field-hidden.atmb-field_id' )
 					.val( id );
 				
 				$( this )
 					.find( 'div.atmb-field-row.atmb-shortcode input.atmb-field-text' )
-					.val( $self._getFieldShortcode( id ) );
+					.val( self._getFieldShortcode( id ) );
+				
+				$( this )
+					.find( 'div.atmb-field-row.atmb-type select' )
+					.trigger( 'change' );
+			} )
+			
+				.on( 'change', '#pojo-forms-form li.atmb-repeater-row div.atmb-field-row.atmb-type select', function() {
+					self._onChangeFieldType( self, $( this ) );
+				} );
+			
+			$( 'li.atmb-repeater-row div.atmb-field-row.atmb-type select', '#pojo-forms-form' ).trigger( 'change' );
+		},
+		
+		_onChangeFieldType: function( self, $element ) {
+			var showFieldsPerElements = {
+					defaults: [],
+					textarea: [ 'textarea_rows' ],
+					checkbox: [ 'inline', 'choices' ],
+					radio: [ 'inline', 'choices' ],
+					dropdown: [ 'choices', 'multiple', 'first_blank_item' ]
+				},
+				hideFields = [ 'textarea_rows', 'inline', 'choices', 'multiple', 'first_blank_item' ];
+			
+			var $wrapper = $element.closest( 'li.atmb-repeater-row' );
+			
+			self._hideOrDisplayFields( $wrapper, hideFields, 'hide' );
+			
+			if ( undefined === showFieldsPerElements[ $element.val() ] ) {
+				return;
+			}
+
+			self._hideOrDisplayFields( $wrapper, showFieldsPerElements[ $element.val() ], 'display' );
+		},
+		
+		_hideOrDisplayFields: function( $wrapper, list_fields, action ) {
+			var $currentField;
+			$.each( list_fields, function( index, field_name ) {
+				$currentField = $wrapper.find( 'div.atmb-field-row.atmb-' + field_name );
+				
+				if ( 'display' === action ) {
+					$currentField.fadeIn( 'fast' );
+				} else {
+					$currentField.hide();
+				}
 			} );
 		},
 		

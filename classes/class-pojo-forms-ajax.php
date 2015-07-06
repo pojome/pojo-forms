@@ -60,10 +60,22 @@ class Pojo_Forms_Ajax {
 			$email_html = '';
 			foreach ( $repeater_fields as $field_index => $field ) {
 				$field_name = 'form_field_' . ( $field_index + 1 );
+				$field_value = '';
+				
+				if ( isset( $_POST[ $field_name ] ) ) {
+					$field_value = $_POST[ $field_name ];
+					
+					if ( is_array( $field_value ) ) {
+						$field_value = implode( ', ', $field_value );
+					} else {
+						$field_value = nl2br( $field_value );
+					}
+				}
+				
 				$email_html .= sprintf(
 					'<div><strong>%s:</strong> %s</div>',
 					$field['name'],
-					isset( $_POST[ $field_name ] ) ? nl2br( $_POST[ $field_name ] ) : ''
+					$field_value
 				);
 			}
 			
