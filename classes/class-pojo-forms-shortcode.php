@@ -173,11 +173,13 @@ class Pojo_Forms_Shortcode {
 		}
 
 		$forms_html = sprintf(
-			'<div class="form-actions pojo-button-%1$s %2$s">
-				<button %3$s>%4$s</button>
+			'<div class="form-actions %1$s">
+				<div class="pojo-button-wrap pojo-button-%2$s">
+					<button %3$s>%4$s</button>
+				</div>
 			</div>',
-			atmb_get_field( 'form_style_button_align', $form_id ),
 			$this->_get_column_class( atmb_get_field( 'form_style_button_width', $form_id ) ),
+			atmb_get_field( 'form_style_button_align', $form_id ),
 			pojo_array_to_attributes( $button_attributes ),
 			atmb_get_field( 'form_style_button_text', $form_id )
 		);
