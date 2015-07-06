@@ -291,15 +291,15 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'email_reply_to',
-			'title' => __( 'Email Reply-To', 'pojo-forms' ),
-			'placeholder' => __( 'Optional', 'pojo-forms' ),
+			'title' => __( 'Email Reply-To (Optional)', 'pojo-forms' ),
+			'placeholder' => __( 'Email field by Shortcode ID', 'pojo-forms' ),
 			'std' => '',
 		);
 		
 		$fields[] = array(
 			'id' => 'redirect_to',
-			'title' => __( 'After submitting redirect to', 'pojo-forms' ),
-			'placeholder' => __( '(Optional) http://pojo.me/', 'pojo-forms' ),
+			'title' => __( 'Redirect To (Optional)', 'pojo-forms' ),
+			'placeholder' => __( 'http://pojo.me/', 'pojo-forms' ),
 			'std' => '',
 		);
 
@@ -478,7 +478,7 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'button_width',
-			'title' => __( 'Button Width', 'pojo-forms' ),
+			'title' => __( 'Button Area Width', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'' => __( '100%', 'pojo-forms' ),
