@@ -134,37 +134,37 @@ class Pojo_Forms_CPT {
 		// Custom elements per field type
 		$repeater_fields[] = array(
 			'id' => 'choices',
-			'title' => __( 'Choices', 'pojo-forms' ),
+			'title' => __( 'Options', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_TEXTAREA,
 			'classes_field' => array( 'large-text' ),
-			'desc' => __( 'One option per line.', 'pojo-forms' ),
+			'desc' => __( 'One option per line', 'pojo-forms' ),
 			'std' => '',
 		);
 		
 		$repeater_fields[] = array(
 			'id' => 'inline',
-			'title' => __( 'Inline', 'pojo-forms' ),
+			'title' => __( 'List Inline', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
 		
 		$repeater_fields[] = array(
 			'id' => 'checked',
-			'title' => __( 'Checked', 'pojo-forms' ),
+			'title' => __( 'Default Value', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
 		
 		$repeater_fields[] = array(
 			'id' => 'multiple',
-			'title' => __( 'Allow multiple selections?', 'pojo-forms' ),
+			'title' => __( 'Allow multiple selections', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
 		
 		$repeater_fields[] = array(
 			'id' => 'first_blank_item',
-			'title' => __( 'Insert a blank item as the first option?', 'pojo-forms' ),
+			'title' => __( 'Insert a first option as blank', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
@@ -267,7 +267,7 @@ class Pojo_Forms_CPT {
 		
 		$fields[] = array(
 			'id' => 'email_to',
-			'title' => __( 'Email to', 'pojo-forms' ),
+			'title' => __( 'Email To', 'pojo-forms' ),
 			'std' => get_option( 'admin_email' ),
 		);
 
@@ -279,13 +279,13 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'email_form_name',
-			'title' => __( 'Email form name', 'pojo-forms' ),
+			'title' => __( 'From Name', 'pojo-forms' ),
 			'std' => get_bloginfo( 'name' ),
 		);
 
 		$fields[] = array(
 			'id' => 'email_form',
-			'title' => __( 'Email form', 'pojo-forms' ),
+			'title' => __( 'From Email', 'pojo-forms' ),
 			'std' => get_option( 'admin_email' ),
 		);
 
