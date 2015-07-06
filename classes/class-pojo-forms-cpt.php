@@ -147,7 +147,7 @@ class Pojo_Forms_CPT {
 		);
 
 		$repeater_fields[] = array(
-			'id' => 'size',
+			'id' => 'width',
 			'title' => __( 'Width', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
@@ -257,13 +257,12 @@ class Pojo_Forms_CPT {
 			'options' => array(
 				'time' => __( 'Time', 'pojo-forms' ),
 				'date' => __( 'Date', 'pojo-forms' ),
-				'page_title' => __( 'Page Title', 'pojo-forms' ),
 				'page_url' => __( 'Page URL', 'pojo-forms' ),
 				'user_agent' => __( 'User Agent', 'pojo-forms' ),
 				'remote_ip' => __( 'Remote IP', 'pojo-forms' ),
 				'credit' => __( 'Credit', 'pojo-forms' ),
 			),
-			'std' => array( 'time', 'date', 'page_title', 'page_url', 'user_agent', 'remote_ip', 'credit' ),
+			'std' => array( 'time', 'date', 'page_url', 'user_agent', 'remote_ip', 'credit' ),
 		);
 		
 		$meta_boxes[] = array(
@@ -301,6 +300,18 @@ class Pojo_Forms_CPT {
 		);
 
 		$fields[] = array(
+			'id' => 'field_size',
+			'title' => __( 'Field Size', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'small' => __( 'Small', 'pojo-forms' ),
+				'medium' => __( 'Medium', 'pojo-forms' ),
+				'large' => __( 'Large', 'pojo-forms' ),
+			),
+			'std' => 'medium',
+		);
+
+		$fields[] = array(
 			'id' => 'fields_style',
 			'title' => __( 'Field Style', 'pojo-forms' ),
 			'classes' => array( 'select-show-or-hide-fields' ),
@@ -313,7 +324,6 @@ class Pojo_Forms_CPT {
 		);
 
 		// Fields custom style
-
 		$fields[] = array(
 			'id' => 'fields_text_size',
 			'title' => __( 'Text Size', 'pojo-forms' ),
@@ -359,7 +369,6 @@ class Pojo_Forms_CPT {
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
 			'std' => '#cccccc',
 		);
-
 		// End fields custom style
 		
 		$fields[] = array(
@@ -375,7 +384,6 @@ class Pojo_Forms_CPT {
 			'std' => __( 'Send', 'pojo-forms' ),
 		);
 
-
 		$fields[] = array(
 			'id' => 'button_size',
 			'title' => __( 'Button Size', 'pojo-forms' ),
@@ -388,6 +396,21 @@ class Pojo_Forms_CPT {
 				'xxl' => __( 'XXL', 'pojo-forms' ),
 			),
 			'std' => 'medium',
+		);
+
+		$fields[] = array(
+			'id' => 'button_width',
+			'title' => __( 'Button Width', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'' => __( '100%', 'pojo-forms' ),
+				'2' => __( '50%', 'pojo-forms' ),
+				'3' => __( '33%', 'pojo-forms' ),
+				'4' => __( '25%', 'pojo-forms' ),
+				'5' => __( '20%', 'pojo-forms' ),
+				'6' => __( '16%', 'pojo-forms' ),
+			),
+			'std' => '',
 		);
 
 		$fields[] = array(
