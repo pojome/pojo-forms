@@ -137,6 +137,7 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Choices', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_TEXTAREA,
 			'classes_field' => array( 'large-text' ),
+			'desc' => __( 'One option per line.', 'pojo-forms' ),
 			'std' => '',
 		);
 		
@@ -544,7 +545,7 @@ class Pojo_Forms_CPT {
 			'id'         => 'pojo-forms-style',
 			'title'      => __( 'Form Style', 'pojo-forms' ),
 			'post_types' => array( 'pojo_forms' ),
-			'context'   => 'side',
+			'context'    => 'normal',
 			'prefix'     => 'form_style_',
 			'fields'     => $fields,
 		);

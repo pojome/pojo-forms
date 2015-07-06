@@ -118,7 +118,7 @@ class Pojo_Forms_Shortcode {
 	
 				$field_html = sprintf(
 					'<div class="%2$s">
-							<label for="%1$s">%3$s</label>
+							<label for="%1$s" class="label-field">%3$s</label>
 							<input %4$s />
 						</div>',
 					$field_id,
@@ -158,7 +158,7 @@ class Pojo_Forms_Shortcode {
 
 				$field_html = sprintf(
 					'<div class="%2$s">
-							<label for="%1$s">%3$s</label>
+							<label for="%1$s" class="label-field">%3$s</label>
 							<select %4$s>
 							%5$s
 							</select>
@@ -218,8 +218,8 @@ class Pojo_Forms_Shortcode {
 
 				$field_html = sprintf(
 					'<div class="%1$s">
-						<label>%2$s</label>
-						%3$s
+						<label class="label-field">%2$s</label>
+						<div class="field-list-items">%3$s</div>
 					</div>',
 					implode( ' ', $container_classes ),
 					$field['name'],
@@ -247,7 +247,7 @@ class Pojo_Forms_Shortcode {
 
 				$field_html = sprintf(
 					'<div class="%2$s">
-						<label for="%1$s">%3$s</label>
+						<label for="%1$s" class="label-field">%3$s</label>
 						<textarea %4$s></textarea>
 					</div>',
 					$field_id,
