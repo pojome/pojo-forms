@@ -30,11 +30,21 @@ class Pojo_Forms_Shortcode {
 				'width' => 1,
 				'placeholder' => '',
 				'class' => '',
+				'choices' => '',
+				'inline' => false,
+				'multiple' => false,
+				'first_blank_item' => false,
+				'textarea_rows' => 5,
 			)
 		);
 		
 		if ( empty( $field['type'] ) )
 			$field['type'] = 'text';
+		
+		// Parse choices to array
+		$choices = explode( "\n", $field['choices'] );
+		$choices = array_map( 'trim', $choices );
+		$choices = array_filter( $choices );
 		
 		$field_classes = array( 'field' );
 		$field_name = 'form_field_' . $field_index;
@@ -79,52 +89,161 @@ class Pojo_Forms_Shortcode {
 		$container_classes = array_filter( $container_classes );
 
 		$field_html = '';
-		if ( in_array( $field['type'], array( 'text', 'email', 'url', 'tel' ) ) ) { // Text field (default).
-			$field_attributes = array(
-				'type' => $field['type'],
-				'id' => $field_id,
-				'name' => $field_name,
-				'class' => implode( ' ', $field_classes ),
-				'style' => implode( ';', $field_style_inline ),
-				'placeholder' => esc_attr( $field['placeholder'] ),
-			);
+		
+		switch ( $field['type'] ) {
+			// Text field (default).
+			case 'text' :
+			case 'email' :
+			case 'url' : 
+			case 'tel' : 
+			case 'number' :
+				
+				$field_attributes = array(
+					'type' => $field['type'],
+					'id' => $field_id,
+					'name' => $field_name,
+					'class' => implode( ' ', $field_classes ),
+					'style' => implode( ';', $field_style_inline ),
+					'placeholder' => esc_attr( $field['placeholder'] ),
+				);
+	
+				// Remove empty values
+				$field_attributes = array_filter( $field_attributes );
+	
+				$field_html = sprintf(
+					'<div class="%2$s">
+							<label for="%1$s">%3$s</label>
+							<input %4$s />
+						</div>',
+					$field_id,
+					implode( ' ', $container_classes ),
+					$field['name'],
+					pojo_array_to_attributes( $field_attributes )
+				);	
+				
+				break;
 			
-			// Remove empty values
-			$field_attributes = array_filter( $field_attributes );
+			case 'dropdown' :
+				
+				if ( $field['multiple'] )
+					$field_name .= '[]';
+
+				$field_attributes = array(
+					'id' => $field_id,
+					'name' => $field_name,
+					'class' => implode( ' ', $field_classes ),
+					'style' => implode( ';', $field_style_inline ),
+				);
+				
+				if ( $field['multiple'] )
+					$field_attributes['multiple'] = 'multiple';
+
+				// Remove empty values
+				$field_attributes = array_filter( $field_attributes );
+				
+				$options = array();
+				
+				if ( $field['first_blank_item'] )
+					$options[] = '<option value="">---</option>';
+				
+				foreach ( $choices as $choice ) {
+					$options[] = sprintf( '<option value="%1$s">%1$s</option>', $choice );
+				}
+
+				$field_html = sprintf(
+					'<div class="%2$s">
+							<label for="%1$s">%3$s</label>
+							<select %4$s>
+							%5$s
+							</select>
+						</div>',
+					$field_id,
+					implode( ' ', $container_classes ),
+					$field['name'],
+					pojo_array_to_attributes( $field_attributes ),
+					implode( '', $options )
+				);
+
+				break;
 			
-			$field_html = sprintf(
-				'<div class="field-group %2$s">
-						<label for="%1$s">%3$s</label>
-						<input %4$s />
+			case 'radio' :
+			case 'checkbox' :
+				
+				if ( 'checkbox' === $field['type'] )
+					$field_name .= '[]';
+
+				$field_attributes = array(
+					'type' => $field['type'],
+					'id' => $field_id,
+					'name' => $field_name,
+					'class' => implode( ' ', $field_classes ),
+					'style' => implode( ';', $field_style_inline ),
+				);
+
+				// Remove empty values
+				$field_attributes = array_filter( $field_attributes );
+				
+				if ( $field['inline'] ) {
+					$container_classes[] = 'field-list-inline';
+				}
+
+				$options = array();
+				foreach ( $choices as $choice_index => $choice ) {
+					$field_attributes['id'] = $field_id . '-' . ( $choice_index + 1 );
+					
+					$options[] = sprintf(
+						'<div class="field-list-item">
+							<input %3$s value="%2$s"%4$s />
+							<label for="%1$s">%2$s</label>
+						</div>',
+						$field_attributes['id'],
+						$choice,
+						pojo_array_to_attributes( $field_attributes ), 
+						( 'radio' === $field['type'] && 0 === $choice_index ) ? ' checked' : ''
+					);
+				}
+
+				$field_html = sprintf(
+					'<div class="%1$s">
+						<label>%2$s</label>
+						%3$s
 					</div>',
-				$field_id,
-				implode( ' ', $container_classes ),
-				$field['name'],
-				pojo_array_to_attributes( $field_attributes )
-			);
-		} elseif ( 'textarea' === $field['type'] ) { // Textarea
-			$field_attributes = array(
-				'id' => $field_id,
-				'name' => $field_name,
-				'class' => implode( ' ', $field_classes ),
-				'style' => implode( ';', $field_style_inline ),
-				'rows' => '3',
-				'placeholder' =>  esc_attr( $field['placeholder'] ),
-			);
+					implode( ' ', $container_classes ),
+					$field['name'],
+					implode( '', $options )
+				);
 
-			// Remove empty values
-			$field_attributes = array_filter( $field_attributes );
+				break;
+			
+			case 'textarea' :
 
-			$field_html = sprintf(
-				'<div class="field-group %2$s">
+				$field_attributes = array(
+					'id' => $field_id,
+					'name' => $field_name,
+					'class' => implode( ' ', $field_classes ),
+					'style' => implode( ';', $field_style_inline ),
+					'rows' => '3',
+					'placeholder' =>  esc_attr( $field['placeholder'] ),
+				);
+
+				if ( ! empty( $field['textarea_rows'] ) )
+					$field_attributes['rows'] = $field['textarea_rows'];
+
+				// Remove empty values
+				$field_attributes = array_filter( $field_attributes );
+
+				$field_html = sprintf(
+					'<div class="%2$s">
 						<label for="%1$s">%3$s</label>
 						<textarea %4$s></textarea>
 					</div>',
-				$field_id,
-				implode( ' ', $container_classes ),
-				$field['name'],
-				pojo_array_to_attributes( $field_attributes )
-			);
+					$field_id,
+					implode( ' ', $container_classes ),
+					$field['name'],
+					pojo_array_to_attributes( $field_attributes )
+				);
+				
+				break;
 		}
 		
 		return $field_html;

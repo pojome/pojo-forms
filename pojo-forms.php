@@ -97,6 +97,9 @@ final class Pojo_Forms {
 	}
 
 	public function admin_enqueue_scripts() {
+		if ( 'pojo_forms' !== get_current_screen()->post_type ) 
+			return;
+		
 		wp_register_script( 'pojo-admin-forms', POJO_FORMS_ASSETS_URL . 'js/admin.min.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'pojo-admin-forms' );
 	}

@@ -112,13 +112,17 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Field Type', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
-				'' => __( 'Text', 'pojo-forms' ),
+				'text' => __( 'Text', 'pojo-forms' ),
 				'textarea' => __( 'Textarea', 'pojo-forms' ),
 				'email' => __( 'Email', 'pojo-forms' ),
 				'tel' => __( 'Telephone Number', 'pojo-forms' ),
 				'url' => __( 'Url', 'pojo-forms' ),
+				'number' => __( 'Number', 'pojo-forms' ),
+				'checkbox' => __( 'Checkbox', 'pojo-forms' ),
+				'radio' => __( 'Radio', 'pojo-forms' ),
+				'dropdown' => __( 'Drop-down', 'pojo-forms' ),
 			),
-			'std' => '',
+			'std' => 'text',
 		);
 
 		$repeater_fields[] = array(
@@ -126,6 +130,47 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Name', 'pojo-forms' ),
 			'std' => '',
 		);
+		
+		// Custom elements per field type
+		$repeater_fields[] = array(
+			'id' => 'choices',
+			'title' => __( 'Choices', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_TEXTAREA,
+			'classes_field' => array( 'large-text' ),
+			'std' => '',
+		);
+		
+		$repeater_fields[] = array(
+			'id' => 'inline',
+			'title' => __( 'Inline', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
+			'std' => false,
+		);
+		
+		$repeater_fields[] = array(
+			'id' => 'multiple',
+			'title' => __( 'Allow multiple selections?', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
+			'std' => false,
+		);
+		
+		$repeater_fields[] = array(
+			'id' => 'first_blank_item',
+			'title' => __( 'Insert a blank item as the first option?', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
+			'std' => false,
+		);
+
+		$repeater_fields[] = array(
+			'id' => 'textarea_rows',
+			'title' => __( 'Rows', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_NUMBER,
+			'placeholder' => '5',
+			'min' => '1',
+			'max' => '100',
+			'std' => '5',
+		);
+		// End custom elements per field type
 
 		$repeater_fields[] = array(
 			'id'      => 'advanced',
