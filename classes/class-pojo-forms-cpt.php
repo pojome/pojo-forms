@@ -431,6 +431,22 @@ class Pojo_Forms_CPT {
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
 			'std' => '#cccccc',
 		);
+
+		$fields[] = array(
+			'id' => 'fields_border_width',
+			'title' => __( 'Border Width', 'pojo-forms' ),
+			'placeholder' => '1px',
+			'show_on' => array( 'form_style_fields_style' => 'custom' ),
+			'std' => '1px',
+		);
+
+		$fields[] = array(
+			'id' => 'fields_border_radius',
+			'title' => __( 'Border Radius', 'pojo-forms' ),
+			'placeholder' => '5px',
+			'show_on' => array( 'form_style_fields_style' => 'custom' ),
+			'std' => '5px',
+		);
 		// End fields custom style
 		
 		$fields[] = array(
@@ -538,6 +554,22 @@ class Pojo_Forms_CPT {
 			'placeholder' => '#ffffff',
 			'show_on' => array( 'form_style_button_style' => 'custom' ),
 			'std' => '#ffffff',
+		);
+
+		$fields[] = array(
+			'id' => 'button_border_width',
+			'title' => __( 'Border Width', 'pojo-forms' ),
+			'placeholder' => '1px',
+			'show_on' => array( 'form_style_button_style' => 'custom' ),
+			'std' => '1px',
+		);
+
+		$fields[] = array(
+			'id' => 'button_border_radius',
+			'title' => __( 'Border Radius', 'pojo-forms' ),
+			'placeholder' => '5px',
+			'show_on' => array( 'form_style_button_style' => 'custom' ),
+			'std' => '5px',
 		);
 		// End button custom style
 		

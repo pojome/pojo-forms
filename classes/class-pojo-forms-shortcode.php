@@ -82,6 +82,16 @@ class Pojo_Forms_Shortcode {
 			if ( ! empty( $input_color ) ) {
 				$field_style_inline[] = 'color:' . $input_color;
 			}
+
+			$border_width = atmb_get_field( 'form_style_fields_border_width', $form_id );
+			if ( ! empty( $border_width ) ) {
+				$field_style_inline[] = 'border-width:' . $border_width;
+			}
+
+			$border_radius = atmb_get_field( 'form_style_fields_border_radius', $form_id );
+			if ( ! empty( $border_radius ) ) {
+				$field_style_inline[] = 'border-radius:' . $border_radius;
+			}
 		}
 		
 		$container_classes = array(
@@ -298,6 +308,16 @@ class Pojo_Forms_Shortcode {
 			$text_color = atmb_get_field( 'form_style_button_text_color', $form_id );
 			if ( ! empty( $text_color ) ) {
 				$style_inline[] = 'color:' . $text_color;
+			}
+
+			$border_width = atmb_get_field( 'form_style_button_border_width', $form_id );
+			if ( ! empty( $border_width ) ) {
+				$style_inline[] = 'border-width:' . $border_width;
+			}
+
+			$border_radius = atmb_get_field( 'form_style_button_border_radius', $form_id );
+			if ( ! empty( $border_radius ) ) {
+				$style_inline[] = 'border-radius:' . $border_radius;
 			}
 			
 			if ( ! empty( $style_inline ) )
