@@ -76,6 +76,11 @@ class Pojo_Forms_Shortcode {
 			if ( ! empty( $border_color ) ) {
 				$field_style_inline[] = 'border-color:' . $border_color;
 			}
+			
+			$input_color = atmb_get_field( 'form_style_fields_input_color', $form_id );
+			if ( ! empty( $input_color ) ) {
+				$field_style_inline[] = 'color:' . $input_color;
+			}
 		}
 		
 		$container_classes = array(
@@ -345,14 +350,14 @@ class Pojo_Forms_Shortcode {
 		$form_style_inline = array();
 		$fields_style = atmb_get_field( 'form_style_fields_style', $form->ID );
 		if ( 'custom' === $fields_style ) {
-			$text_color = atmb_get_field( 'form_style_fields_text_color', $form->ID );
-			if ( ! empty( $text_color ) ) {
-				$form_style_inline[] = 'color:' . $text_color;
+			$label_size = atmb_get_field( 'form_style_fields_lbl_size', $form->ID );
+			if ( ! empty( $text_size ) ) {
+				$form_style_inline[] = 'font-size:' . $label_size;
 			}
 			
-			$text_size = atmb_get_field( 'form_style_fields_text_size', $form->ID );
-			if ( ! empty( $text_size ) ) {
-				$form_style_inline[] = 'font-size:' . $text_size;
+			$label_color = atmb_get_field( 'form_style_fields_lbl_color', $form->ID );
+			if ( ! empty( $label_color ) ) {
+				$form_style_inline[] = 'color:' . $label_color;
 			}
 		}
 

@@ -370,16 +370,25 @@ class Pojo_Forms_CPT {
 
 		// Fields custom style
 		$fields[] = array(
-			'id' => 'fields_text_size',
-			'title' => __( 'Text Size', 'pojo-forms' ),
+			'id' => 'fields_lbl_size',
+			'title' => __( 'Label Size', 'pojo-forms' ),
 			'placeholder' => __( '13px', 'pojo-forms' ),
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
 			'std' => '',
 		);
 
 		$fields[] = array(
-			'id' => 'fields_text_color',
-			'title' => __( 'Text Color', 'pojo-forms' ),
+			'id' => 'fields_lbl_color',
+			'title' => __( 'Label Color', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_COLOR,
+			'placeholder' => '#ffffff',
+			'show_on' => array( 'form_style_fields_style' => 'custom' ),
+			'std' => '#ffffff',
+		);
+		
+		$fields[] = array(
+			'id' => 'fields_input_color',
+			'title' => __( 'Input Color', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_COLOR,
 			'placeholder' => '#ffffff',
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
