@@ -128,6 +128,12 @@ class Pojo_Forms_CPT {
 		);
 
 		$repeater_fields[] = array(
+			'id'      => 'advanced',
+			'title'   => __( 'Settings', 'pojo-forms' ),
+			'type'    => Pojo_MetaBox::FIELD_BUTTON_COLLAPSE,
+		);
+
+		$repeater_fields[] = array(
 			'id' => 'placeholder',
 			'title' => __( 'Placeholder', 'pojo-forms' ),
 			'std' => '',
@@ -141,22 +147,16 @@ class Pojo_Forms_CPT {
 		);
 
 		$repeater_fields[] = array(
-			'id'      => 'advanced',
-			'title'   => __( 'Advanced', 'pojo-forms' ),
-			'type'    => Pojo_MetaBox::FIELD_BUTTON_COLLAPSE,
-		);
-
-		$repeater_fields[] = array(
 			'id' => 'size',
 			'title' => __( 'Width', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
-				'' => __( 'One Column', 'pojo-forms' ),
-				'2' => __( '2 Columns', 'pojo-forms' ),
-				'3' => __( '3 Columns', 'pojo-forms' ),
-				'4' => __( '4 Columns', 'pojo-forms' ),
-				'5' => __( '5 Columns', 'pojo-forms' ),
-				'6' => __( '6 Columns', 'pojo-forms' ),
+				'' => __( '100%', 'pojo-forms' ),
+				'2' => __( '50%', 'pojo-forms' ),
+				'3' => __( '33%', 'pojo-forms' ),
+				'4' => __( '25%', 'pojo-forms' ),
+				'5' => __( '20%', 'pojo-forms' ),
+				'6' => __( '16%', 'pojo-forms' ),
 			),
 			'std' => '',
 		);
@@ -253,7 +253,7 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'metadata',
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX_LIST,
-			'title' => __( 'Metadata', 'pojo-forms' ),
+			'title' => __( 'Form data', 'pojo-forms' ),
 			'options' => array(
 				'time' => __( 'Time', 'pojo-forms' ),
 				'date' => __( 'Date', 'pojo-forms' ),
@@ -289,7 +289,7 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'align_text',
-			'title' => __( 'Align Text', 'pojo-forms' ),
+			'title' => __( 'Label Align', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'top' => __( 'Top', 'pojo-forms' ),
@@ -302,7 +302,7 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'fields_style',
-			'title' => __( 'fields Style', 'pojo-forms' ),
+			'title' => __( 'Field Style', 'pojo-forms' ),
 			'classes' => array( 'select-show-or-hide-fields' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
@@ -320,6 +320,15 @@ class Pojo_Forms_CPT {
 			'placeholder' => __( '13px', 'pojo-forms' ),
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
 			'std' => '',
+		);
+
+		$fields[] = array(
+			'id' => 'fields_text_color',
+			'title' => __( 'Text Color', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_COLOR,
+			'placeholder' => '#ffffff',
+			'show_on' => array( 'form_style_fields_style' => 'custom' ),
+			'std' => '#ffffff',
 		);
 
 		$fields[] = array(
@@ -349,15 +358,6 @@ class Pojo_Forms_CPT {
 			'placeholder' => '#cccccc',
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
 			'std' => '#cccccc',
-		);
-
-		$fields[] = array(
-			'id' => 'fields_text_color',
-			'title' => __( 'Text Color', 'pojo-forms' ),
-			'type' => Pojo_MetaBox::FIELD_COLOR,
-			'placeholder' => '#ffffff',
-			'show_on' => array( 'form_style_fields_style' => 'custom' ),
-			'std' => '#ffffff',
 		);
 
 		// End fields custom style
