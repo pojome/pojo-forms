@@ -32,6 +32,7 @@ class Pojo_Forms_Shortcode {
 				'class' => '',
 				'choices' => '',
 				'inline' => false,
+				'checked' => false,
 				'multiple' => false,
 				'first_blank_item' => false,
 				'textarea_rows' => 5,
@@ -195,6 +196,13 @@ class Pojo_Forms_Shortcode {
 				$options = array();
 				foreach ( $choices as $choice_index => $choice ) {
 					$field_attributes['id'] = $field_id . '-' . ( $choice_index + 1 );
+
+					$checked = false;
+					if ( 'radio' === $field['type'] && 0 === $choice_index )
+						$checked = true;
+
+					if ( 'checkbox' === $field['type'] && $field['checked'] )
+						$checked = true;
 					
 					$options[] = sprintf(
 						'<div class="field-list-item">
@@ -204,7 +212,7 @@ class Pojo_Forms_Shortcode {
 						$field_attributes['id'],
 						$choice,
 						pojo_array_to_attributes( $field_attributes ), 
-						( 'radio' === $field['type'] && 0 === $choice_index ) ? ' checked' : ''
+						( $checked ) ? ' checked' : ''
 					);
 				}
 
