@@ -300,6 +300,18 @@ class Pojo_Forms_CPT {
 		);
 
 		$fields[] = array(
+			'id' => 'field_size',
+			'title' => __( 'Field Size', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'small' => __( 'Small', 'pojo-forms' ),
+				'medium' => __( 'Medium', 'pojo-forms' ),
+				'large' => __( 'Large', 'pojo-forms' ),
+			),
+			'std' => 'medium',
+		);
+
+		$fields[] = array(
 			'id' => 'fields_style',
 			'title' => __( 'Field Style', 'pojo-forms' ),
 			'classes' => array( 'select-show-or-hide-fields' ),
@@ -312,7 +324,6 @@ class Pojo_Forms_CPT {
 		);
 
 		// Fields custom style
-
 		$fields[] = array(
 			'id' => 'fields_text_size',
 			'title' => __( 'Text Size', 'pojo-forms' ),
@@ -358,7 +369,6 @@ class Pojo_Forms_CPT {
 			'show_on' => array( 'form_style_fields_style' => 'custom' ),
 			'std' => '#cccccc',
 		);
-
 		// End fields custom style
 		
 		$fields[] = array(
@@ -373,7 +383,6 @@ class Pojo_Forms_CPT {
 			'placeholder' => __( 'Send', 'pojo-forms' ),
 			'std' => __( 'Send', 'pojo-forms' ),
 		);
-
 
 		$fields[] = array(
 			'id' => 'button_size',

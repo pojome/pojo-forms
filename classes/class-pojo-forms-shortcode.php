@@ -6,6 +6,9 @@ class Pojo_Forms_Shortcode {
 	protected $_form_index = 1;
 
 	protected function _get_column_class( $width ) {
+		if ( empty( $width ) )
+			$width = 1;
+		
 		switch ( $width ) {
 			case '5' :
 				$column_class = 'column-2-5';
@@ -20,17 +23,27 @@ class Pojo_Forms_Shortcode {
 	}
 	
 	protected function _get_field_html( $form_id, $field_index, $field ) {
+		$field = wp_parse_args(
+			$field,
+			array(
+				'name' => '',
+				'width' => 1,
+				'placeholder' => '',
+				'class' => '',
+			)
+		);
+		
+		if ( empty( $field['type'] ) )
+			$field['type'] = 'text';
+		
 		$field_classes = array( 'field' );
 		$field_name = 'form_field_' . $field_index;
 		$field_id = sprintf( 'form-field-%d-%d', $this->_form_index, $field_index );
 		if ( $field['required'] )
 			$field_classes[] = 'required';
 		
-		if ( empty( $field['type'] ) )
-			$field['type'] = 'text';
-		
-		if ( empty( $field['width'] ) )
-			$field['width'] = 1;
+		$field_size = atmb_get_field( 'form_style_field_size', $form_id );
+		$field_classes[] = 'field-' . $field_size;
 
 		$column_class = $this->_get_column_class( $field['width'] );
 
@@ -54,6 +67,16 @@ class Pojo_Forms_Shortcode {
 				$field_style_inline[] = 'border-color:' . $border_color;
 			}
 		}
+		
+		$container_classes = array(
+			'field-group',
+			$field['class'],
+			$field_name,
+			$column_class,
+		);
+
+		// Remove empty values
+		$container_classes = array_filter( $container_classes );
 
 		$field_html = '';
 		if ( in_array( $field['type'], array( 'text', 'email', 'url', 'tel' ) ) ) { // Text field (default).
@@ -63,20 +86,19 @@ class Pojo_Forms_Shortcode {
 				'name' => $field_name,
 				'class' => implode( ' ', $field_classes ),
 				'style' => implode( ';', $field_style_inline ),
-				'placeholder' => ! empty( $field['placeholder'] ) ? esc_attr( $field['placeholder'] ) : '',
+				'placeholder' => esc_attr( $field['placeholder'] ),
 			);
 			
 			// Remove empty values
 			$field_attributes = array_filter( $field_attributes );
 			
 			$field_html = sprintf(
-				'<div class="field-group %2$s %3$s">
-						<label for="%1$s">%4$s</label>
-						<input %5$s />
+				'<div class="field-group %2$s">
+						<label for="%1$s">%3$s</label>
+						<input %4$s />
 					</div>',
 				$field_id,
-				$field_name,
-				$column_class,
+				implode( ' ', $container_classes ),
 				$field['name'],
 				pojo_array_to_attributes( $field_attributes )
 			);
@@ -87,20 +109,19 @@ class Pojo_Forms_Shortcode {
 				'class' => implode( ' ', $field_classes ),
 				'style' => implode( ';', $field_style_inline ),
 				'rows' => '3',
-				'placeholder' => ! empty( $field['placeholder'] ) ? esc_attr( $field['placeholder'] ) : '',
+				'placeholder' =>  esc_attr( $field['placeholder'] ),
 			);
 
 			// Remove empty values
 			$field_attributes = array_filter( $field_attributes );
 
 			$field_html = sprintf(
-				'<div class="field-group %2$s %3$s">
-						<label for="%1$s">%4$s</label>
-						<textarea %5$s></textarea>
+				'<div class="field-group %2$s">
+						<label for="%1$s">%3$s</label>
+						<textarea %4$s></textarea>
 					</div>',
 				$field_id,
-				$field_name,
-				$column_class,
+				implode( ' ', $container_classes ),
 				$field['name'],
 				pojo_array_to_attributes( $field_attributes )
 			);
@@ -152,7 +173,7 @@ class Pojo_Forms_Shortcode {
 		}
 
 		$forms_html = sprintf(
-			'<div class="form-actions pojo-button-%1$s %2%s">
+			'<div class="form-actions pojo-button-%1$s %2$s">
 				<button %3$s>%4$s</button>
 			</div>',
 			atmb_get_field( 'form_style_button_align', $form_id ),
