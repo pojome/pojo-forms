@@ -79,12 +79,8 @@ class Pojo_Forms_Ajax {
 						$email_html .= sprintf( $tmpl_line_html, __( 'Date', 'pojo-forms' ), date( 'd/m/Y', current_time( 'timestamp' ) ) );
 						break;
 					
-					case 'page_title' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'Page Title', 'pojo-forms' ), '' );
-						break;
-					
 					case 'page_url' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'Page URL', 'pojo-forms' ), '' );
+						$email_html .= sprintf( $tmpl_line_html, __( 'Page URL', 'pojo-forms' ), home_url( $_POST['_wp_http_referer'] ) );
 						break;
 					
 					case 'user_agent' :
@@ -96,17 +92,11 @@ class Pojo_Forms_Ajax {
 						break;
 					
 					case 'credit' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'Credit', 'pojo-forms' ), '' );
+						$email_html .= '<div>' . __( 'Powered by <a href="http://pojo.me/">Pojo.me</a>', 'pojo-forms' ) . '</div>';
 						break;
 				}
 			}
 			
-			$email_html .= '<div>' . sprintf( __( 'via <a href="%s">%s</a> / %s', 'pojo-forms' ), home_url( '/' ), get_bloginfo( 'name' ), home_url( $_POST['_wp_http_referer'] ) ) . '</div>';
-			
-			$email_html .= '<div style="color:#999999;"><hr style="height: 1px; border: 0; border-top: 1px solid #eeeeee;">' .
-				sprintf( __( 'Powered by <a style="color:#B40B51;" href="%s">Pojo.me</a>', 'pojo-forms' ), 'http://pojo.me/' ) .
-			'</div>';
-
 			$email_from_name = atmb_get_field( 'form_email_form_name', $form->ID );
 			if ( empty( $email_from_name ) )
 				$email_from_name = get_bloginfo( 'name' );

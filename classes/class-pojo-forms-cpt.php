@@ -257,13 +257,12 @@ class Pojo_Forms_CPT {
 			'options' => array(
 				'time' => __( 'Time', 'pojo-forms' ),
 				'date' => __( 'Date', 'pojo-forms' ),
-				'page_title' => __( 'Page Title', 'pojo-forms' ),
 				'page_url' => __( 'Page URL', 'pojo-forms' ),
 				'user_agent' => __( 'User Agent', 'pojo-forms' ),
 				'remote_ip' => __( 'Remote IP', 'pojo-forms' ),
 				'credit' => __( 'Credit', 'pojo-forms' ),
 			),
-			'std' => array( 'time', 'date', 'page_title', 'page_url', 'user_agent', 'remote_ip', 'credit' ),
+			'std' => array( 'time', 'date', 'page_url', 'user_agent', 'remote_ip', 'credit' ),
 		);
 		
 		$meta_boxes[] = array(
