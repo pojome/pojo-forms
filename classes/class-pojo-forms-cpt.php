@@ -302,7 +302,7 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'fields_style',
-			'title' => __( 'fields Style', 'pojo-forms' ),
+			'title' => __( 'Field Style', 'pojo-forms' ),
 			'classes' => array( 'select-show-or-hide-fields' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
