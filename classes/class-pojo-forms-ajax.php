@@ -58,6 +58,7 @@ class Pojo_Forms_Ajax {
 			}
 			
 			$email_html = '';
+			$inline_shortcodes = array();
 			foreach ( $repeater_fields as $field_index => $field ) {
 				$field_name = 'form_field_' . ( $field_index + 1 );
 				$field_value = '';
@@ -71,6 +72,8 @@ class Pojo_Forms_Ajax {
 						$field_value = nl2br( $field_value );
 					}
 				}
+
+				$inline_shortcodes[ $field['shortcode'] ] = $field_value;
 				
 				$email_html .= sprintf(
 					'<div><strong>%s:</strong> %s</div>',
@@ -116,6 +119,10 @@ class Pojo_Forms_Ajax {
 			$email_from = atmb_get_field( 'form_email_form', $form->ID );
 			if ( empty( $email_from ) )
 				$email_from = get_bloginfo( 'admin_email' );
+
+			$email_subject = strtr( $email_subject, $inline_shortcodes );
+			$email_from_name = strtr( $email_from_name, $inline_shortcodes );
+			$email_from = strtr( $email_from, $inline_shortcodes );
 
 			$headers = sprintf( 'From: %s <%s>;' . "\r\n" . 'content-type: text/html;' . "\r\n", $email_from_name, $email_from );
 			
