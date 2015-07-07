@@ -76,14 +76,14 @@ class Pojo_Forms_Ajax {
 				$inline_shortcodes[ $field['shortcode'] ] = $field_value;
 				
 				$email_html .= sprintf(
-					'<div><strong>%s:</strong> %s</div>',
+					'%s: %s' . PHP_EOL,
 					$field['name'],
 					$field_value
 				);
 			}
 			
 			$metadata_types = atmb_get_field( 'form_metadata', $form->ID, Pojo_MetaBox::FIELD_CHECKBOX_LIST );
-			$tmpl_line_html = '<div><strong>%s:</strong> %s</div>';
+			$tmpl_line_html = '%s: %s' . PHP_EOL;
 			foreach ( $metadata_types as $metadata_type ) {
 				switch ( $metadata_type ) {
 					case 'time' :
@@ -107,7 +107,7 @@ class Pojo_Forms_Ajax {
 						break;
 					
 					case 'credit' :
-						$email_html .= '<div>' . __( 'Powered by <a href="http://pojo.me/">Pojo.me</a>', 'pojo-forms' ) . '</div>';
+						$email_html .= __( 'Powered by http://pojo.me/', 'pojo-forms' ) . PHP_EOL;
 						break;
 				}
 			}
@@ -126,8 +126,6 @@ class Pojo_Forms_Ajax {
 
 			//$headers = sprintf( 'From: %s <%s>;' . "\r\n" . 'content-type: text/html;' . "\r\n", $email_from_name, $email_from );
 			$headers = sprintf( 'From: %s <%s>;' . "\r\n", $email_from_name, $email_from );
-			
-			
 			
 			wp_mail( $email_to, $email_subject, $email_html, $headers );
 			
