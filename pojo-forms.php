@@ -131,6 +131,12 @@ final class Pojo_Forms {
 
 		add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts' ) );
+		
+		// Integrations
+		if ( is_callable( array( 'Akismet', 'get_api_key' ) ) ) {
+			include( 'classes/class-pojo-forms-akismet.php' );
+			$akismet = new Pojo_Forms_Akismet();
+		}
 	}
 
 	public function admin_notices() {

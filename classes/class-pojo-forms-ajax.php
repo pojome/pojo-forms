@@ -59,6 +59,7 @@ class Pojo_Forms_Ajax {
 			
 			$email_html = '';
 			$inline_shortcodes = array();
+			
 			foreach ( $repeater_fields as $field_index => $field ) {
 				$field_name = 'form_field_' . ( $field_index + 1 );
 				$field_value = '';
@@ -103,7 +104,7 @@ class Pojo_Forms_Ajax {
 						break;
 					
 					case 'remote_ip' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'Remote IP', 'pojo-forms' ), $_SERVER['REMOTE_ADDR'] );
+						$email_html .= sprintf( $tmpl_line_html, __( 'Remote IP', 'pojo-forms' ), POJO_FORMS()->helpers->get_client_ip() );
 						break;
 					
 					case 'credit' :
@@ -112,28 +113,31 @@ class Pojo_Forms_Ajax {
 				}
 			}
 			
-			$email_from_name = atmb_get_field( 'form_email_form_name', $form->ID );
-			if ( empty( $email_from_name ) )
-				$email_from_name = get_bloginfo( 'name' );
-			
-			$email_from = atmb_get_field( 'form_email_form', $form->ID );
-			if ( empty( $email_from ) )
-				$email_from = get_bloginfo( 'admin_email' );
-			
-			$email_reply_to = atmb_get_field( 'form_email_reply_to', $form->ID );
-			if ( empty( $email_reply_to ) )
-				$email_reply_to = $email_from;
+			$skip = apply_filters( 'pojo_forms_skip_contact', false, $form->ID, $inline_shortcodes );
+			if ( ! $skip ) {
+				$email_from_name = atmb_get_field( 'form_email_form_name', $form->ID );
+				if ( empty( $email_from_name ) )
+					$email_from_name = get_bloginfo( 'name' );
 
-			$email_subject = strtr( $email_subject, $inline_shortcodes );
-			$email_from_name = strtr( $email_from_name, $inline_shortcodes );
-			$email_from = strtr( $email_from, $inline_shortcodes );
-			$email_reply_to = strtr( $email_reply_to, $inline_shortcodes );
+				$email_from = atmb_get_field( 'form_email_form', $form->ID );
+				if ( empty( $email_from ) )
+					$email_from = get_bloginfo( 'admin_email' );
 
-			//$headers = sprintf( 'From: %s <%s>;' . "\r\n" . 'content-type: text/html;' . "\r\n", $email_from_name, $email_from );
-			$headers = sprintf( 'From: %s <%s>;' . "\r\n", $email_from_name, $email_from );
-			$headers .= sprintf( 'Reply-To: %s <%s>;' . "\r\n", $email_from_name, $email_reply_to );
-			
-			wp_mail( $email_to, $email_subject, $email_html, $headers );
+				$email_reply_to = atmb_get_field( 'form_email_reply_to', $form->ID );
+				if ( empty( $email_reply_to ) )
+					$email_reply_to = $email_from;
+
+				$email_subject   = strtr( $email_subject, $inline_shortcodes );
+				$email_from_name = strtr( $email_from_name, $inline_shortcodes );
+				$email_from      = strtr( $email_from, $inline_shortcodes );
+				$email_reply_to  = strtr( $email_reply_to, $inline_shortcodes );
+
+				//$headers = sprintf( 'From: %s <%s>;' . "\r\n" . 'content-type: text/html;' . "\r\n", $email_from_name, $email_from );
+				$headers = sprintf( 'From: %s <%s>;' . "\r\n", $email_from_name, $email_from );
+				$headers .= sprintf( 'Reply-To: %s <%s>;' . "\r\n", $email_from_name, $email_reply_to );
+
+				wp_mail( $email_to, $email_subject, $email_html, $headers );
+			}
 			
 			$redirect_to = atmb_get_field( 'form_redirect_to', $form->ID );
 			if ( empty( $redirect_to ) || ! filter_var( $redirect_to, FILTER_VALIDATE_URL ) ) {

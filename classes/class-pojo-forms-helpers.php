@@ -2,6 +2,27 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Pojo_Forms_Helpers {
+
+	public function get_client_ip() {
+		$server_ip_keys = array(
+			'HTTP_CLIENT_IP',
+			'HTTP_X_FORWARDED_FOR',
+			'HTTP_X_FORWARDED',
+			'HTTP_X_CLUSTER_CLIENT_IP',
+			'HTTP_FORWARDED_FOR',
+			'HTTP_FORWARDED',
+			'REMOTE_ADDR',
+		);
+
+		foreach ( $server_ip_keys as $key ) {
+			if ( isset( $_SERVER[ $key ] ) ) {
+				return $_SERVER[ $key ];
+			}
+		}
+
+		// Fallback local ip.
+		return '127.0.0.1';
+	}
 	
 	public function get_all_forms() {
 		$forms = new WP_Query( array(
