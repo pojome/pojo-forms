@@ -32,7 +32,7 @@ class Pojo_Forms_Shortcode {
 				'class' => '',
 				'choices' => '',
 				'inline' => false,
-				'checked' => false,
+				'default_value' => 'unchecked',
 				'multiple' => false,
 				'first_blank_item' => false,
 				'textarea_rows' => 5,
@@ -211,7 +211,7 @@ class Pojo_Forms_Shortcode {
 					if ( 'radio' === $field['type'] && 0 === $choice_index )
 						$checked = true;
 
-					if ( 'checkbox' === $field['type'] && $field['checked'] )
+					if ( 'checkbox' === $field['type'] && 'checked' === $field['default_value'] )
 						$checked = true;
 					
 					$options[] = sprintf(

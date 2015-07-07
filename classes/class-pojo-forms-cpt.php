@@ -149,10 +149,14 @@ class Pojo_Forms_CPT {
 		);
 		
 		$repeater_fields[] = array(
-			'id' => 'checked',
+			'id' => 'default_value',
 			'title' => __( 'Default Value', 'pojo-forms' ),
-			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
-			'std' => false,
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'unchecked' => __( 'Unchecked', 'pojo-forms' ),
+				'checked' => __( 'Checked', 'pojo-forms' ),
+			),
+			'std' => 'unchecked',
 		);
 		
 		$repeater_fields[] = array(

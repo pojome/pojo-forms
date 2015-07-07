@@ -124,7 +124,10 @@ class Pojo_Forms_Ajax {
 			$email_from_name = strtr( $email_from_name, $inline_shortcodes );
 			$email_from = strtr( $email_from, $inline_shortcodes );
 
-			$headers = sprintf( 'From: %s <%s>;' . "\r\n" . 'content-type: text/html;' . "\r\n", $email_from_name, $email_from );
+			//$headers = sprintf( 'From: %s <%s>;' . "\r\n" . 'content-type: text/html;' . "\r\n", $email_from_name, $email_from );
+			$headers = sprintf( 'From: %s <%s>;' . "\r\n", $email_from_name, $email_from );
+			
+			
 			
 			wp_mail( $email_to, $email_subject, $email_html, $headers );
 			
