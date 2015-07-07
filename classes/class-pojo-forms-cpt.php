@@ -127,7 +127,7 @@ class Pojo_Forms_CPT {
 
 		$repeater_fields[] = array(
 			'id' => 'name',
-			'title' => __( 'Name', 'pojo-forms' ),
+			'title' => __( 'Field Label', 'pojo-forms' ),
 			'std' => '',
 		);
 		
@@ -157,14 +157,14 @@ class Pojo_Forms_CPT {
 		
 		$repeater_fields[] = array(
 			'id' => 'multiple',
-			'title' => __( 'Allow multiple selections', 'pojo-forms' ),
+			'title' => __( 'Allow Multiple Selections', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
 		
 		$repeater_fields[] = array(
 			'id' => 'first_blank_item',
-			'title' => __( 'Insert a first option as blank', 'pojo-forms' ),
+			'title' => __( 'Set the First Option as Blank', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
