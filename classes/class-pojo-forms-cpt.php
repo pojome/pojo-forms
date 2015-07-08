@@ -143,7 +143,7 @@ class Pojo_Forms_CPT {
 		
 		$repeater_fields[] = array(
 			'id' => 'inline',
-			'title' => __( 'List Inline', 'pojo-forms' ),
+			'title' => __( 'List Inline', 'pojo-forms' ) . ':',
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
@@ -161,14 +161,14 @@ class Pojo_Forms_CPT {
 		
 		$repeater_fields[] = array(
 			'id' => 'multiple',
-			'title' => __( 'Allow Multiple Selections', 'pojo-forms' ),
+			'title' => __( 'Allow Multiple Selections', 'pojo-forms' ) . ':',
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
 		
 		$repeater_fields[] = array(
 			'id' => 'first_blank_item',
-			'title' => __( 'Set the First Option as Blank', 'pojo-forms' ),
+			'title' => __( 'Set the First Option as Blank', 'pojo-forms' ) . ':',
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);
@@ -198,7 +198,7 @@ class Pojo_Forms_CPT {
 
 		$repeater_fields[] = array(
 			'id' => 'required',
-			'title' => __( 'Required', 'pojo-forms' ),
+			'title' => __( 'Required', 'pojo-forms' ) . ':',
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => true,
 		);
@@ -312,8 +312,8 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX_LIST,
 			'title' => __( 'Form data', 'pojo-forms' ),
 			'options' => array(
-				'time' => __( 'Time', 'pojo-forms' ),
 				'date' => __( 'Date', 'pojo-forms' ),
+				'time' => __( 'Time', 'pojo-forms' ),
 				'page_url' => __( 'Page URL', 'pojo-forms' ),
 				'user_agent' => __( 'User Agent', 'pojo-forms' ),
 				'remote_ip' => __( 'Remote IP', 'pojo-forms' ),
