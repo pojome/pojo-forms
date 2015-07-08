@@ -349,9 +349,9 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'top' => __( 'Top', 'pojo-forms' ),
-				'inside' => __( 'Inside', 'pojo-forms' ),
-				'right' => __( 'Side - Alignright', 'pojo-forms' ),
-				'left' => __( 'Side - Alignleft', 'pojo-forms' ),
+				'inside' => __( 'Hide Label', 'pojo-forms' ),
+				'right' => __( 'Side - Align Right', 'pojo-forms' ),
+				'left' => __( 'Side - Align Left', 'pojo-forms' ),
 			),
 			'std' => 'top',
 		);

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Forms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-06 20:32+0300\n"
-"PO-Revision-Date: 2015-07-06 20:41+0300\n"
+"POT-Creation-Date: 2015-07-08 15:20+0300\n"
+"PO-Revision-Date: 2015-07-08 15:31+0300\n"
 "Last-Translator: Ariel K <a@arielk.net>\n"
 "Language-Team: Pojo Them <aryodigital@gmail.com>\n"
 "Language: he_IL\n"
@@ -15,562 +15,579 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.8.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_n:1,2;_c,"
-"_nc:4c,1,2\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_n:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../classes/class-pojo-forms-ajax.php:27
-#: ../classes/class-pojo-forms-ajax.php:34
-#: ../classes/class-pojo-forms-ajax.php:40
+#: classes/class-pojo-forms-ajax.php:27 classes/class-pojo-forms-ajax.php:34
+#: classes/class-pojo-forms-ajax.php:40
 msgid "Invalid form."
 msgstr "טופס לא חוקי"
 
-#: ../classes/class-pojo-forms-ajax.php:48
+#: classes/class-pojo-forms-ajax.php:48
 msgid "This field is required"
 msgstr "שדה חובה"
 
-#: ../classes/class-pojo-forms-ajax.php:56
+#: classes/class-pojo-forms-ajax.php:56
 msgid "Problem with Form setting."
 msgstr "יש בעיה עם הגדרות טופס"
 
-#: ../classes/class-pojo-forms-ajax.php:87
-#: ../classes/class-pojo-forms-cpt.php:311
+#: classes/class-pojo-forms-ajax.php:92 classes/class-pojo-forms-cpt.php:316
 msgid "Time"
 msgstr "זמן"
 
-#: ../classes/class-pojo-forms-ajax.php:91
-#: ../classes/class-pojo-forms-cpt.php:75
-#: ../classes/class-pojo-forms-cpt.php:312
+#: classes/class-pojo-forms-ajax.php:96 classes/class-pojo-forms-cpt.php:75
+#: classes/class-pojo-forms-cpt.php:315
 msgid "Date"
 msgstr "תאריך"
 
-#: ../classes/class-pojo-forms-ajax.php:95
-#: ../classes/class-pojo-forms-cpt.php:313
+#: classes/class-pojo-forms-ajax.php:100 classes/class-pojo-forms-cpt.php:317
 msgid "Page URL"
 msgstr "קישור לעמוד"
 
-#: ../classes/class-pojo-forms-ajax.php:99
-#: ../classes/class-pojo-forms-cpt.php:314
+#: classes/class-pojo-forms-ajax.php:104 classes/class-pojo-forms-cpt.php:318
 msgid "User Agent"
 msgstr "פרטי משתמש"
 
-#: ../classes/class-pojo-forms-ajax.php:103
-#: ../classes/class-pojo-forms-cpt.php:315
+#: classes/class-pojo-forms-ajax.php:108 classes/class-pojo-forms-cpt.php:319
 msgid "Remote IP"
-msgstr "כתובת IP"
+msgstr "כתובת IP השולח"
 
-#: ../classes/class-pojo-forms-ajax.php:107
-msgid "Powered by <a href=\"http://pojo.me/\">Pojo.me</a>"
-msgstr "מופעל על ידי <a href=\"http://pojo.me/\">Pojo.me</a>"
+#: classes/class-pojo-forms-ajax.php:112
+msgid "Powered by http://pojo.me/"
+msgstr "מופעל על ידי http://pojo.me/"
 
-#: ../classes/class-pojo-forms-ajax.php:130
+#: classes/class-pojo-forms-ajax.php:149
 msgid "Your details were sent successfully!"
 msgstr "הפרטים נשלחו בהצלחה!"
 
-#: ../classes/class-pojo-forms-ajax.php:133
+#: classes/class-pojo-forms-ajax.php:152
 msgid "This form has an error, please fix it."
 msgstr "בטופס זה ישנה שגיאה, אנא תקנו אותה."
 
-#: ../classes/class-pojo-forms-cpt.php:9
-#: ../classes/class-pojo-forms-cpt.php:21
+#: classes/class-pojo-forms-akismet.php:17
+msgid "Spam Filter"
+msgstr "מסנן ספאם"
+
+#: classes/class-pojo-forms-akismet.php:18
+msgid ""
+"If you are using the Akismet plugin you can also use it as the form's spam "
+"filter by setting the fields. Insert the relevant field's ID shortcode "
+"according to the following settings, e.g. Author Email: [form-field-1]"
+msgstr ""
+"אם אתה משתמש בתוסף Akismet תוכל גם להשתמש בו במסנן ספאם לטופס על ידי הגדרות "
+"השדה. יש להזין את השורטקוד ID של השדה הרלוונטי לפי הההגדרות הבאות, לדוגמא: "
+"אימייל מחבר: [form-field-1]"
+
+#: classes/class-pojo-forms-akismet.php:23
+msgid "Author"
+msgstr "מחבר"
+
+#: classes/class-pojo-forms-akismet.php:29
+msgid "Author Email"
+msgstr "אימייל מחבר"
+
+#: classes/class-pojo-forms-akismet.php:35
+msgid "Author Url"
+msgstr "URL מחבר"
+
+#: classes/class-pojo-forms-akismet.php:41
+msgid "Content"
+msgstr "תוכן"
+
+#: classes/class-pojo-forms-akismet.php:47
+msgid "Akismet Options"
+msgstr "אפשרויות Akismet"
+
+#: classes/class-pojo-forms-cpt.php:9 classes/class-pojo-forms-cpt.php:21
 msgid "Forms"
 msgstr "טפסים"
 
-#: ../classes/class-pojo-forms-cpt.php:10
-#: ../classes/class-pojo-forms-cpt.php:254
+#: classes/class-pojo-forms-cpt.php:10 classes/class-pojo-forms-cpt.php:258
 msgid "Form"
 msgstr "טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:11
+#: classes/class-pojo-forms-cpt.php:11
 msgid "Add New"
 msgstr "הוספת חדש"
 
-#: ../classes/class-pojo-forms-cpt.php:12
+#: classes/class-pojo-forms-cpt.php:12
 msgid "Add New Form"
 msgstr "הוספת טופס חדש"
 
-#: ../classes/class-pojo-forms-cpt.php:13
-#: ../classes/class-pojo-forms-shortcode.php:394
+#: classes/class-pojo-forms-cpt.php:13
+#: classes/class-pojo-forms-shortcode.php:394
 msgid "Edit Form"
 msgstr "עריכת טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:14
+#: classes/class-pojo-forms-cpt.php:14
 msgid "New Form"
 msgstr "טופס חדש"
 
-#: ../classes/class-pojo-forms-cpt.php:15
-#: ../classes/class-pojo-forms-widget.php:41
+#: classes/class-pojo-forms-cpt.php:15 classes/class-pojo-forms-widget.php:41
 msgid "All Forms"
 msgstr "כל הטפסים"
 
-#: ../classes/class-pojo-forms-cpt.php:16
+#: classes/class-pojo-forms-cpt.php:16
 msgid "View Form"
 msgstr "הצגת טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:17
+#: classes/class-pojo-forms-cpt.php:17
 msgid "Search Form"
 msgstr "חיפוש טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:18
+#: classes/class-pojo-forms-cpt.php:18
 msgid "No forms found"
 msgstr "לא נמצאו תוצאות"
 
-#: ../classes/class-pojo-forms-cpt.php:19
+#: classes/class-pojo-forms-cpt.php:19
 msgid "No forms found in Trash"
 msgstr "לא נמצאו תוצאות בפח"
 
-#: ../classes/class-pojo-forms-cpt.php:50
-#: ../classes/class-pojo-forms-cpt.php:53
+#: classes/class-pojo-forms-cpt.php:50 classes/class-pojo-forms-cpt.php:53
 msgid "Form updated."
 msgstr "טופס עודכן"
 
-#: ../classes/class-pojo-forms-cpt.php:51
+#: classes/class-pojo-forms-cpt.php:51
 msgid "Custom field updated."
 msgstr "שדות מיוחדות עודכנו"
 
-#: ../classes/class-pojo-forms-cpt.php:52
+#: classes/class-pojo-forms-cpt.php:52
 msgid "Custom field deleted."
 msgstr "שדות מיוחדים נמחקו"
 
-#. translators: %s: date and time of the revision
-#: ../classes/class-pojo-forms-cpt.php:55
+#: classes/class-pojo-forms-cpt.php:55
 #, php-format
 msgid "Form restored to revision from %s"
 msgstr "הטופס שוחזר לגרסה קודמת מ %s"
 
-#: ../classes/class-pojo-forms-cpt.php:56
+#: classes/class-pojo-forms-cpt.php:56
 msgid "Form published."
 msgstr "הטופס פורסם"
 
-#: ../classes/class-pojo-forms-cpt.php:57
+#: classes/class-pojo-forms-cpt.php:57
 msgid "Form saved."
 msgstr "הטופס נשמר"
 
-#: ../classes/class-pojo-forms-cpt.php:58
+#: classes/class-pojo-forms-cpt.php:58
 msgid "Form submitted."
 msgstr "הטופס נשלח"
 
-#: ../classes/class-pojo-forms-cpt.php:59
+#: classes/class-pojo-forms-cpt.php:59
 #, fuzzy, php-format
 msgid "Post scheduled for: <strong>%1$s</strong>."
 msgstr "הוספת פוסט"
 
-#. translators: Publish box date format, see http://php.net/date
-#: ../classes/class-pojo-forms-cpt.php:61
+#. //php.net/date
+#: classes/class-pojo-forms-cpt.php:61
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:62
+#: classes/class-pojo-forms-cpt.php:62
 msgid "Form draft updated."
 msgstr "טיוטת טופס עודכנה"
 
-#: ../classes/class-pojo-forms-cpt.php:71
+#: classes/class-pojo-forms-cpt.php:71
 msgid "Title Form"
 msgstr "כותרת טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:72
+#: classes/class-pojo-forms-cpt.php:72
 msgid "Preview Form"
 msgstr "תצוגה מקדימה"
 
-#: ../classes/class-pojo-forms-cpt.php:73
+#: classes/class-pojo-forms-cpt.php:73
 msgid "Fields"
 msgstr "שדות"
 
-#: ../classes/class-pojo-forms-cpt.php:74
+#: classes/class-pojo-forms-cpt.php:74
 msgid "Shortcode"
 msgstr "שורטקוד"
 
-#: ../classes/class-pojo-forms-cpt.php:84
-#: ../classes/class-pojo-forms-cpt.php:609
+#: classes/class-pojo-forms-cpt.php:84 classes/class-pojo-forms-cpt.php:615
 msgid "Preview"
 msgstr "תצוגה מקדימה"
 
-#: ../classes/class-pojo-forms-cpt.php:101
+#: classes/class-pojo-forms-cpt.php:101
 #, php-format
 msgid "%s Form"
 msgid_plural "%s Forms"
 msgstr[0] "טופס %s"
 msgstr[1] "%s טפסים"
 
-#: ../classes/class-pojo-forms-cpt.php:112
+#: classes/class-pojo-forms-cpt.php:112
 msgid "Field Type"
 msgstr "סוג שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:115
+#: classes/class-pojo-forms-cpt.php:115
 msgid "Text"
 msgstr "טקסט"
 
-#: ../classes/class-pojo-forms-cpt.php:116
+#: classes/class-pojo-forms-cpt.php:116
 msgid "Textarea"
 msgstr "אזור טקסט"
 
-#: ../classes/class-pojo-forms-cpt.php:117
+#: classes/class-pojo-forms-cpt.php:117
 msgid "Email"
 msgstr "אימייל"
 
-#: ../classes/class-pojo-forms-cpt.php:118
+#: classes/class-pojo-forms-cpt.php:118
 msgid "Telephone Number"
 msgstr "מספר טלפון"
 
-#: ../classes/class-pojo-forms-cpt.php:119
+#: classes/class-pojo-forms-cpt.php:119
 msgid "Url"
 msgstr "קישור URL"
 
-#: ../classes/class-pojo-forms-cpt.php:120
+#: classes/class-pojo-forms-cpt.php:120
 msgid "Number"
 msgstr "מספר"
 
-#: ../classes/class-pojo-forms-cpt.php:121
+#: classes/class-pojo-forms-cpt.php:121
 msgid "Checkbox"
 msgstr "תיבות סימון"
 
-#: ../classes/class-pojo-forms-cpt.php:122
+#: classes/class-pojo-forms-cpt.php:122
 msgid "Radio"
 msgstr "אפשרויות בחירה"
 
-#: ../classes/class-pojo-forms-cpt.php:123
+#: classes/class-pojo-forms-cpt.php:123
 msgid "Drop-down"
 msgstr "תפריט בחירה"
 
-#: ../classes/class-pojo-forms-cpt.php:130
-msgid "Name"
-msgstr "שם"
+#: classes/class-pojo-forms-cpt.php:130
+msgid "Field Label"
+msgstr "כותרת שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:137
+#: classes/class-pojo-forms-cpt.php:137
 msgid "Options"
 msgstr "אפשרויות"
 
-#: ../classes/class-pojo-forms-cpt.php:140
+#: classes/class-pojo-forms-cpt.php:140
 msgid "One option per line"
 msgstr "אפשרות אחת בכל שורה"
 
-#: ../classes/class-pojo-forms-cpt.php:146
+#: classes/class-pojo-forms-cpt.php:146
 msgid "List Inline"
 msgstr "רשימה בשורה"
 
-#: ../classes/class-pojo-forms-cpt.php:153
+#: classes/class-pojo-forms-cpt.php:153
 msgid "Default Value"
-msgstr ""
+msgstr "ברירת מחדל"
 
-#: ../classes/class-pojo-forms-cpt.php:160
-msgid "Allow multiple selections"
+#: classes/class-pojo-forms-cpt.php:156
+msgid "Unchecked"
+msgstr "לא מסומן"
+
+#: classes/class-pojo-forms-cpt.php:157
+msgid "Checked"
+msgstr "מסומן"
+
+#: classes/class-pojo-forms-cpt.php:164
+msgid "Allow Multiple Selections"
 msgstr "לאפשר בחירה מרובה"
 
-#: ../classes/class-pojo-forms-cpt.php:167
-msgid "Insert a first option as blank"
-msgstr ""
+#: classes/class-pojo-forms-cpt.php:171
+msgid "Set the First Option as Blank"
+msgstr "הגדר אפשרות ראשונה ריקה"
 
-#: ../classes/class-pojo-forms-cpt.php:174
+#: classes/class-pojo-forms-cpt.php:178
 msgid "Rows"
 msgstr "שורות"
 
-#: ../classes/class-pojo-forms-cpt.php:185
+#: classes/class-pojo-forms-cpt.php:189
 msgid "Settings"
 msgstr "הגדרות"
 
-#: ../classes/class-pojo-forms-cpt.php:191
+#: classes/class-pojo-forms-cpt.php:195
 msgid "Placeholder"
 msgstr "טקסט בתוך השדה"
 
-#: ../classes/class-pojo-forms-cpt.php:197
+#: classes/class-pojo-forms-cpt.php:201
 msgid "Required"
 msgstr "שדה חובה"
 
-#: ../classes/class-pojo-forms-cpt.php:204
+#: classes/class-pojo-forms-cpt.php:208
 msgid "Width"
 msgstr "רוחב"
 
-#: ../classes/class-pojo-forms-cpt.php:207
-#: ../classes/class-pojo-forms-cpt.php:484
+#: classes/class-pojo-forms-cpt.php:211 classes/class-pojo-forms-cpt.php:490
 msgid "100%"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:208
-#: ../classes/class-pojo-forms-cpt.php:485
+#: classes/class-pojo-forms-cpt.php:212 classes/class-pojo-forms-cpt.php:491
 msgid "50%"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:209
-#: ../classes/class-pojo-forms-cpt.php:486
+#: classes/class-pojo-forms-cpt.php:213 classes/class-pojo-forms-cpt.php:492
 msgid "33%"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:210
-#: ../classes/class-pojo-forms-cpt.php:487
+#: classes/class-pojo-forms-cpt.php:214 classes/class-pojo-forms-cpt.php:493
 msgid "25%"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:211
-#: ../classes/class-pojo-forms-cpt.php:488
+#: classes/class-pojo-forms-cpt.php:215 classes/class-pojo-forms-cpt.php:494
 msgid "20%"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:212
-#: ../classes/class-pojo-forms-cpt.php:489
+#: classes/class-pojo-forms-cpt.php:216 classes/class-pojo-forms-cpt.php:495
 msgid "16%"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:219
+#: classes/class-pojo-forms-cpt.php:223
 msgid "ID"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:227
+#: classes/class-pojo-forms-cpt.php:231
 msgid "Shortcode ID"
 msgstr "שורטקוד ID"
 
-#: ../classes/class-pojo-forms-cpt.php:234
+#: classes/class-pojo-forms-cpt.php:238
 msgid "CSS Classes"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:240
+#: classes/class-pojo-forms-cpt.php:244
 msgid "Advanced"
 msgstr "מתקדם"
 
-#: ../classes/class-pojo-forms-cpt.php:248
+#: classes/class-pojo-forms-cpt.php:252
 msgid "+ Add Field"
 msgstr "+ הוספת שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:270
+#: classes/class-pojo-forms-cpt.php:274
 msgid "Email To"
-msgstr ""
+msgstr "אימייל אל"
 
-#: ../classes/class-pojo-forms-cpt.php:276
+#: classes/class-pojo-forms-cpt.php:280
 msgid "Email Subject"
 msgstr "כותרת אימייל"
 
-#: ../classes/class-pojo-forms-cpt.php:277
+#: classes/class-pojo-forms-cpt.php:281
 #, php-format
 msgid "New massage from \"%s\""
 msgstr "הודעה חדשה מאת \"%s\""
 
-#: ../classes/class-pojo-forms-cpt.php:282
+#: classes/class-pojo-forms-cpt.php:286
 msgid "From Name"
-msgstr ""
+msgstr "שם השולח"
 
-#: ../classes/class-pojo-forms-cpt.php:288
+#: classes/class-pojo-forms-cpt.php:292
 msgid "From Email"
+msgstr "אימייל השולח"
+
+#: classes/class-pojo-forms-cpt.php:298
+msgid "Email Reply-To (Optional)"
+msgstr "אימייל תגובה (אופציונלי)"
+
+#: classes/class-pojo-forms-cpt.php:299
+msgid "Email field by Shortcode ID"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:294
-msgid "Email Reply-To"
+#: classes/class-pojo-forms-cpt.php:305
+msgid "Redirect To (Optional)"
+msgstr "הפניה אל עמוד תודה (אופציונלי)"
+
+#: classes/class-pojo-forms-cpt.php:306
+msgid "http://pojo.me/thankyou/"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:295
-msgid "Optional"
-msgstr "אופציונלי"
-
-#: ../classes/class-pojo-forms-cpt.php:301
-msgid "After submitting redirect to"
-msgstr "לאחר השליחה העבר אל"
-
-#: ../classes/class-pojo-forms-cpt.php:302
-msgid "(Optional) http://pojo.me/"
-msgstr "(אופציונלי) http://pojo.me/"
-
-#: ../classes/class-pojo-forms-cpt.php:309
+#: classes/class-pojo-forms-cpt.php:313
 msgid "Form data"
 msgstr "מידע טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:316
+#: classes/class-pojo-forms-cpt.php:320
 msgid "Credit"
 msgstr "קרדיט\t\t\t\t"
 
-#: ../classes/class-pojo-forms-cpt.php:323
+#: classes/class-pojo-forms-cpt.php:327
 msgid "Form Options"
 msgstr "אפשרויות טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:338
+#: classes/class-pojo-forms-cpt.php:342
 msgid "Field Settings"
 msgstr "הגדרות שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:344
+#: classes/class-pojo-forms-cpt.php:348
 msgid "Label Align"
 msgstr "יישור כותרת"
 
-#: ../classes/class-pojo-forms-cpt.php:347
+#: classes/class-pojo-forms-cpt.php:351
 msgid "Top"
 msgstr "מעל השדה"
 
-#: ../classes/class-pojo-forms-cpt.php:348
+#: classes/class-pojo-forms-cpt.php:352
 msgid "Inside"
 msgstr "בתוך השדה"
 
-#: ../classes/class-pojo-forms-cpt.php:349
+#: classes/class-pojo-forms-cpt.php:353
 msgid "Side - Alignright"
 msgstr "צדדי - מיושר לימין"
 
-#: ../classes/class-pojo-forms-cpt.php:350
+#: classes/class-pojo-forms-cpt.php:354
 msgid "Side - Alignleft"
 msgstr "צדדי - יישור לימין"
 
-#: ../classes/class-pojo-forms-cpt.php:357
+#: classes/class-pojo-forms-cpt.php:361
 msgid "Field Size"
 msgstr "גודל שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:360
-#: ../classes/class-pojo-forms-cpt.php:470
+#: classes/class-pojo-forms-cpt.php:364 classes/class-pojo-forms-cpt.php:476
 msgid "Small"
 msgstr "קטן"
 
-#: ../classes/class-pojo-forms-cpt.php:361
-#: ../classes/class-pojo-forms-cpt.php:471
+#: classes/class-pojo-forms-cpt.php:365 classes/class-pojo-forms-cpt.php:477
 msgid "Medium"
 msgstr "בינוני"
 
-#: ../classes/class-pojo-forms-cpt.php:362
-#: ../classes/class-pojo-forms-cpt.php:472
+#: classes/class-pojo-forms-cpt.php:366 classes/class-pojo-forms-cpt.php:478
 msgid "Large"
 msgstr "גדול"
 
-#: ../classes/class-pojo-forms-cpt.php:369
-msgid "Field Style"
-msgstr "סגנון שדה"
-
-#: ../classes/class-pojo-forms-cpt.php:373
-#: ../classes/class-pojo-forms-cpt.php:514
-msgid "Default"
-msgstr "ברירת מחדל"
-
-#: ../classes/class-pojo-forms-cpt.php:374
-#: ../classes/class-pojo-forms-cpt.php:515
-msgid "Custom Style"
-msgstr "סגנון מותאם אישית"
-
-#: ../classes/class-pojo-forms-cpt.php:382
-msgid "Label Size"
-msgstr "גודל כותרת"
-
-#: ../classes/class-pojo-forms-cpt.php:383
-msgid "13px"
-msgstr ""
-
-#: ../classes/class-pojo-forms-cpt.php:390
-msgid "Label Color"
-msgstr "צבע כותרת"
-
-#: ../classes/class-pojo-forms-cpt.php:399
-msgid "Input Color"
-msgstr "צבע שדה"
-
-#: ../classes/class-pojo-forms-cpt.php:408
-#: ../classes/class-pojo-forms-cpt.php:523
-msgid "Background Color"
-msgstr ""
-
-#: ../classes/class-pojo-forms-cpt.php:417
-#: ../classes/class-pojo-forms-cpt.php:532
-msgid "Background Opacity"
-msgstr ""
-
-#: ../classes/class-pojo-forms-cpt.php:428
-#: ../classes/class-pojo-forms-cpt.php:543
-msgid "Border Color"
-msgstr ""
-
-#: ../classes/class-pojo-forms-cpt.php:437
-#: ../classes/class-pojo-forms-cpt.php:561
-msgid "Border Width"
-msgstr ""
-
-#: ../classes/class-pojo-forms-cpt.php:445
-#: ../classes/class-pojo-forms-cpt.php:569
-msgid "Border Radius"
-msgstr ""
-
-#: ../classes/class-pojo-forms-cpt.php:454
-msgid "Button Settings"
-msgstr "הגדרות כפתור"
-
-#: ../classes/class-pojo-forms-cpt.php:460
-msgid "Button Text"
-msgstr ""
-
-#: ../classes/class-pojo-forms-cpt.php:461
-#: ../classes/class-pojo-forms-cpt.php:462
-msgid "Send"
-msgstr "שליחה"
-
-#: ../classes/class-pojo-forms-cpt.php:467
-msgid "Button Size"
-msgstr "גודל כפתור"
-
-#: ../classes/class-pojo-forms-cpt.php:473
+#: classes/class-pojo-forms-cpt.php:367 classes/class-pojo-forms-cpt.php:479
 msgid "XL"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:474
+#: classes/class-pojo-forms-cpt.php:368 classes/class-pojo-forms-cpt.php:480
 msgid "XXL"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:481
-msgid "Button Width"
+#: classes/class-pojo-forms-cpt.php:375
+msgid "Field Style"
+msgstr "סגנון שדה"
+
+#: classes/class-pojo-forms-cpt.php:379 classes/class-pojo-forms-cpt.php:520
+msgid "Default"
+msgstr "ברירת מחדל"
+
+#: classes/class-pojo-forms-cpt.php:380 classes/class-pojo-forms-cpt.php:521
+msgid "Custom Style"
+msgstr "סגנון מותאם אישית"
+
+#: classes/class-pojo-forms-cpt.php:388
+msgid "Label Size"
+msgstr "גודל כותרת"
+
+#: classes/class-pojo-forms-cpt.php:389
+msgid "13px"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:496
+#: classes/class-pojo-forms-cpt.php:396
+msgid "Label Color"
+msgstr "צבע כותרת"
+
+#: classes/class-pojo-forms-cpt.php:405
+msgid "Input Color"
+msgstr "צבע טקסט שדה"
+
+#: classes/class-pojo-forms-cpt.php:414 classes/class-pojo-forms-cpt.php:538
+msgid "Background Color"
+msgstr "צבע רקע"
+
+#: classes/class-pojo-forms-cpt.php:423 classes/class-pojo-forms-cpt.php:547
+msgid "Background Opacity"
+msgstr "שקיפות רקע"
+
+#: classes/class-pojo-forms-cpt.php:434 classes/class-pojo-forms-cpt.php:558
+msgid "Border Color"
+msgstr "צבע בורדר"
+
+#: classes/class-pojo-forms-cpt.php:443 classes/class-pojo-forms-cpt.php:567
+msgid "Border Width"
+msgstr "רוחב מסגרת"
+
+#: classes/class-pojo-forms-cpt.php:451 classes/class-pojo-forms-cpt.php:575
+msgid "Border Radius"
+msgstr "עיגול מסגרת"
+
+#: classes/class-pojo-forms-cpt.php:460
+msgid "Button Settings"
+msgstr "הגדרות כפתור"
+
+#: classes/class-pojo-forms-cpt.php:466
+msgid "Button Text"
+msgstr "שדה כפתור"
+
+#: classes/class-pojo-forms-cpt.php:467 classes/class-pojo-forms-cpt.php:468
+msgid "Send"
+msgstr "שליחה"
+
+#: classes/class-pojo-forms-cpt.php:473
+msgid "Button Size"
+msgstr "גודל כפתור"
+
+#: classes/class-pojo-forms-cpt.php:487
+msgid "Button Area Width"
+msgstr "רוחב אזור כפתור"
+
+#: classes/class-pojo-forms-cpt.php:502
 msgid "Button Align"
 msgstr "יישור כפתור"
 
-#: ../classes/class-pojo-forms-cpt.php:499
+#: classes/class-pojo-forms-cpt.php:505
+msgctxt "button-align"
 msgid "None"
-msgstr "ללא"
+msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:500
+#: classes/class-pojo-forms-cpt.php:506
+msgctxt "button-align"
 msgid "Center"
-msgstr "אמצע"
+msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:501
+#: classes/class-pojo-forms-cpt.php:507
+msgctxt "button-align"
 msgid "Right"
-msgstr "ימין"
+msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:502
+#: classes/class-pojo-forms-cpt.php:508
+msgctxt "button-align"
 msgid "Left"
-msgstr "שמאל"
+msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:503
+#: classes/class-pojo-forms-cpt.php:509
+msgctxt "button-align"
 msgid "Block"
-msgstr "בלוק"
+msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:510
+#: classes/class-pojo-forms-cpt.php:516
 msgid "Button Style"
 msgstr "סגנון כפתור"
 
-#: ../classes/class-pojo-forms-cpt.php:552
+#: classes/class-pojo-forms-cpt.php:529
 msgid "Text Color"
 msgstr "צבע טקסט"
 
-#: ../classes/class-pojo-forms-cpt.php:578
+#: classes/class-pojo-forms-cpt.php:584
 msgid "Form Style"
 msgstr "סגנון טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:605
+#: classes/class-pojo-forms-cpt.php:611
 msgid ""
 "Copy and paste this shortcode into your Text editor or use with Form Widget."
 msgstr ""
 "יש להעתיק ולהדביק את השורטקוד לתוך עורך הטקסט, או להשתמש בוידג'ט טפסים."
 
-#: ../classes/class-pojo-forms-widget.php:14
+#: classes/class-pojo-forms-widget.php:14
 msgid "Title:"
 msgstr "כותרת:"
 
-#: ../classes/class-pojo-forms-widget.php:25
+#: classes/class-pojo-forms-widget.php:25
 msgid "Choose Form:"
 msgstr "בחירת טופס"
 
-#: ../classes/class-pojo-forms-widget.php:34
+#: classes/class-pojo-forms-widget.php:34
 msgid "Create a Form"
 msgstr "יצירת טופס"
 
-#: ../classes/class-pojo-forms-widget.php:47
-#: ../classes/class-pojo-forms-widget.php:48
+#: classes/class-pojo-forms-widget.php:47
+#: classes/class-pojo-forms-widget.php:48
 msgid "Pojo Forms"
 msgstr ""
 
-#: ../pojo-forms.php:54 ../pojo-forms.php:65
+#: pojo-forms.php:54 pojo-forms.php:65
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: ../pojo-forms.php:137
+#: pojo-forms.php:143
 #, php-format
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Pojo Framework</a> is not active. Please "
@@ -579,14 +596,52 @@ msgstr ""
 "<a href=\"%s\" target=\"_blank\">Pojo Framework</a> לא פעיל. יש להפעיל ערכת "
 "עיצוב של Pojo לפני שמשתמשים בתוסף \"Pojo Forms\"."
 
-#: ../pojo-forms.php:141
+#: pojo-forms.php:147
 #, php-format
 msgid ""
 "Your <a href=\"%s\" target=\"_blank\">Pojo Framework</a> isn't updated, "
 "please upgrade."
 msgstr ""
-"Your <a href=\"%s\" target=\"_blank\">Pojo Framework</a> לא מעודכן, אנא "
-"עדכן."
+"Your <a href=\"%s\" target=\"_blank\">Pojo Framework</a> לא מעודכן, אנא עדכן."
+
+#~ msgid "Powered by <a href=\"http://pojo.me/\">Pojo.me</a>"
+#~ msgstr "מופעל על ידי <a href=\"http://pojo.me/\">Pojo.me</a>"
+
+#~ msgid "Name"
+#~ msgstr "שם"
+
+#~ msgid "Allow multiple selections"
+#~ msgstr "לאפשר בחירה מרובה"
+
+#~ msgid "Insert a first option as blank"
+#~ msgstr "להכניס אפשרות ראשונה ריקה"
+
+#~ msgid "Email Reply-To"
+#~ msgstr "אימייל תגובה (Replay-To)"
+
+#~ msgid "Optional"
+#~ msgstr "אופציונלי"
+
+#~ msgid "After submitting redirect to"
+#~ msgstr "לאחר השליחה העבר אל"
+
+#~ msgid "(Optional) http://pojo.me/"
+#~ msgstr "(אופציונלי) http://pojo.me/"
+
+#~ msgid "None"
+#~ msgstr "ללא"
+
+#~ msgid "Center"
+#~ msgstr "אמצע"
+
+#~ msgid "Right"
+#~ msgstr "ימין"
+
+#~ msgid "Left"
+#~ msgstr "שמאל"
+
+#~ msgid "Block"
+#~ msgstr "בלוק"
 
 #~ msgid "Email to"
 #~ msgstr "שליחת אימייל אל"
