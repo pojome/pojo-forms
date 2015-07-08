@@ -83,7 +83,7 @@ class Pojo_Forms_Ajax {
 				);
 			}
 			
-			$metadata_types = atmb_get_field( 'form_metadata', $form->ID, Pojo_MetaBox::FIELD_CHECKBOX_LIST );
+			$metadata_types = (array) atmb_get_field( 'form_metadata', $form->ID, Pojo_MetaBox::FIELD_CHECKBOX_LIST );
 			$tmpl_line_html = '%s: %s' . PHP_EOL;
 			foreach ( $metadata_types as $metadata_type ) {
 				switch ( $metadata_type ) {
@@ -131,8 +131,7 @@ class Pojo_Forms_Ajax {
 				$email_from_name = strtr( $email_from_name, $inline_shortcodes );
 				$email_from      = strtr( $email_from, $inline_shortcodes );
 				$email_reply_to  = strtr( $email_reply_to, $inline_shortcodes );
-
-				//$headers = sprintf( 'From: %s <%s>;' . "\r\n" . 'content-type: text/html;' . "\r\n", $email_from_name, $email_from );
+				
 				$headers = sprintf( 'From: %s <%s>;' . "\r\n", $email_from_name, $email_from );
 				$headers .= sprintf( 'Reply-To: %s <%s>;' . "\r\n", $email_from_name, $email_reply_to );
 
