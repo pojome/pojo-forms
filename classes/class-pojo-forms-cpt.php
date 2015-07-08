@@ -182,6 +182,22 @@ class Pojo_Forms_CPT {
 			'max' => '100',
 			'std' => '5',
 		);
+
+		$repeater_fields[] = array(
+			'id' => 'number_min',
+			'title' => __( 'Min', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_NUMBER,
+			'placeholder' => '5',
+			'std' => '',
+		);
+
+		$repeater_fields[] = array(
+			'id' => 'number_max',
+			'title' => __( 'Max', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_NUMBER,
+			'placeholder' => '100',
+			'std' => '',
+		);
 		// End custom elements per field type
 
 		$repeater_fields[] = array(

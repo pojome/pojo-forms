@@ -47,11 +47,12 @@
 			var showFieldsPerElements = {
 					defaults: [],
 					textarea: [ 'textarea_rows' ],
+					number: [ 'number_min', 'number_max' ],
 					checkbox: [ 'inline', 'choices', 'default_value' ],
 					radio: [ 'inline', 'choices' ],
 					dropdown: [ 'choices', 'multiple', 'first_blank_item' ]
 				},
-				hideFields = [ 'textarea_rows', 'default_value', 'inline', 'choices', 'multiple', 'first_blank_item' ];
+				hideFields = [ 'textarea_rows', 'default_value', 'inline', 'choices', 'multiple', 'first_blank_item', 'number_min', 'number_max' ];
 			
 			var $wrapper = $element.closest( 'li.atmb-repeater-row' );
 			

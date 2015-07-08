@@ -28,6 +28,8 @@ class Pojo_Forms_Shortcode {
 				'multiple' => false,
 				'first_blank_item' => false,
 				'textarea_rows' => 5,
+				'number_min' => '',
+				'number_max' => '',
 			)
 		);
 		
@@ -114,6 +116,11 @@ class Pojo_Forms_Shortcode {
 					'style' => implode( ';', $field_style_inline ),
 					'placeholder' => esc_attr( $field['placeholder'] ),
 				);
+				
+				if ( 'number' === $field['type'] ) {
+					$field_attributes['number_min'] = $field['number_min'];
+					$field_attributes['number_max'] = $field['number_max'];
+				}
 	
 				// Remove empty values
 				$field_attributes = array_filter( $field_attributes );
