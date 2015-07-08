@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-08 14:13+0300\n"
+"POT-Creation-Date: 2015-07-08 15:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,6 +96,8 @@ msgid "Akismet Options"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:9 classes/class-pojo-forms-cpt.php:21
+#: classes/class-pojo-forms-widget.php:47
+#: classes/class-pojo-forms-widget.php:48
 msgid "Forms"
 msgstr ""
 
@@ -571,11 +573,6 @@ msgstr ""
 
 #: classes/class-pojo-forms-widget.php:34
 msgid "Create a Form"
-msgstr ""
-
-#: classes/class-pojo-forms-widget.php:47
-#: classes/class-pojo-forms-widget.php:48
-msgid "Pojo Forms"
 msgstr ""
 
 #: pojo-forms.php:54 pojo-forms.php:65
