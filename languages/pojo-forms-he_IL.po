@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Forms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-08 17:45+0300\n"
-"PO-Revision-Date: 2015-07-08 17:49+0300\n"
+"POT-Creation-Date: 2015-07-08 17:51+0300\n"
+"PO-Revision-Date: 2015-07-08 17:51+0300\n"
 "Last-Translator: Ariel K <a@arielk.net>\n"
 "Language-Team: Pojo Them <aryodigital@gmail.com>\n"
 "Language: he_IL\n"
@@ -423,8 +423,8 @@ msgid "Email Reply-To (Optional)"
 msgstr "אימייל תגובה (אופציונלי)"
 
 #: ../classes/class-pojo-forms-cpt.php:318
-msgid "Insert Shortcode ID e.g. [form-field-1]"
-msgstr "יש להזין שורטקוד ID לדוגמא: [form-field-1]"
+msgid "Insert Shortcode ID"
+msgstr "יש להזין שורטקוד ID"
 
 #: ../classes/class-pojo-forms-cpt.php:324
 msgid "Redirect To (Optional)"
@@ -649,6 +649,9 @@ msgid ""
 "please upgrade."
 msgstr ""
 "Your <a href=\"%s\" target=\"_blank\">Pojo Framework</a> לא מעודכן, אנא עדכן."
+
+#~ msgid "Insert Shortcode ID e.g. [form-field-1]"
+#~ msgstr "יש להזין שורטקוד ID לדוגמא: [form-field-1]"
 
 #~ msgid "Insert Shortcode ID e.g. [filed-1]"
 #~ msgstr "יש להזין שורטקוד ID לדוגמא: "

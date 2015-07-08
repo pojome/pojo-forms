@@ -315,7 +315,7 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'email_reply_to',
 			'title' => __( 'Email Reply-To (Optional)', 'pojo-forms' ),
-			'placeholder' => __( 'Insert Shortcode ID e.g. [form-field-1]', 'pojo-forms' ),
+			'placeholder' => __( 'Insert Shortcode ID', 'pojo-forms' ),
 			'std' => '',
 		);
 		
