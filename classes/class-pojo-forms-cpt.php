@@ -364,6 +364,8 @@ class Pojo_Forms_CPT {
 				'small' => __( 'Small', 'pojo-forms' ),
 				'medium' => __( 'Medium', 'pojo-forms' ),
 				'large' => __( 'Large', 'pojo-forms' ),
+				'xl' => __( 'XL', 'pojo-forms' ),
+				'xxl' => __( 'XXL', 'pojo-forms' ),
 			),
 			'std' => 'medium',
 		);
