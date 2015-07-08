@@ -200,7 +200,7 @@ class Pojo_Forms_CPT {
 			'id' => 'required',
 			'title' => __( 'Required', 'pojo-forms' ) . ':',
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
-			'std' => true,
+			'std' => false,
 		);
 
 		$repeater_fields[] = array(
