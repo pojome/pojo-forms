@@ -303,7 +303,7 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'redirect_to',
 			'title' => __( 'Redirect To (Optional)', 'pojo-forms' ),
-			'placeholder' => __( 'http://pojo.me/', 'pojo-forms' ),
+			'placeholder' => __( 'http://pojo.me/thankyou/', 'pojo-forms' ),
 			'std' => '',
 		);
 
