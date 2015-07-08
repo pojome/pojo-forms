@@ -14,8 +14,8 @@ class Pojo_Forms_Akismet {
 		$fields[] = array(
 			'id' => 'akismet_description',
 			'type' => Pojo_MetaBox::FIELD_RAW_HTML,
-			'title' => __( 'Title', 'pojo-forms' ),
-			'raw' => __( 'Insert your shortcode ID by your form', 'pojo-forms' ),
+			'title' => __( 'Spam Filter', 'pojo-forms' ),
+			'raw' => __( 'If you are using the Akismet plugin you can also use it as the form\'s spam filter by setting the fields. Insert the relevant field\'s ID shortcode according to the following settings, e.g. Author Email: [form-field-1]', 'pojo-forms' ),
 		);
 
 		$fields[] = array(

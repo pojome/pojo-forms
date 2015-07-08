@@ -303,7 +303,7 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'redirect_to',
 			'title' => __( 'Redirect To (Optional)', 'pojo-forms' ),
-			'placeholder' => __( 'http://pojo.me/', 'pojo-forms' ),
+			'placeholder' => __( 'http://pojo.me/thankyou/', 'pojo-forms' ),
 			'std' => '',
 		);
 
@@ -364,6 +364,8 @@ class Pojo_Forms_CPT {
 				'small' => __( 'Small', 'pojo-forms' ),
 				'medium' => __( 'Medium', 'pojo-forms' ),
 				'large' => __( 'Large', 'pojo-forms' ),
+				'xl' => __( 'XL', 'pojo-forms' ),
+				'xxl' => __( 'XXL', 'pojo-forms' ),
 			),
 			'std' => 'medium',
 		);
@@ -523,6 +525,15 @@ class Pojo_Forms_CPT {
 		
 		// Button custom style
 		$fields[] = array(
+			'id' => 'button_text_color',
+			'title' => __( 'Text Color', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_COLOR,
+			'placeholder' => '#ffffff',
+			'show_on' => array( 'form_style_button_style' => 'custom' ),
+			'std' => '#ffffff',
+		);
+
+		$fields[] = array(
 			'id' => 'button_bg_color',
 			'title' => __( 'Background Color', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_COLOR,
@@ -549,15 +560,6 @@ class Pojo_Forms_CPT {
 			'placeholder' => '#cccccc',
 			'show_on' => array( 'form_style_button_style' => 'custom' ),
 			'std' => '#cccccc',
-		);
-		
-		$fields[] = array(
-			'id' => 'button_text_color',
-			'title' => __( 'Text Color', 'pojo-forms' ),
-			'type' => Pojo_MetaBox::FIELD_COLOR,
-			'placeholder' => '#ffffff',
-			'show_on' => array( 'form_style_button_style' => 'custom' ),
-			'std' => '#ffffff',
 		);
 
 		$fields[] = array(
