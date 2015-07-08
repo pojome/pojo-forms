@@ -7,17 +7,9 @@ class Pojo_Forms_Shortcode {
 
 	protected function _get_column_class( $width ) {
 		if ( empty( $width ) )
-			$width = 1;
+			$width = 12;
 		
-		switch ( $width ) {
-			case '5' :
-				$column_class = 'column-2-5';
-				break;
-
-			default :
-				$column_class = 'column-' . ( 12 / $width );
-				break;
-		}
+		$column_class = 'column-' . $width;
 		
 		return $column_class;
 	}
@@ -27,7 +19,7 @@ class Pojo_Forms_Shortcode {
 			$field,
 			array(
 				'name' => '',
-				'width' => 1,
+				'width' => 12,
 				'placeholder' => '',
 				'class' => '',
 				'choices' => '',
@@ -36,6 +28,8 @@ class Pojo_Forms_Shortcode {
 				'multiple' => false,
 				'first_blank_item' => false,
 				'textarea_rows' => 5,
+				'number_min' => '',
+				'number_max' => '',
 			)
 		);
 		
@@ -122,6 +116,11 @@ class Pojo_Forms_Shortcode {
 					'style' => implode( ';', $field_style_inline ),
 					'placeholder' => esc_attr( $field['placeholder'] ),
 				);
+				
+				if ( 'number' === $field['type'] ) {
+					$field_attributes['number_min'] = $field['number_min'];
+					$field_attributes['number_max'] = $field['number_max'];
+				}
 	
 				// Remove empty values
 				$field_attributes = array_filter( $field_attributes );

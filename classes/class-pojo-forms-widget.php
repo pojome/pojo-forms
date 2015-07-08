@@ -44,8 +44,8 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 		
 		parent::__construct(
 			'pojo_form_widget',
-			__( 'Pojo Forms', 'pojo-forms' ),
-			array( 'description' => __( 'Pojo Forms', 'pojo-forms' ), )
+			__( 'Forms', 'pojo-forms' ),
+			array( 'description' => __( 'Forms', 'pojo-forms' ), )
 		);
 	}
 
