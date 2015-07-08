@@ -65,7 +65,7 @@ class Pojo_Forms_Ajax {
 				$field_value = '';
 				
 				if ( isset( $_POST[ $field_name ] ) ) {
-					$field_value = $_POST[ $field_name ];
+					$field_value = stripslashes_deep( $_POST[ $field_name ] );
 					
 					if ( is_array( $field_value ) ) {
 						$field_value = implode( ', ', $field_value );
@@ -82,32 +82,36 @@ class Pojo_Forms_Ajax {
 			}
 			
 			$metadata_types = (array) atmb_get_field( 'form_metadata', $form->ID, Pojo_MetaBox::FIELD_CHECKBOX_LIST );
-			$tmpl_line_html = '%s: %s' . PHP_EOL;
-			foreach ( $metadata_types as $metadata_type ) {
-				switch ( $metadata_type ) {
-					case 'time' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'Time', 'pojo-forms' ), date( 'H:i', current_time( 'timestamp' ) ) );
-						break;
-					
-					case 'date' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'Date', 'pojo-forms' ), date( 'd/m/Y', current_time( 'timestamp' ) ) );
-						break;
-					
-					case 'page_url' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'Page URL', 'pojo-forms' ), home_url( $_POST['_wp_http_referer'] ) );
-						break;
-					
-					case 'user_agent' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'User Agent', 'pojo-forms' ), $_SERVER['HTTP_USER_AGENT'] );
-						break;
-					
-					case 'remote_ip' :
-						$email_html .= sprintf( $tmpl_line_html, __( 'Remote IP', 'pojo-forms' ), POJO_FORMS()->helpers->get_client_ip() );
-						break;
-					
-					case 'credit' :
-						$email_html .= __( 'Powered by http://pojo.me/', 'pojo-forms' ) . PHP_EOL;
-						break;
+			if ( ! empty( $metadata_types ) ) {
+				$email_html .= PHP_EOL . '---' . PHP_EOL . PHP_EOL;
+				
+				$tmpl_line_html = '%s: %s' . PHP_EOL;
+				foreach ( $metadata_types as $metadata_type ) {
+					switch ( $metadata_type ) {
+						case 'time' :
+							$email_html .= sprintf( $tmpl_line_html, __( 'Time', 'pojo-forms' ), date( 'H:i', current_time( 'timestamp' ) ) );
+							break;
+
+						case 'date' :
+							$email_html .= sprintf( $tmpl_line_html, __( 'Date', 'pojo-forms' ), date( 'd/m/Y', current_time( 'timestamp' ) ) );
+							break;
+
+						case 'page_url' :
+							$email_html .= sprintf( $tmpl_line_html, __( 'Page URL', 'pojo-forms' ), home_url( $_POST['_wp_http_referer'] ) );
+							break;
+
+						case 'user_agent' :
+							$email_html .= sprintf( $tmpl_line_html, __( 'User Agent', 'pojo-forms' ), $_SERVER['HTTP_USER_AGENT'] );
+							break;
+
+						case 'remote_ip' :
+							$email_html .= sprintf( $tmpl_line_html, __( 'Remote IP', 'pojo-forms' ), POJO_FORMS()->helpers->get_client_ip() );
+							break;
+
+						case 'credit' :
+							$email_html .= __( 'Powered by http://pojo.me/', 'pojo-forms' ) . PHP_EOL;
+							break;
+					}
 				}
 			}
 			
@@ -130,9 +134,9 @@ class Pojo_Forms_Ajax {
 				$email_from      = strtr( $email_from, $inline_shortcodes );
 				$email_reply_to  = strtr( $email_reply_to, $inline_shortcodes );
 				
-				$headers = sprintf( 'From: %s <%s>;' . "\r\n", $email_from_name, $email_from );
-				$headers .= sprintf( 'Reply-To: %s <%s>;' . "\r\n", $email_from_name, $email_reply_to );
-
+				$headers = sprintf( 'From: %s <%s>' . "\r\n", $email_from_name, $email_from );
+				$headers .= sprintf( 'Reply-To: %s <%s>' . "\r\n", $email_from_name, $email_reply_to );
+				
 				wp_mail( $email_to, $email_subject, $email_html, $headers );
 			}
 			
