@@ -113,14 +113,14 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'text' => __( 'Text', 'pojo-forms' ),
-				'textarea' => __( 'Textarea', 'pojo-forms' ),
 				'email' => __( 'Email', 'pojo-forms' ),
-				'tel' => __( 'Telephone Number', 'pojo-forms' ),
-				'url' => __( 'Url', 'pojo-forms' ),
-				'number' => __( 'Number', 'pojo-forms' ),
+				'textarea' => __( 'Textarea', 'pojo-forms' ),
+				'tel' => __( 'Tel', 'pojo-forms' ),
 				'checkbox' => __( 'Checkbox', 'pojo-forms' ),
 				'radio' => __( 'Radio', 'pojo-forms' ),
 				'dropdown' => __( 'Drop-down', 'pojo-forms' ),
+				'number' => __( 'Number', 'pojo-forms' ),
+				'url' => __( 'URL', 'pojo-forms' ),
 			),
 			'std' => 'text',
 		);
@@ -315,7 +315,7 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'email_reply_to',
 			'title' => __( 'Email Reply-To (Optional)', 'pojo-forms' ),
-			'placeholder' => __( 'Email field by Shortcode ID', 'pojo-forms' ),
+			'placeholder' => __( 'Insert Shortcode ID', 'pojo-forms' ),
 			'std' => '',
 		);
 		
@@ -368,9 +368,9 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'top' => __( 'Top', 'pojo-forms' ),
-				'inside' => __( 'Inside', 'pojo-forms' ),
-				'right' => __( 'Side - Alignright', 'pojo-forms' ),
-				'left' => __( 'Side - Alignleft', 'pojo-forms' ),
+				'inside' => __( 'Hide Label', 'pojo-forms' ),
+				'right' => __( 'Side - Align Right', 'pojo-forms' ),
+				'left' => __( 'Side - Align Left', 'pojo-forms' ),
 			),
 			'std' => 'top',
 		);
