@@ -69,8 +69,6 @@ class Pojo_Forms_Ajax {
 					
 					if ( is_array( $field_value ) ) {
 						$field_value = implode( ', ', $field_value );
-					} else {
-						$field_value = nl2br( $field_value );
 					}
 				}
 
