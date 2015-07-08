@@ -118,8 +118,8 @@ class Pojo_Forms_Shortcode {
 				);
 				
 				if ( 'number' === $field['type'] ) {
-					$field_attributes['number_min'] = $field['number_min'];
-					$field_attributes['number_max'] = $field['number_max'];
+					$field_attributes['min'] = $field['number_min'];
+					$field_attributes['max'] = $field['number_max'];
 				}
 	
 				// Remove empty values
