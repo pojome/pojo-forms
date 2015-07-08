@@ -7,17 +7,9 @@ class Pojo_Forms_Shortcode {
 
 	protected function _get_column_class( $width ) {
 		if ( empty( $width ) )
-			$width = 1;
+			$width = 12;
 		
-		switch ( $width ) {
-			case '5' :
-				$column_class = 'column-2-5';
-				break;
-
-			default :
-				$column_class = 'column-' . ( 12 / $width );
-				break;
-		}
+		$column_class = 'column-' . $width;
 		
 		return $column_class;
 	}
@@ -27,7 +19,7 @@ class Pojo_Forms_Shortcode {
 			$field,
 			array(
 				'name' => '',
-				'width' => 1,
+				'width' => 12,
 				'placeholder' => '',
 				'class' => '',
 				'choices' => '',

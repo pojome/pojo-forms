@@ -208,14 +208,17 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Width', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
-				'' => __( '100%', 'pojo-forms' ),
-				'2' => __( '50%', 'pojo-forms' ),
-				'3' => __( '33%', 'pojo-forms' ),
-				'4' => __( '25%', 'pojo-forms' ),
-				'5' => __( '20%', 'pojo-forms' ),
-				'6' => __( '16%', 'pojo-forms' ),
+				'12' => __( '100%', 'pojo-forms' ),
+				'10' => __( '83%', 'pojo-forms' ),
+				'9' => __( '75%', 'pojo-forms' ),
+				'8' => __( '66%', 'pojo-forms' ),
+				'6' => __( '50%', 'pojo-forms' ),
+				'4' => __( '33%', 'pojo-forms' ),
+				'3' => __( '25%', 'pojo-forms' ),
+				'2-5' => __( '20%', 'pojo-forms' ),
+				'2' => __( '16%', 'pojo-forms' ),
 			),
-			'std' => '',
+			'std' => '12',
 		);
 
 		$repeater_fields[] = array(
@@ -487,14 +490,17 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Button Area Width', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
-				'' => __( '100%', 'pojo-forms' ),
-				'2' => __( '50%', 'pojo-forms' ),
-				'3' => __( '33%', 'pojo-forms' ),
-				'4' => __( '25%', 'pojo-forms' ),
-				'5' => __( '20%', 'pojo-forms' ),
-				'6' => __( '16%', 'pojo-forms' ),
+				'12' => __( '100%', 'pojo-forms' ),
+				'10' => __( '83%', 'pojo-forms' ),
+				'9' => __( '75%', 'pojo-forms' ),
+				'8' => __( '66%', 'pojo-forms' ),
+				'6' => __( '50%', 'pojo-forms' ),
+				'4' => __( '33%', 'pojo-forms' ),
+				'3' => __( '25%', 'pojo-forms' ),
+				'2-5' => __( '20%', 'pojo-forms' ),
+				'2' => __( '16%', 'pojo-forms' ),
 			),
-			'std' => '',
+			'std' => '12',
 		);
 
 		$fields[] = array(
