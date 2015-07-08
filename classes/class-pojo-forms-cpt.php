@@ -113,14 +113,14 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'text' => __( 'Text', 'pojo-forms' ),
-				'textarea' => __( 'Textarea', 'pojo-forms' ),
 				'email' => __( 'Email', 'pojo-forms' ),
-				'tel' => __( 'Telephone Number', 'pojo-forms' ),
-				'url' => __( 'Url', 'pojo-forms' ),
-				'number' => __( 'Number', 'pojo-forms' ),
+				'textarea' => __( 'Textarea', 'pojo-forms' ),
+				'tel' => __( 'Tel', 'pojo-forms' ),
 				'checkbox' => __( 'Checkbox', 'pojo-forms' ),
 				'radio' => __( 'Radio', 'pojo-forms' ),
 				'dropdown' => __( 'Drop-down', 'pojo-forms' ),
+				'number' => __( 'Number', 'pojo-forms' ),
+				'url' => __( 'URL', 'pojo-forms' ),
 			),
 			'std' => 'text',
 		);

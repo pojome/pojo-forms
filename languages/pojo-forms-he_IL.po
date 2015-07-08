@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Forms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-08 17:51+0300\n"
-"PO-Revision-Date: 2015-07-08 17:51+0300\n"
+"POT-Creation-Date: 2015-07-08 18:47+0300\n"
+"PO-Revision-Date: 2015-07-08 18:47+0300\n"
 "Last-Translator: Ariel K <a@arielk.net>\n"
 "Language-Team: Pojo Them <aryodigital@gmail.com>\n"
 "Language: he_IL\n"
@@ -237,36 +237,36 @@ msgid "Text"
 msgstr "טקסט"
 
 #: ../classes/class-pojo-forms-cpt.php:116
-msgid "Textarea"
-msgstr "אזור טקסט"
-
-#: ../classes/class-pojo-forms-cpt.php:117
 msgid "Email"
 msgstr "אימייל"
 
+#: ../classes/class-pojo-forms-cpt.php:117
+msgid "Textarea"
+msgstr "אזור טקסט"
+
 #: ../classes/class-pojo-forms-cpt.php:118
-msgid "Telephone Number"
-msgstr "מספר טלפון"
+msgid "Tel"
+msgstr "טלפון"
 
 #: ../classes/class-pojo-forms-cpt.php:119
-msgid "Url"
-msgstr "קישור URL"
-
-#: ../classes/class-pojo-forms-cpt.php:120
-msgid "Number"
-msgstr "מספר"
-
-#: ../classes/class-pojo-forms-cpt.php:121
 msgid "Checkbox"
 msgstr "תיבות סימון"
 
-#: ../classes/class-pojo-forms-cpt.php:122
+#: ../classes/class-pojo-forms-cpt.php:120
 msgid "Radio"
 msgstr "אפשרויות בחירה"
 
-#: ../classes/class-pojo-forms-cpt.php:123
+#: ../classes/class-pojo-forms-cpt.php:121
 msgid "Drop-down"
 msgstr "תפריט בחירה"
+
+#: ../classes/class-pojo-forms-cpt.php:122
+msgid "Number"
+msgstr "מספר"
+
+#: ../classes/class-pojo-forms-cpt.php:123
+msgid "URL"
+msgstr "קישור URL"
 
 #: ../classes/class-pojo-forms-cpt.php:130
 msgid "Field Label"
@@ -649,6 +649,12 @@ msgid ""
 "please upgrade."
 msgstr ""
 "Your <a href=\"%s\" target=\"_blank\">Pojo Framework</a> לא מעודכן, אנא עדכן."
+
+#~ msgid "Telephone Number"
+#~ msgstr "מספר טלפון"
+
+#~ msgid "Url"
+#~ msgstr "קישור URL"
 
 #~ msgid "Insert Shortcode ID e.g. [form-field-1]"
 #~ msgstr "יש להזין שורטקוד ID לדוגמא: [form-field-1]"
