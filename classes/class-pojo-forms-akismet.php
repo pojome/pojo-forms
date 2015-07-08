@@ -12,6 +12,13 @@ class Pojo_Forms_Akismet {
 		$fields = array();
 
 		$fields[] = array(
+			'id' => 'akismet_description',
+			'type' => Pojo_MetaBox::FIELD_RAW_HTML,
+			'title' => __( 'Title', 'pojo-forms' ),
+			'raw' => __( 'Insert your shortcode ID by your form', 'pojo-forms' ),
+		);
+
+		$fields[] = array(
 			'id' => 'author',
 			'title' => __( 'Author', 'pojo-forms' ),
 			'std' => '',
