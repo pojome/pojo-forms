@@ -14,11 +14,13 @@ Pojo Forms allows you to create any form you want with a simple drag and drop in
 
 Pojo Forms is the ultimate form creation solution for WordPress sites that work with Pojo Framework. It allows you to easily and quickly design complex forms through a drag and drop interface and all this with no CSS knowledge or coding required.
 
-Field Type (HTML5):
+<strong>Field Type (HTML5):</strong>
+
 * Text
 * Textarea
 * Email
 * URL
+* Tel
 * Checkbox
 * Radio
 * Drop-down (Select)
@@ -26,6 +28,7 @@ Field Type (HTML5):
 * Button
 
 Here are just a few of the things you will find in Pojo Forms:
+
 * Set required fields
 * Set placeholder
 * 3 sizes for Field or Button
