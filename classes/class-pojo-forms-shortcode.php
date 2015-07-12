@@ -48,7 +48,7 @@ class Pojo_Forms_Shortcode {
 			$field_classes[] = 'required';
 		
 		$field_size = atmb_get_field( 'form_style_field_size', $form_id );
-		$field_classes[] = 'field-' . $field_size;
+		$field_classes[] = 'size-' . $field_size;
 
 		$column_class = $this->_get_column_class( $field['width'] );
 
