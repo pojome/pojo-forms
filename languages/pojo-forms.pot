@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-09 09:09+0300\n"
+"POT-Creation-Date: 2015-07-12 17:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,11 +56,11 @@ msgstr ""
 msgid "Powered by http://pojo.me/"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:149
+#: classes/class-pojo-forms-ajax.php:153
 msgid "Your details were sent successfully!"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:152
+#: classes/class-pojo-forms-ajax.php:156
 msgid "This form has an error, please fix it."
 msgstr ""
 
@@ -599,14 +599,14 @@ msgstr ""
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: pojo-forms.php:143
+#: pojo-forms.php:148
 #, php-format
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Pojo Framework</a> is not active. Please "
 "activate any theme by Pojo before you are using \"Pojo Forms\" plugin."
 msgstr ""
 
-#: pojo-forms.php:147
+#: pojo-forms.php:152
 #, php-format
 msgid ""
 "Your <a href=\"%s\" target=\"_blank\">Pojo Framework</a> isn't updated, "
