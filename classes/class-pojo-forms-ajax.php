@@ -138,6 +138,10 @@ class Pojo_Forms_Ajax {
 				$headers .= sprintf( 'Reply-To: %s <%s>' . "\r\n", $email_from_name, $email_reply_to );
 				
 				wp_mail( $email_to, $email_subject, $email_html, $headers );
+				
+				do_action( 'pojo_forms_mail_sent', $form->ID );
+			} else {
+				do_action( 'pojo_forms_mail_blocked', $form->ID );
 			}
 			
 			$redirect_to = atmb_get_field( 'form_redirect_to', $form->ID );

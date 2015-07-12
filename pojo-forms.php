@@ -137,6 +137,11 @@ final class Pojo_Forms {
 			include( 'classes/class-pojo-forms-akismet.php' );
 			$akismet = new Pojo_Forms_Akismet();
 		}
+		
+		if ( class_exists( 'AAL_Main' ) ) {
+			include( 'classes/class-pojo-forms-aal.php' );
+			$aal = new Pojo_Forms_Aal();
+		}
 	}
 
 	public function admin_notices() {
