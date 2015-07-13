@@ -52,7 +52,7 @@ class Pojo_Forms_Ajax {
 		if ( empty( $return_array['fields'] ) ) {
 			$email_to = trim( atmb_get_field( 'form_email_to', $form->ID ) );
 			$email_subject = trim( atmb_get_field( 'form_email_subject', $form->ID ) );
-			if ( ! is_email( $email_to ) || empty( $email_subject ) ) {
+			if ( empty( $email_subject ) ) {
 				$return_array['message'] = __( 'Problem with Form setting.', 'pojo-forms' );
 				wp_send_json_error( $return_array );
 			}
