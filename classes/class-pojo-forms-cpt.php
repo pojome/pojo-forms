@@ -188,6 +188,7 @@ class Pojo_Forms_CPT {
 			'title' => __( 'Min', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_NUMBER,
 			'placeholder' => '5',
+			'min' => '-99999',
 			'std' => '',
 		);
 
