@@ -111,7 +111,7 @@ final class Pojo_Forms {
 			return;
 		}
 
-		if ( version_compare( '1.5.1', Pojo_Core::instance()->get_version(), '>' ) ) {
+		if ( version_compare( '1.6.1', Pojo_Core::instance()->get_version(), '>' ) ) {
 			add_action( 'admin_notices', array( &$this, 'print_update_error' ) );
 			return;
 		}
@@ -145,11 +145,11 @@ final class Pojo_Forms {
 	}
 
 	public function admin_notices() {
-		echo '<div class="error"><p>' . sprintf( __( '<a href="%s" target="_blank">Pojo Framework</a> is not active. Please activate any theme by Pojo before you are using "Pojo Forms" plugin.', 'pojo-forms' ), 'http://pojo.me/' ) . '</p></div>';
+		echo '<div class="error"><p>' . sprintf( __( '<a href="%s" target="_blank">Pojo Theme</a> is not active. Please activate any theme by Pojo.me before you are using "Pojo Forms" plugin.', 'pojo-forms' ), 'http://pojo.me/' ) . '</p></div>';
 	}
 
 	public function print_update_error() {
-		echo '<div class="error"><p>' . sprintf( __( 'Your <a href="%s" target="_blank">Pojo Framework</a> isn\'t updated, please upgrade.', 'pojo-forms' ), 'http://pojo.me/' ) . '</p></div>';
+		echo '<div class="error"><p>' . sprintf( __( 'The Pojo Forms is not supported by this version of %s. Please <a href="%s">upgrade the theme to its latest version</a>.', 'pojo-forms' ), Pojo_Core::instance()->licenses->updater->theme_name, admin_url( 'update-core.php' ) ) . '</p></div>';
 	}
 
 	protected function __construct() {
