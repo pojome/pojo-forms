@@ -158,11 +158,11 @@ class Pojo_Forms_Shortcode {
 				
 				$options = array();
 				
-				if ( $field['first_blank_item'] )
-					$options[] = '<option value="">---</option>';
-				
-				foreach ( $choices as $choice ) {
-					$options[] = sprintf( '<option value="%1$s">%1$s</option>', $choice );
+				foreach ( $choices as $choice_index => $choice ) {
+					if ( 0 === $choice_index && $field['first_blank_item'] )
+						$options[] = sprintf( '<option value="">%1$s</option>', $choice );
+					else
+						$options[] = sprintf( '<option value="%1$s">%1$s</option>', $choice );
 				}
 
 				$field_html = sprintf(
