@@ -128,14 +128,19 @@ class Pojo_Forms_Ajax {
 				$email_reply_to = atmb_get_field( 'form_email_reply_to', $form->ID );
 				if ( empty( $email_reply_to ) )
 					$email_reply_to = $email_from;
+				
+				$email_reply_to_name = atmb_get_field( 'form_email_reply_to_name', $form->ID );
+				if ( empty( $email_reply_to_name ) )
+					$email_reply_to_name = $email_from_name;
 
-				$email_subject   = strtr( $email_subject, $inline_shortcodes );
-				$email_from_name = strtr( $email_from_name, $inline_shortcodes );
-				$email_from      = strtr( $email_from, $inline_shortcodes );
-				$email_reply_to  = strtr( $email_reply_to, $inline_shortcodes );
+				$email_subject       = strtr( $email_subject, $inline_shortcodes );
+				$email_from_name     = strtr( $email_from_name, $inline_shortcodes );
+				$email_from          = strtr( $email_from, $inline_shortcodes );
+				$email_reply_to      = strtr( $email_reply_to, $inline_shortcodes );
+				$email_reply_to_name = strtr( $email_reply_to_name, $inline_shortcodes );
 				
 				$headers = sprintf( 'From: %s <%s>' . "\r\n", $email_from_name, $email_from );
-				$headers .= sprintf( 'Reply-To: %s <%s>' . "\r\n", $email_from_name, $email_reply_to );
+				$headers .= sprintf( 'Reply-To: %s <%s>' . "\r\n", $email_reply_to_name, $email_reply_to );
 				
 				wp_mail( $email_to, $email_subject, $email_html, $headers );
 				

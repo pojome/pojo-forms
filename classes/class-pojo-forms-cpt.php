@@ -310,9 +310,16 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'email_form',
 			'title' => __( 'From Email', 'pojo-forms' ),
-			'std' => get_option( 'admin_email' ),
+			'std' => 'noreply@' . parse_url( home_url(), PHP_URL_HOST ),
 		);
 
+		$fields[] = array(
+			'id' => 'email_reply_to_name',
+			'title' => __( 'Name Reply-To (Optional)', 'pojo-forms' ),
+			'placeholder' => __( 'Insert Shortcode ID', 'pojo-forms' ),
+			'std' => '',
+		);
+		
 		$fields[] = array(
 			'id' => 'email_reply_to',
 			'title' => __( 'Email Reply-To (Optional)', 'pojo-forms' ),
