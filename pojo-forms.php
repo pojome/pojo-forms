@@ -111,7 +111,7 @@ final class Pojo_Forms {
 			return;
 		}
 
-		if ( version_compare( '1.6.1', Pojo_Core::instance()->get_version(), '>' ) ) {
+		if ( version_compare( '1.5.1', Pojo_Core::instance()->get_version(), '>' ) ) {
 			add_action( 'admin_notices', array( &$this, 'print_update_error' ) );
 			return;
 		}
