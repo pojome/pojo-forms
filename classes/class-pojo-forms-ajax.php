@@ -141,6 +141,8 @@ class Pojo_Forms_Ajax {
 				
 				$headers = sprintf( 'From: %s <%s>' . "\r\n", $email_from_name, $email_from );
 				$headers .= sprintf( 'Reply-To: %s <%s>' . "\r\n", $email_reply_to_name, $email_reply_to );
+
+				$headers = apply_filters( 'pojo_forms_wp_mail_headers', $headers ); // Temp filter
 				
 				wp_mail( $email_to, $email_subject, $email_html, $headers );
 				
