@@ -167,8 +167,8 @@ class Pojo_Forms_CPT {
 		);
 		
 		$repeater_fields[] = array(
-			'id' => 'first_blank_item',
-			'title' => __( 'Set the First Option as unselected', 'pojo-forms' ) . ':',
+			'id' => 'first_unselectable_item',
+			'title' => __( 'Set the first option as unselectable', 'pojo-forms' ) . ':',
 			'type' => Pojo_MetaBox::FIELD_CHECKBOX,
 			'std' => false,
 		);

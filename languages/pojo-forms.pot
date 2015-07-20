@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-20 14:07+0300\n"
+"POT-Creation-Date: 2015-07-20 15:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -285,7 +285,7 @@ msgid "Allow Multiple Selections"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:171
-msgid "Set the First Option as unselected"
+msgid "Set the first option as unselectable"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:178
