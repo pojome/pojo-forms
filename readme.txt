@@ -69,6 +69,12 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 1. Drag and drop the widget and set it
 1. Enjoy!
 
+== Screenshots ==
+
+1. Forms admin page
+2. Form builder
+3. Form style options
+
 == Changelog ==
 
 = 1.1.0 =
