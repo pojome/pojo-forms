@@ -142,6 +142,11 @@ final class Pojo_Forms {
 			include( 'classes/class-pojo-forms-aal.php' );
 			$aal = new Pojo_Forms_Aal();
 		}
+		
+		if ( function_exists( 'CF7DBPlugin_i18n_init' ) ) {
+			include( 'classes/class-pojo-forms-cf7db.php' );
+			$cf7db = new Pojo_Forms_CF7DB();
+		}
 	}
 
 	public function admin_notices() {

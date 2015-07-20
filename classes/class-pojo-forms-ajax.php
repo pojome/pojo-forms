@@ -58,7 +58,7 @@ class Pojo_Forms_Ajax {
 			}
 			
 			$email_html = '';
-			$inline_shortcodes = array();
+			$inline_shortcodes = $field_values = array();
 			
 			foreach ( $repeater_fields as $field_index => $field ) {
 				$field_name = 'form_field_' . ( $field_index + 1 );
@@ -73,6 +73,11 @@ class Pojo_Forms_Ajax {
 				}
 
 				$inline_shortcodes[ $field['shortcode'] ] = $field_value;
+				
+				$field_values[] = array(
+					'title' => $field['name'],
+					'value' => $field_value,
+				);
 				
 				$email_html .= sprintf(
 					'%s: %s' . PHP_EOL,
@@ -97,11 +102,27 @@ class Pojo_Forms_Ajax {
 							break;
 
 						case 'page_url' :
-							$email_html .= sprintf( $tmpl_line_html, __( 'Page URL', 'pojo-forms' ), home_url( $_POST['_wp_http_referer'] ) );
+							$title = __( 'Page URL', 'pojo-forms' );
+							$value = home_url( $_POST['_wp_http_referer'] );
+							
+							$field_values[] = array(
+								'title' => $title,
+								'value' => $value,
+							);
+							
+							$email_html .= sprintf( $tmpl_line_html, $title, $value );
 							break;
 
 						case 'user_agent' :
-							$email_html .= sprintf( $tmpl_line_html, __( 'User Agent', 'pojo-forms' ), $_SERVER['HTTP_USER_AGENT'] );
+							$title = __( 'User Agent', 'pojo-forms' );
+							$value = $_SERVER['HTTP_USER_AGENT'];
+
+							$field_values[] = array(
+								'title' => $title,
+								'value' => $value,
+							);
+
+							$email_html .= sprintf( $tmpl_line_html, $title, $value );
 							break;
 
 						case 'remote_ip' :
@@ -146,7 +167,7 @@ class Pojo_Forms_Ajax {
 				
 				wp_mail( $email_to, $email_subject, $email_html, $headers );
 				
-				do_action( 'pojo_forms_mail_sent', $form->ID );
+				do_action( 'pojo_forms_mail_sent', $form->ID, $field_values );
 			} else {
 				do_action( 'pojo_forms_mail_blocked', $form->ID );
 			}
