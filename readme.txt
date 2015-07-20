@@ -71,8 +71,12 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 == Changelog ==
 
-= 1.0.2 =
-* Tweak! - Improved upgrade old pojo themes 
+= 1.1.0 =
+* New! - Added [CF7DB](https://wordpress.org/plugins/contact-form-7-to-database-extension/) support
+* New! - Added reply-to name 
+* Tweak! - Drop-down new option: Set the First Option as unselected 
+* Tweak! - Improved upgrade old pojo themes
+* Fixed! - min/max numbers
 
 = 1.0.1 =
 * Fixed! - problem with multiple email addresses
