@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Forms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-20 16:34+0300\n"
-"PO-Revision-Date: 2015-07-20 16:36+0300\n"
-"Last-Translator: Yakir Sitbon <yakir@pojo.me>\n"
+"POT-Creation-Date: 2015-07-20 19:59+0300\n"
+"PO-Revision-Date: 2015-07-20 20:01+0300\n"
+"Last-Translator: Ariel Klikstein <a@arielk.net>\n"
 "Language-Team: Pojo Them <aryodigital@gmail.com>\n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
@@ -399,7 +399,7 @@ msgstr "אימייל השולח"
 
 #: classes/class-pojo-forms-cpt.php:318
 msgid "Name Reply-To (Optional)"
-msgstr ""
+msgstr "שם לתגובה (אופציונלי)"
 
 #: classes/class-pojo-forms-cpt.php:319 classes/class-pojo-forms-cpt.php:326
 msgid "Insert Shortcode ID"
@@ -614,6 +614,8 @@ msgid ""
 "<a href=\"%s\" target=\"_blank\">Pojo Theme</a> is not active. Please "
 "activate any theme by Pojo.me before you are using \"Pojo Forms\" plugin."
 msgstr ""
+"<a href=\"%s\" target=\"_blank\">ערכת עיצוב של Pojo.me</a> אינה פעילה. יש "
+"להפעיל ערכת עיצוב של Pojo.me לפני שמשתמשים בתוסף  \"Pojo Forms\"."
 
 #: pojo-forms.php:157
 #, php-format
