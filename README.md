@@ -85,6 +85,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 ## Changelog ##
 
+### 1.1.2 ###
+* Fixed! - Removed reply-to name field was added in v1.1.0 (conflict with Hebrew language)
+
 ### 1.1.1 ###
 * Tweak! - change some translate string
 * Fixed! - unselectable item in dropdown
