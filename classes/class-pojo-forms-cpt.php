@@ -312,13 +312,6 @@ class Pojo_Forms_CPT {
 			'title' => __( 'From Email', 'pojo-forms' ),
 			'std' => 'noreply@' . parse_url( home_url(), PHP_URL_HOST ),
 		);
-
-		$fields[] = array(
-			'id' => 'email_reply_to_name',
-			'title' => __( 'Name Reply-To (Optional)', 'pojo-forms' ),
-			'placeholder' => __( 'Insert Shortcode ID', 'pojo-forms' ),
-			'std' => '',
-		);
 		
 		$fields[] = array(
 			'id' => 'email_reply_to',
