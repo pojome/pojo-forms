@@ -394,12 +394,12 @@ class Pojo_Forms_Shortcode {
 		}
 		
 		$forms_html = sprintf(
-			'<form class="pojo-form pojo-form-ajax form-align-%s"%s action="" method="post" role="form">
+			'<form class="pojo-form pojo-form-%3$d pojo-form-ajax form-align-%1$s"%2$s action="" method="post" role="form">
 			<input type="hidden" name="action" value="pojo_form_contact_submit" />
-			<input type="hidden" name="form_id" value="%d" />
-			%s
-			%s
-			%s
+			<input type="hidden" name="form_id" value="%3$d" />
+			%4$s
+			%5$s
+			%6$s
 			</form>',
 			$form_align_text,
 			! empty( $form_style_inline ) ? ' style="' . implode( ';', $form_style_inline ) . '"' : '',
