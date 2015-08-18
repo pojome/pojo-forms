@@ -386,7 +386,7 @@ msgstr "כותרת אימייל"
 
 #: classes/class-pojo-forms-cpt.php:301
 #, php-format
-msgid "New massage from \"%s\""
+msgid "New message from \"%s\""
 msgstr "הודעה חדשה מאת \"%s\""
 
 #: classes/class-pojo-forms-cpt.php:306

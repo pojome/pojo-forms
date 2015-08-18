@@ -117,6 +117,7 @@ final class Pojo_Forms {
 		}
 
 		include( 'classes/class-pojo-forms-helpers.php' );
+		include( 'classes/class-pojo-forms-messages.php' );
 		include( 'classes/class-pojo-forms-cpt.php' );
 		include( 'classes/class-pojo-forms-shortcode.php' );
 		include( 'classes/class-pojo-forms-ajax.php' );

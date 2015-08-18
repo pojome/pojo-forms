@@ -298,7 +298,7 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'email_subject',
 			'title' => __( 'Email Subject', 'pojo-forms' ),
-			'std' => sprintf( __( 'New massage from "%s"', 'pojo-forms' ), get_bloginfo( 'name' ) ),
+			'std' => sprintf( __( 'New message from "%s"', 'pojo-forms' ), get_bloginfo( 'name' ) ),
 		);
 
 		$fields[] = array(
@@ -340,6 +340,46 @@ class Pojo_Forms_CPT {
 				'credit' => __( 'Credit', 'pojo-forms' ),
 			),
 			'std' => array( 'time', 'date', 'page_url', 'user_agent', 'remote_ip', 'credit' ),
+		);
+
+		$fields[] = array(
+			'id' => 'messages',
+			'title' => __( 'Messages', 'pojo-forms' ),
+			'classes' => array( 'select-show-or-hide-fields' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'' => __( 'Default', 'pojo-forms' ),
+				'custom' => __( 'Custom', 'pojo-forms' ),
+			),
+			'std' => '',
+		);
+
+		$fields[] = array(
+			'id' => 'message_' . Pojo_Forms_Messages::SUCCESS,
+			'title' => __( 'Success Message', 'pojo-forms' ),
+			'show_on' => array( 'form_messages' => 'custom' ),
+			'std' => Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::SUCCESS ),
+		);
+
+		$fields[] = array(
+			'id' => 'message_' . Pojo_Forms_Messages::ERROR,
+			'title' => __( 'Error Message', 'pojo-forms' ),
+			'show_on' => array( 'form_messages' => 'custom' ),
+			'std' => Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::ERROR ),
+		);
+
+		$fields[] = array(
+			'id' => 'message_' . Pojo_Forms_Messages::FIELD_REQUIRED,
+			'title' => __( 'Required field Message', 'pojo-forms' ),
+			'show_on' => array( 'form_messages' => 'custom' ),
+			'std' => Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::FIELD_REQUIRED ),
+		);
+
+		$fields[] = array(
+			'id' => 'message_' . Pojo_Forms_Messages::INVALID_FORM,
+			'title' => __( 'Invalid Message', 'pojo-forms' ),
+			'show_on' => array( 'form_messages' => 'custom' ),
+			'std' => Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::INVALID_FORM ),
 		);
 		
 		$meta_boxes[] = array(

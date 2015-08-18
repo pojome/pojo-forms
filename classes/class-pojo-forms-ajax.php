@@ -24,20 +24,20 @@ class Pojo_Forms_Ajax {
 		);
 		
 		if ( empty( $_POST['form_id'] ) ) {
-			$return_array['message'] = __( 'Invalid form.', 'pojo-forms' );
+			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::INVALID_FORM );
 			wp_send_json_error( $return_array );
 		}
 
 		$form = get_post( absint( $_POST['form_id'] ) );
 		
 		if ( ! $form || 'pojo_forms' !== $form->post_type || ! isset( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'contact-form-send-' . $form->ID ) ) {
-			$return_array['message'] = __( 'Invalid form.', 'pojo-forms' );
+			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::INVALID_FORM );
 			wp_send_json_error( $return_array );
 		}
 
 		$repeater_fields = atmb_get_field_without_type( 'fields', 'form_',  $form->ID );
 		if ( empty( $repeater_fields ) ) {
-			$return_array['message'] = __( 'Invalid form.', 'pojo-forms' );
+			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::INVALID_FORM );
 			wp_send_json_error( $return_array );
 		}
 
@@ -45,7 +45,7 @@ class Pojo_Forms_Ajax {
 			$field_name = 'form_field_' . ( $field_index + 1 );
 			// TODO: Valid by field type
 			if ( $field['required'] && empty( $_POST[ $field_name ] ) ) {
-				$return_array['fields'][ $field_name ] = __( 'This field is required', 'pojo-forms' );
+				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::FIELD_REQUIRED );
 			}
 		}
 
@@ -53,8 +53,7 @@ class Pojo_Forms_Ajax {
 			$email_to = trim( atmb_get_field( 'form_email_to', $form->ID ) );
 			$email_subject = trim( atmb_get_field( 'form_email_subject', $form->ID ) );
 			if ( empty( $email_subject ) ) {
-				$return_array['message'] = __( 'Problem with Form setting.', 'pojo-forms' );
-				wp_send_json_error( $return_array );
+				$email_subject = sprintf( __( 'New message from "%s"', 'pojo-forms' ), get_bloginfo( 'name' ) );
 			}
 			
 			$email_html = '';
@@ -174,10 +173,10 @@ class Pojo_Forms_Ajax {
 			}
 			
 			$return_array['link'] = $redirect_to;
-			$return_array['message'] = __( 'Your details were sent successfully!', 'pojo-forms' );
+			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::SUCCESS );
 			wp_send_json_success( $return_array );
 		} else {
-			$return_array['message'] = __( 'This form has an error, please fix it.', 'pojo-forms' );
+			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::ERROR );
 			wp_send_json_error( $return_array );
 		}
 		
