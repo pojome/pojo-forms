@@ -37,7 +37,7 @@ class Pojo_Forms_Ajax {
 
 		$repeater_fields = atmb_get_field_without_type( 'fields', 'form_',  $form->ID );
 		if ( empty( $repeater_fields ) ) {
-			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::INVALID_FORM );
+			$return_array['message'] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::INVALID_FORM );
 			wp_send_json_error( $return_array );
 		}
 
@@ -45,7 +45,7 @@ class Pojo_Forms_Ajax {
 			$field_name = 'form_field_' . ( $field_index + 1 );
 			// TODO: Valid by field type
 			if ( $field['required'] && empty( $_POST[ $field_name ] ) ) {
-				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::FIELD_REQUIRED );
+				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
 			}
 		}
 
@@ -173,10 +173,10 @@ class Pojo_Forms_Ajax {
 			}
 			
 			$return_array['link'] = $redirect_to;
-			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::SUCCESS );
+			$return_array['message'] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::SUCCESS );
 			wp_send_json_success( $return_array );
 		} else {
-			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::ERROR );
+			$return_array['message'] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::ERROR );
 			wp_send_json_error( $return_array );
 		}
 		
