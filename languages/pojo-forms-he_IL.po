@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Forms\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-18 17:33+0300\n"
-"PO-Revision-Date: 2015-08-18 17:35+0300\n"
+"PO-Revision-Date: 2015-08-18 17:44+0300\n"
 "Last-Translator: Ariel Klikstein <a@arielk.net>\n"
 "Language-Team: Pojo Them <aryodigital@gmail.com>\n"
 "Language: he_IL\n"
@@ -427,7 +427,7 @@ msgstr "הודעת שדה חובה"
 
 #: classes/class-pojo-forms-cpt.php:380
 msgid "Invalid Message"
-msgstr "הודעת טופס לא תקין"
+msgstr "הודעת שגיאה כללית"
 
 #: classes/class-pojo-forms-cpt.php:387
 msgid "Form Options"
@@ -606,7 +606,7 @@ msgstr "שדה חובה"
 
 #: classes/class-pojo-forms-messages.php:16
 msgid "Invalid form."
-msgstr "טופס לא חוקי"
+msgstr "טופס אינו תקין."
 
 #: classes/class-pojo-forms-messages.php:22
 msgid "Unknown"
