@@ -304,7 +304,7 @@ class Pojo_Forms_CPT {
 		$fields[] = array(
 			'id' => 'email_form_name',
 			'title' => __( 'From Name', 'pojo-forms' ),
-			'std' => get_bloginfo( 'name' ),
+			'std' => mb_substr( get_bloginfo( 'name' ), 0, 30 ),
 		);
 
 		$fields[] = array(
