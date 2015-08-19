@@ -85,6 +85,11 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 ## Changelog ##
 
+### 1.2.0 - 08/19/15 ###
+* New! - Added custom messages
+* New! - Added form-id class for element form
+* Tweak! - Added limit from name default
+
 ### 1.1.2 ###
 * Fixed! - Removed reply-to name field was added in v1.1.0 (conflict with Hebrew language)
 
