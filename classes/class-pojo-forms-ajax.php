@@ -129,7 +129,7 @@ class Pojo_Forms_Ajax {
 							break;
 
 						case 'credit' :
-							$email_html .= __( 'Powered by http://pojo.me/', 'pojo-forms' ) . PHP_EOL;
+							$email_html .= apply_filters( 'pojo_forms_email_credit', __( 'Powered by http://pojo.me/', 'pojo-forms' ) ) . PHP_EOL;
 							break;
 					}
 				}
