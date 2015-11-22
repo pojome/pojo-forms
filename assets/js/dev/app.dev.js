@@ -17,6 +17,8 @@
 		buildElements: function() {},
 
 		bindEvents: function() {
+			var self = this;
+			
 			$( 'form.pojo-form.pojo-form-ajax' ).on( 'submit', function() {
 				var $thisForm = $( this ),
 					serializeForm = $thisForm.serialize(),
@@ -66,6 +68,8 @@
 						} );
 						$thisForm.append( '<div class="form-message form-message-danger">' + response.data.message + '</div>' );
 					} else {
+						self.cache.$document.trigger( 'pojo_forms_form_submitted', $thisForm );
+						
 						if ( ! response.data.hide_form ) {
 							$thisForm.trigger( 'reset' );
 						}
