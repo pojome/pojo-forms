@@ -405,7 +405,7 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'align_text',
-			'title' => __( 'Label Align', 'pojo-forms' ),
+			'title' => __( 'Label', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'top' => __( 'Top', 'pojo-forms' ),
