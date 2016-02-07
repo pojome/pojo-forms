@@ -3,7 +3,7 @@ Contributors: pojo.me, KingYes, ariel.k
 Tags: contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,
 Requires at least: 4.1
 Tested up to: 4.3
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 
 Pojo Forms allows you to create any form you want with a simple drag and drop interface.
