@@ -215,10 +215,11 @@ class Pojo_Forms_Shortcode {
 					
 					$options[] = sprintf(
 						'<div class="field-list-item">
-							<input %3$s value="%2$s"%4$s />
-							<label for="%1$s">%2$s</label>
+							<input %4$s value="%2$s"%5$s />
+							<label for="%1$s">%3$s</label>
 						</div>',
 						$field_attributes['id'],
+						esc_attr( $choice ),
 						$choice,
 						pojo_array_to_attributes( $field_attributes ), 
 						( $checked ) ? ' checked' : ''

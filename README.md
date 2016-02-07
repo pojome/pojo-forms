@@ -85,8 +85,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 ## Changelog ##
 
-### 1.2.1 - 23/11/2015 ###
+### 1.2.1 - 07/02/2016 ###
 * New! - Added filter `pojo_forms_email_credit` to change the credit line
+* Tweak! - Print as plain text in checkbox field
 * Tweak! - Added JS trigger when the form submitted
 
 ### 1.2.0 - 19/08/2015 ###
