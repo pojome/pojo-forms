@@ -4,8 +4,8 @@
 **Contributors:** pojo.me, KingYes, ariel.k  
 **Tags:** contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,  
 **Requires at least:** 4.1  
-**Tested up to:** 4.3  
-**Stable tag:** 1.2.1  
+**Tested up to:** 4.4.2  
+**Stable tag:** 1.2.2  
 **License:** GPLv2 or later  
 
 Pojo Forms allows you to create any form you want with a simple drag and drop interface.
@@ -84,6 +84,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 
 ## Changelog ##
+
+### 1.2.2 - 08/02/2016 ###
+* Tested up to WordPress v4.4
 
 ### 1.2.1 - 07/02/2016 ###
 * New! - Added filter `pojo_forms_email_credit` to change the credit line
