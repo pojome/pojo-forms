@@ -47,6 +47,24 @@ class Pojo_Forms_Ajax {
 			if ( $field['required'] && empty( $_POST[ $field_name ] ) ) {
 				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
 			}
+
+			// WP File Upload
+			if ( ! function_exists( 'wp_handle_upload' ) ) {
+			    require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			}
+
+			$uploadedfile = $_FILES['file'];
+
+			$upload_overrides = array( 'test_form' => false );
+
+			$movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
+
+			if ( $movefile && !isset( $movefile['error'] ) ) {
+			    //echo "File is valid, and was successfully uploaded.\n";
+			    //var_dump( $movefile);
+			} else {
+				$return_array['fields'][ $field_name ] = $movefile['error'];
+			}			
 		}
 
 		if ( empty( $return_array['fields'] ) ) {
@@ -183,11 +201,20 @@ class Pojo_Forms_Ajax {
 		wp_send_json_error( $return_array );
 		die();
 	}
+
+	function pojo_forms_upload() {
+
+	}
 	
 	public function __construct() {
 		add_action( 'wp_ajax_form_preview_shortcode', array( &$this, 'preview_shortcode' ) );
 		add_action( 'wp_ajax_pojo_form_contact_submit', array( &$this, 'form_contact_submit' ) );
 		add_action( 'wp_ajax_nopriv_pojo_form_contact_submit', array( &$this, 'form_contact_submit' ) );
+
+		//add_action( 'wp_ajax_pojo_pojo_forms_upload', array( &$this, 'pojo_forms_upload' ) );
+		//add_action( 'wp_ajax_nopriv_pojo_forms_upload', array( &$this, 'pojo_forms_upload' ) );
+
+		do_action('pojo_forms_ajax_handler');
 	}
 	
 }

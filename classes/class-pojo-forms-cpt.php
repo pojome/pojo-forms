@@ -111,7 +111,7 @@ class Pojo_Forms_CPT {
 			'id' => 'type',
 			'title' => __( 'Field Type', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
-			'options' => array(
+			'options' => apply_filters('pojo_forms_fields_type', array(
 				'text' => __( 'Text', 'pojo-forms' ),
 				'email' => __( 'Email', 'pojo-forms' ),
 				'textarea' => __( 'Textarea', 'pojo-forms' ),
@@ -121,7 +121,8 @@ class Pojo_Forms_CPT {
 				'dropdown' => __( 'Drop-down', 'pojo-forms' ),
 				'number' => __( 'Number', 'pojo-forms' ),
 				'url' => __( 'URL', 'pojo-forms' ),
-			),
+				'file' => __( 'File', 'pojo-forms' ),
+			) ),
 			'std' => 'text',
 		);
 

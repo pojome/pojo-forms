@@ -107,6 +107,7 @@ class Pojo_Forms_Shortcode {
 			case 'url' : 
 			case 'tel' : 
 			case 'number' :
+			case 'file' :
 				
 				$field_attributes = array(
 					'type' => $field['type'],
@@ -269,7 +270,7 @@ class Pojo_Forms_Shortcode {
 				break;
 		}
 		
-		return $field_html;
+		return apply_filters('pojo_forms_field_' . $field['type'] . '_html_output' , $field_html);;
 	}
 
 	public function _get_button_html( $form_id ) {
