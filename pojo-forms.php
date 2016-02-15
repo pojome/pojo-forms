@@ -93,12 +93,7 @@ final class Pojo_Forms {
 
 	public function enqueue_scripts() {
 		wp_register_script( 'pojo-forms', POJO_FORMS_ASSETS_URL . 'js/app.min.js', array( 'jquery' ), false, true );
-		wp_register_script( 'pojo-forms-file-upload', POJO_FORMS_ASSETS_URL . 'js/file.js', array( 'jquery' ), false, true );
-		
-		wp_localize_script( 'pojo-forms', 'pojo_forms', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
-
 		wp_enqueue_script( 'pojo-forms' );
-		wp_enqueue_script( 'pojo-forms-file-upload' );
 
 		do_action('pojo_forms_load_front_assets');
 	}
