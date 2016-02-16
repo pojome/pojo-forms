@@ -50,21 +50,38 @@ class Pojo_Forms_Ajax {
 				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
 			}
 
-			if ( $field['required'] && $_FILES[$field_name]['error'] == 4 && $field['type'] == 'file' ) {
-				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
-			} 
+			if ( $field['type'] == 'file' ) {
+				if ( $field['required'] && $_FILES[$field_name]['error'] == 4 ) {
+					$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
+				} 
+
+				$allowed_mimes =  array_values( get_allowed_mime_types() );
+
+				if ( !in_array( $_FILES[$field_name]["type"], $allowed_mimes ) )
+					$return_array['fields'][ $field_name ] = __('This file type is not allowed.', 'pojo-forms' );			
+		
+											
+			}
 
 			if ( $field['type'] == 'file' && empty( $return_array['fields'] ) ) {
 
 				//TODO: is there a proper way to change wp folder on ajax request ?
-				$upload_dir = wp_upload_dir();
-				$target_dir = wp_normalize_path($upload_dir['basedir']).'/pojo_forms_uploads';
 
-				if ( is_dir( $target_dir ) && is_writable( $target_dir ) ) {
+				$uploads_dir = $this->upload_tmp_dir();
+				$uploads_dir = $this->maybe_add_random_dir( $uploads_dir );
 
-					$target_file = $target_dir . '/' . basename($_FILES[$field_name]["name"]);
-				    if (move_uploaded_file($_FILES[$field_name]["tmp_name"], $target_file)) {
-				        $files[$field_name] = $this->get_file_url( $target_file );
+				$filename = basename( $_FILES[$field_name]["name"] );
+				$filename = $this->canonicalize( $filename );
+				$filename = sanitize_file_name( $filename );
+				$filename = $this->antiscript_file_name( $filename );
+				$filename = wp_unique_filename( $uploads_dir, $filename );
+
+				$new_file = trailingslashit( $uploads_dir ) . $filename;
+
+				if ( is_dir( $uploads_dir ) && is_writable( $uploads_dir ) ) {
+
+				    if (@move_uploaded_file($_FILES[$field_name]["tmp_name"], $new_file)) {
+				        $files[$field_name] = $this->get_file_url( $new_file );
 				    } else {
 				        $return_array['fields'][ $field_name ] = __('There was an error while trying uploading your file.', 'pojo-forms');
 				    }	
@@ -212,6 +229,65 @@ class Pojo_Forms_Ajax {
 		wp_send_json_error( $return_array );
 		die();
 	}
+
+	function upload_tmp_dir() {
+		$upload_dir = wp_upload_dir();
+		$upload_dir = wp_normalize_path($upload_dir['basedir']).'/pojo_forms_uploads';		
+		return apply_filters( 'pojo_forms_upload_folder', $upload_dir );
+	}	
+
+	function maybe_add_random_dir( $dir ) {
+		do {
+			$rand_max = mt_getrandmax();
+			$rand = zeroise( mt_rand( 0, $rand_max ), strlen( $rand_max ) );
+			$dir_new = path_join( $dir, $rand );
+		} while ( file_exists( $dir_new ) );
+
+		if ( wp_mkdir_p( $dir_new ) ) {
+			return $dir_new;
+		}
+
+		return $dir;
+	}
+
+	function canonicalize( $text ) {
+		if ( function_exists( 'mb_convert_kana' )
+		&& 'UTF-8' == get_option( 'blog_charset' ) ) {
+			$text = mb_convert_kana( $text, 'asKV', 'UTF-8' );
+		}
+
+		$text = strtolower( $text );
+		$text = trim( $text );
+		return $text;
+	}
+
+	function antiscript_file_name( $filename ) {
+		$filename = basename( $filename );
+		$parts = explode( '.', $filename );
+
+		if ( count( $parts ) < 2 )
+			return $filename;
+
+		$script_pattern = '/^(php|phtml|pl|py|rb|cgi|asp|aspx)\d?$/i';
+
+		$filename = array_shift( $parts );
+		$extension = array_pop( $parts );
+
+		foreach ( (array) $parts as $part ) {
+			if ( preg_match( $script_pattern, $part ) )
+				$filename .= '.' . $part . '_';
+			else
+				$filename .= '.' . $part;
+		}
+
+		if ( preg_match( $script_pattern, $extension ) )
+			$filename .= '.' . $extension . '_.txt';
+		else
+			$filename .= '.' . $extension;
+
+		return $filename;
+	}	
+
 
 	function get_file_url( $file ) {
 
