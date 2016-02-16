@@ -2,6 +2,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Pojo_Forms_Ajax {
+
+	private $files = array();
 	
 	public function preview_shortcode() {
 		if ( empty( $_POST['id'] ) ) {
@@ -41,10 +43,11 @@ class Pojo_Forms_Ajax {
 			wp_send_json_error( $return_array );
 		}
 
-		$files = array();
+		$this->files = array();
 
 		foreach ( $repeater_fields as $field_index => $field ) {
 			$field_name = 'form_field_' . ( $field_index + 1 );
+			$field_label = $field['name'];
 			// TODO: Valid by field type
 			if ( $field['required'] && empty( $_POST[ $field_name ] ) && $field['type'] != 'file' ) {
 				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
@@ -59,8 +62,7 @@ class Pojo_Forms_Ajax {
 
 				if ( !in_array( $_FILES[$field_name]["type"], $allowed_mimes ) )
 					$return_array['fields'][ $field_name ] = __('This file type is not allowed.', 'pojo-forms' );			
-		
-											
+									
 			}
 
 			if ( $field['type'] == 'file' && empty( $return_array['fields'] ) ) {
@@ -81,7 +83,7 @@ class Pojo_Forms_Ajax {
 				if ( is_dir( $uploads_dir ) && is_writable( $uploads_dir ) ) {
 
 				    if (@move_uploaded_file($_FILES[$field_name]["tmp_name"], $new_file)) {
-				        $files[$field_name] = $this->get_file_url( $new_file );
+				        $this->files[$field_label] = $new_file;
 				    } else {
 				        $return_array['fields'][ $field_name ] = __('There was an error while trying uploading your file.', 'pojo-forms');
 				    }	
@@ -104,6 +106,7 @@ class Pojo_Forms_Ajax {
 			
 			foreach ( $repeater_fields as $field_index => $field ) {
 				$field_name = 'form_field_' . ( $field_index + 1 );
+				$field_label = $field['name'];
 				$field_value = '';
 				
 				if ( isset( $_POST[ $field_name ] ) ) {
@@ -114,8 +117,9 @@ class Pojo_Forms_Ajax {
 					}
 				}
 
-				if ( isset( $files[$field_name] ) )
-					$field_value = $files[$field_name];
+				if ( isset( $this->files[$field_label] ) ) {
+					$field_value = $this->get_file_url( $this->files[$field_label] );
+				}
 
 				$inline_shortcodes[ $field['shortcode'] ] = $field_value;
 				
@@ -208,7 +212,7 @@ class Pojo_Forms_Ajax {
 				
 				wp_mail( $email_to, $email_subject, $email_html, $headers );
 				
-				do_action( 'pojo_forms_mail_sent', $form->ID, $field_values );
+				do_action( 'pojo_forms_mail_sent', $form->ID, $field_values, $this->files );
 			} else {
 				do_action( 'pojo_forms_mail_blocked', $form->ID );
 			}
@@ -233,6 +237,7 @@ class Pojo_Forms_Ajax {
 	function upload_tmp_dir() {
 		$upload_dir = wp_upload_dir();
 		$upload_dir = wp_normalize_path($upload_dir['basedir']).'/pojo_forms_uploads';		
+
 		return apply_filters( 'pojo_forms_upload_folder', $upload_dir );
 	}	
 

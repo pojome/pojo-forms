@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Pojo_Forms_CF7DB {
 
-	public function store_submit_form( $form_id, $field_values ) {
+	public function store_submit_form( $form_id, $field_values, $files = array() ) {
 		$posted_data = array();
 
 		foreach ( $field_values as $field ) {
@@ -11,13 +11,15 @@ class Pojo_Forms_CF7DB {
 				$field['title'] = '&nbsp;';
 			}
 
-			$posted_data[ $field['title'] ] = $field['value'];
+		if ( filter_var( $field['value'], FILTER_VALIDATE_URL ) === false ) {
+				$posted_data[ $field['title'] ] = $field['value'];
+			}
 		}
 		
 		$data = (object) array(
 			'title' => get_the_title( $form_id ),
 			'posted_data' => $posted_data,
-			'uploaded_files' => array()
+			'uploaded_files' => $files
 		);
 
 		// Call hook to submit data
@@ -25,7 +27,7 @@ class Pojo_Forms_CF7DB {
 	}
 
 	public function __construct() {
-		add_action( 'pojo_forms_mail_sent', array( &$this, 'store_submit_form' ), 20, 2 );
+		add_action( 'pojo_forms_mail_sent', array( &$this, 'store_submit_form' ), 20, 3 );
 	}
 	
 }
