@@ -46,12 +46,15 @@ class Pojo_Forms_Ajax {
 		foreach ( $repeater_fields as $field_index => $field ) {
 			$field_name = 'form_field_' . ( $field_index + 1 );
 			// TODO: Valid by field type
-			if ( $field['required'] && empty( $_POST[ $field_name ] ) ) {
+			if ( $field['required'] && empty( $_POST[ $field_name ] ) && $field['type'] != 'file' ) {
 				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
 			}
 
-			if ( $field['type'] == 'file' ) {
+			if ( $field['required'] && $_FILES[$field_name]['error'] == 4 && $field['type'] == 'file' ) {
+				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
+			} 
 
+			if ( $field['type'] == 'file' && !empty( $return_array['fields'] ) ) {
 				// WP File Upload
 				if ( ! function_exists( 'wp_handle_upload' ) ) {
 				    require_once( ABSPATH . 'wp-admin/includes/file.php' );

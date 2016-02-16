@@ -7,6 +7,10 @@ class Pojo_Forms_CF7DB {
 		$posted_data = array();
 
 		foreach ( $field_values as $field ) {
+			if ( empty( $field['title'] ) ) {
+				$field['title'] = '&nbsp;';
+			}
+
 			$posted_data[ $field['title'] ] = $field['value'];
 		}
 		

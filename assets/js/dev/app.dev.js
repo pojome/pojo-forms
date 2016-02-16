@@ -48,6 +48,7 @@
 					.remove();
 
 				var formData = new FormData($thisForm[0]);
+				console.log(formData);
 				formData.append('action', 'pojo_form_contact_submit');
 
 			    $.ajax({
