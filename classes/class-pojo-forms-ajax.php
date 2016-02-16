@@ -54,23 +54,23 @@ class Pojo_Forms_Ajax {
 				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
 			} 
 
-			if ( $field['type'] == 'file' && !empty( $return_array['fields'] ) ) {
-				// WP File Upload
-				if ( ! function_exists( 'wp_handle_upload' ) ) {
-				    require_once( ABSPATH . 'wp-admin/includes/file.php' );
-				}
+			if ( $field['type'] == 'file' && empty( $return_array['fields'] ) ) {
 
-				$uploadedfile = $_FILES[$field_name];
+				//TODO: is there a proper way to change wp folder on ajax request ?
+				$upload_dir = wp_upload_dir();
+				$target_dir = wp_normalize_path($upload_dir['basedir']).'/pojo_forms_uploads';
 
-				$upload_overrides = array( 'test_form' => false );
+				if ( is_dir( $target_dir ) && is_writable( $target_dir ) ) {
 
-				$movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
-
-				if ( !$movefile && isset( $movefile['error'] ) ) {
-				    $return_array['fields'][ $field_name ] = $movefile['error'];
+					$target_file = $target_dir . '/' . basename($_FILES[$field_name]["name"]);
+				    if (move_uploaded_file($_FILES[$field_name]["tmp_name"], $target_file)) {
+				        $files[$field_name] = $this->get_file_url( $target_file );
+				    } else {
+				        $return_array['fields'][ $field_name ] = __('There was an error while trying uploading your file.', 'pojo-forms');
+				    }	
 				} else {
-					$files[$field_name] = $movefile['url'];
-				}			
+					$return_array['fields'][ $field_name ] = __('Upload directory is not writable, or does not exist.', 'pojo-forms');
+				}	
 			}
 			
 		}
@@ -211,6 +211,19 @@ class Pojo_Forms_Ajax {
 		
 		wp_send_json_error( $return_array );
 		die();
+	}
+
+	function get_file_url( $file ) {
+
+		// Get correct URL and path to wp-content
+		$content_url = untrailingslashit( dirname( dirname( get_stylesheet_directory_uri() ) ) );
+		$content_dir = untrailingslashit( WP_CONTENT_DIR );
+
+		// Fix path on Windows
+		$file = wp_normalize_path( $file );
+		$content_dir = wp_normalize_path( $content_dir );
+
+		return str_replace( $content_dir, $content_url, $file );		
 	}
 
 

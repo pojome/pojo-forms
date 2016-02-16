@@ -161,9 +161,41 @@ final class Pojo_Forms {
 		echo '<div class="error"><p>' . sprintf( __( 'The Pojo Forms is not supported by this version of %s. Please <a href="%s">upgrade the theme to its latest version</a>.', 'pojo-forms' ), Pojo_Core::instance()->licenses->updater->theme_name, admin_url( 'update-core.php' ) ) . '</p></div>';
 	}
 
+	//inspired by woocommerce
+	function create_files() {
+		$upload_dir      = wp_upload_dir();
+
+		wp_mkdir_p( $upload_dir['basedir'] . '/pojo_forms_uploads');
+
+		$files = array(
+			array(
+				'base' 		=> $upload_dir['basedir'] . '/pojo_forms_uploads',
+				'file' 		=> 'index.html',
+				'content' 	=> ''
+			),
+			array(
+				'base' 		=> $upload_dir['basedir'] . '/pojo_forms_uploads',
+				'file' 		=> '.htaccess',
+				'content' 	=> 'deny from all'
+			)
+		);
+
+		foreach ( $files as $file ) {
+			if ( wp_mkdir_p( $file['base'] ) && ! file_exists( trailingslashit( $file['base'] ) . $file['file'] ) ) {
+				if ( $file_handle = @fopen( trailingslashit( $file['base'] ) . $file['file'], 'w' ) ) {
+					fwrite( $file_handle, $file['content'] );
+					fclose( $file_handle );
+				}
+			}
+		}
+	}
+
 	protected function __construct() {
+		register_activation_hook( __FILE__, array( &$this, 'create_files' ) );
+
 		add_action( 'after_setup_theme', array( &$this, 'bootstrap' ), 100 );
 		add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ) );
+		
 	}
 	
 }
