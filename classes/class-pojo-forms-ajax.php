@@ -225,10 +225,10 @@ class Pojo_Forms_Ajax {
 				if ( empty( $email_reply_to ) )
 					$email_reply_to = $email_from;
 
-				$email_subject       = strtr( $email_subject, $inline_shortcodes );
-				$email_from_name     = strtr( $email_from_name, $inline_shortcodes );
-				$email_from          = strtr( $email_from, $inline_shortcodes );
-				$email_reply_to      = strtr( $email_reply_to, $inline_shortcodes );
+				$email_subject = strtr( $email_subject, $inline_shortcodes );
+				$email_from_name = strtr( $email_from_name, $inline_shortcodes );
+				$email_from = strtr( $email_from, $inline_shortcodes );
+				$email_reply_to = strtr( $email_reply_to, $inline_shortcodes );
 				
 				$headers = sprintf( 'From: %s <%s>' . "\r\n", $email_from_name, $email_from );
 				$headers .= sprintf( 'Reply-To: %s' . "\r\n", $email_reply_to );
