@@ -56,8 +56,6 @@
 				hideFields = [ 'textarea_rows', 'default_value', 'inline', 'choices', 'multiple', 'first_unselectable_item', 'number_min', 'number_max', 'file_types', 'file_sizes' ];
 			
 			var $wrapper = $element.closest( 'li.atmb-repeater-row' );
-
-			console.log( hideFields );
 			
 			self._hideOrDisplayFields( $wrapper, hideFields, 'hide' );
 			
