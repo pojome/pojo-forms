@@ -10,10 +10,12 @@ class Pojo_Forms_CF7DB {
 			if ( empty( $field['title'] ) ) {
 				$field['title'] = '&nbsp;';
 			}
+			
+			// Skip that (Will be add from `uploaded_files` later)
+			if ( isset( $field[ $field['title'] ] ) )
+				continue;
 
-		if ( filter_var( $field['value'], FILTER_VALIDATE_URL ) === false ) {
-				$posted_data[ $field['title'] ] = $field['value'];
-			}
+			$posted_data[ $field['title'] ] = $field['value'];
 		}
 		
 		$data = (object) array(
@@ -29,5 +31,4 @@ class Pojo_Forms_CF7DB {
 	public function __construct() {
 		add_action( 'pojo_forms_mail_sent', array( &$this, 'store_submit_form' ), 20, 3 );
 	}
-	
 }
