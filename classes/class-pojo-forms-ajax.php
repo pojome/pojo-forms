@@ -46,6 +46,7 @@ class Pojo_Forms_Ajax {
 		$this->files = array();
 
 		foreach ( $repeater_fields as $field_index => $field ) {
+			
 			$field_name = 'form_field_' . ( $field_index + 1 );
 			$field_label = $field['name'];
 			// TODO: Valid by field type
@@ -54,28 +55,46 @@ class Pojo_Forms_Ajax {
 			}
 
 			if ( $field['type'] == 'file' ) {
+				$file_upload_error = array(
+					0 => __( 'There is no error, the file uploaded with success.', 'pojo-forms' ),
+					1 => __( 'The uploaded file exceeds the upload_max_filesize directive in php.ini.', 'pojo-forms' ),
+					2 => __( 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.', 'pojo-forms' ),
+					3 => __( 'The uploaded file was only partially uploaded.', 'pojo-forms' ),
+					4 => __( 'No file was uploaded.', 'pojo-forms' ),
+					6 => __( 'Missing a temporary folder.', 'pojo-forms' ),
+					7 => __( 'Failed to write file to disk.', 'pojo-forms' ),
+					8 => __( 'A PHP extension stopped the file upload. PHP does not provide a way to ascertain which extension caused the file upload to stop; examining the list of loaded extensions with phpinfo() may help.', 'pojo-forms' )
+				);
+
 				if ( $field['required'] && $_FILES[$field_name]['error'] == 4 ) {
 					$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
 				} 
 
-				$allowed_mimes =  array_values( get_allowed_mime_types() );
+				if ( $_FILES[$field_name]['error'] > 0 && $_FILES[$field_name]['error'] != 4 && empty( $return_array['fields'] ) ) {
+					$error_code = $_FILES[$field_name]['error'];
+					$return_array['fields'][ $field_name ] = $file_upload_error[$error_code];
+				}
+				
+				$file_types_meta = explode(',' ,$field['file_types'] );
+				$ext = @pathinfo( $_FILES[$field_name]["name"], PATHINFO_EXTENSION);
 
-				if ( !in_array( $_FILES[$field_name]["type"], $allowed_mimes ) )
-					$return_array['fields'][ $field_name ] = __('This file type is not allowed.', 'pojo-forms' );			
-									
+				if ( !in_array( $ext, $file_types_meta ) && empty( $return_array['fields'] ) )
+					$return_array['fields'][ $field_name ] = __('This file type is not allowed.', 'pojo-forms' );	
+
+				$file_size_meta = $field['file_sizes'] * pow( 1024,2 );
+				$upload_file_size = @$_FILES[$field_name]["size"];
+
+				if ( $upload_file_size > $file_size_meta && empty( $return_array['fields'] ) ) 
+					$return_array['fields'][ $field_name ] = __('This file size is to big, try smaller one.', 'pojo-forms' );	
+										
 			}
 
 			if ( $field['type'] == 'file' && empty( $return_array['fields'] ) ) {
 
-				//TODO: is there a proper way to change wp folder on ajax request ?
-
 				$uploads_dir = $this->upload_tmp_dir();
 				$uploads_dir = $this->maybe_add_random_dir( $uploads_dir );
 
-				$filename = basename( $_FILES[$field_name]["name"] );
-				$filename = $this->canonicalize( $filename );
-				$filename = sanitize_file_name( $filename );
-				$filename = $this->antiscript_file_name( $filename );
+				$filename = uniqid() . ".{$ext}";
 				$filename = wp_unique_filename( $uploads_dir, $filename );
 
 				$new_file = trailingslashit( $uploads_dir ) . $filename;
@@ -83,6 +102,7 @@ class Pojo_Forms_Ajax {
 				if ( is_dir( $uploads_dir ) && is_writable( $uploads_dir ) ) {
 
 				    if (@move_uploaded_file($_FILES[$field_name]["tmp_name"], $new_file)) {
+				    	@chmod( $new_file, 0400 );
 				        $this->files[$field_label] = $new_file;
 				    } else {
 				        $return_array['fields'][ $field_name ] = __('There was an error while trying uploading your file.', 'pojo-forms');
@@ -253,44 +273,6 @@ class Pojo_Forms_Ajax {
 		}
 
 		return $dir;
-	}
-
-	function canonicalize( $text ) {
-		if ( function_exists( 'mb_convert_kana' )
-		&& 'UTF-8' == get_option( 'blog_charset' ) ) {
-			$text = mb_convert_kana( $text, 'asKV', 'UTF-8' );
-		}
-
-		$text = strtolower( $text );
-		$text = trim( $text );
-		return $text;
-	}
-
-	function antiscript_file_name( $filename ) {
-		$filename = basename( $filename );
-		$parts = explode( '.', $filename );
-
-		if ( count( $parts ) < 2 )
-			return $filename;
-
-		$script_pattern = '/^(php|phtml|pl|py|rb|cgi|asp|aspx)\d?$/i';
-
-		$filename = array_shift( $parts );
-		$extension = array_pop( $parts );
-
-		foreach ( (array) $parts as $part ) {
-			if ( preg_match( $script_pattern, $part ) )
-				$filename .= '.' . $part . '_';
-			else
-				$filename .= '.' . $part;
-		}
-
-		if ( preg_match( $script_pattern, $extension ) )
-			$filename .= '.' . $extension . '_.txt';
-		else
-			$filename .= '.' . $extension;
-
-		return $filename;
 	}	
 
 

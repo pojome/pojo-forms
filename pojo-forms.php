@@ -172,14 +172,12 @@ final class Pojo_Forms {
 				'base' 		=> $upload_dir['basedir'] . '/pojo_forms_uploads',
 				'file' 		=> 'index.html',
 				'content' 	=> ''
-			)
-			/*
+			),
 			array(
 				'base' 		=> $upload_dir['basedir'] . '/pojo_forms_uploads',
 				'file' 		=> '.htaccess',
 				'content' 	=> 'deny from all'
 			)
-			*/
 		);
 
 		foreach ( $files as $file ) {
