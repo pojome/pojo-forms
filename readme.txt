@@ -26,6 +26,7 @@ Pojo Forms is the ultimate form creation solution for WordPress sites that work 
 * Drop-down (Select)
 * Number
 * Button
+* File
 
 Here are just a few of the things you will find in Pojo Forms:
 
@@ -76,6 +77,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 3. Form style options
 
 == Changelog ==
+
+= 1.3.0 - 19/02/2016 =
+* New! - Added upload file field (Thanks to [Yehuda Hassine](https://github.com/yehudah))
 
 = 1.2.2 - 08/02/2016 =
 * Tested up to WordPress v4.4
