@@ -269,8 +269,8 @@ class Pojo_Forms_Shortcode {
 				
 				break;
 		}
-		
-		return apply_filters('pojo_forms_field_' . $field['type'] . '_html_output' , $field_html);;
+
+		return apply_filters( 'pojo_forms_field_' . $field['type'] . '_html_output', $field_html );
 	}
 
 	public function _get_button_html( $form_id ) {

@@ -111,7 +111,7 @@ class Pojo_Forms_CPT {
 			'id' => 'type',
 			'title' => __( 'Field Type', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
-			'options' => apply_filters('pojo_forms_fields_type', array(
+			'options' => array(
 				'text' => __( 'Text', 'pojo-forms' ),
 				'email' => __( 'Email', 'pojo-forms' ),
 				'textarea' => __( 'Textarea', 'pojo-forms' ),
@@ -122,7 +122,7 @@ class Pojo_Forms_CPT {
 				'number' => __( 'Number', 'pojo-forms' ),
 				'url' => __( 'URL', 'pojo-forms' ),
 				'file' => __( 'File', 'pojo-forms' ),
-			) ),
+			),
 			'std' => 'text',
 		);
 
@@ -213,10 +213,10 @@ class Pojo_Forms_CPT {
 			'id' => 'file_sizes',
 			'title' => __( 'Select max upload file size', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
-			'options' => $this->get_upload_file_size_options(),
+			'options' => $this->_get_upload_file_size_options(),
 			'desc' => __( 'The file sizes listed here, are the one allowed by your hosting. for bigger upload size contact them.', 'pojo-forms' ),
-			'std' => $this->file_upload_max_size(),
-		);			
+			'std' => '6',
+		);
 		// End custom elements per field type
 
 		$repeater_fields[] = array(
@@ -282,7 +282,7 @@ class Pojo_Forms_CPT {
 			'title'   => __( 'Advanced', 'pojo-forms' ),
 			'type'    => Pojo_MetaBox::FIELD_BUTTON_COLLAPSE,
 			'mode'    => 'end',
-		);		
+		);
 
 		$fields[] = array(
 			'id' => 'fields',
@@ -657,7 +657,7 @@ class Pojo_Forms_CPT {
 			'placeholder' => '5px',
 			'show_on' => array( 'form_style_button_style' => 'custom' ),
 			'std' => '5px',
-		);	
+		);
 		// End button custom style
 		
 		$meta_boxes[] = array(
@@ -698,56 +698,15 @@ class Pojo_Forms_CPT {
 	<?php
 	}
 
-	function get_upload_file_size_options() {
-		$max_size = $this->file_upload_max_size();
-		$max_size = self::formatBytes( $max_size );
-
+	private function _get_upload_file_size_options() {
+		$max_file_size = 52; //MB
+		
 		$sizes = array();
-		for ($i=1; $i <= $max_size; $i++) { 
-			$sizes[$i] = $i . ' MB';
+		for ( $file_size = 1; $file_size <= $max_file_size; $file_size++ ) {
+			$sizes[ $file_size ] = $file_size . 'MB';
 		}
-
 		return $sizes;
 	}
-
-	function file_upload_max_size() {
-		$max_size = -1;
-
-		if ($max_size < 0) {
-			$max_size = $this->parse_size(ini_get('post_max_size'));
-
-			$upload_max = $this->parse_size(ini_get('upload_max_filesize'));
-			if ($upload_max > 0 && $upload_max < $max_size) {
-			  	$max_size = $upload_max;
-			}
-		}
-		return $max_size;
-	}
-
-	function parse_size($size) {
-		$unit = preg_replace('/[^bkmgtpezy]/i', '', $size); // Remove the non-unit characters from the size.
-		$size = preg_replace('/[^0-9\.]/', '', $size); // Remove the non-numeric characters from the size.
-		if ($unit) {
-			return round($size * pow(1024, stripos('bkmgtpezy', $unit[0])));
-		} else {
-			return round($size);
-		}
-	}	
-
-	public static function formatBytes($bytes, $precision = 2) { 
-
-		if ($bytes > 0) {
-		    $unit = intval(log($bytes, 1024));
-		    $units = array('B', 'KB', 'MB', 'GB');
-
-		    if (array_key_exists($unit, $units) === true) {
-		        //return sprintf('%d %s', $bytes / pow(1024, $unit), $units[$unit]);
-		        return $bytes / pow(1024, $unit);
-		    }
-		}
-
-		return $bytes;
-	} 	
 
 	public function __construct() {
 		add_action( 'init', array( &$this, 'init' ) );
