@@ -41,6 +41,11 @@ final class Pojo_Forms {
 	public $ajax;
 
 	/**
+	 * @var Pojo_Forms_Maintenance
+	 */
+	public $maintenance;
+
+	/**
 	 * Throw error on object clone
 	 *
 	 * The whole idea of the singleton design pattern is that there is a single
@@ -118,17 +123,15 @@ final class Pojo_Forms {
 			add_action( 'admin_notices', array( &$this, 'print_update_error' ) );
 			return;
 		}
-
-		include( 'classes/class-pojo-forms-helpers.php' );
+		
 		include( 'classes/class-pojo-forms-messages.php' );
 		include( 'classes/class-pojo-forms-cpt.php' );
 		include( 'classes/class-pojo-forms-shortcode.php' );
 		include( 'classes/class-pojo-forms-ajax.php' );
-
-		$this->cpt       = new Pojo_Forms_CPT();
+		
+		$this->cpt = new Pojo_Forms_CPT();
 		$this->shortcode = new Pojo_Forms_Shortcode();
-		$this->helpers   = new Pojo_Forms_Helpers();
-		$this->ajax      = new Pojo_Forms_Ajax();
+		$this->ajax = new Pojo_Forms_Ajax();
 
 		add_action( 'pojo_widgets_registered', array( &$this, 'register_widget' ) );
 		add_action( 'pojo_builder_widgets', array( &$this, 'register_widget_builder' ) );
@@ -161,43 +164,16 @@ final class Pojo_Forms {
 		echo '<div class="error"><p>' . sprintf( __( 'The Pojo Forms is not supported by this version of %s. Please <a href="%s">upgrade the theme to its latest version</a>.', 'pojo-forms' ), Pojo_Core::instance()->licenses->updater->theme_name, admin_url( 'update-core.php' ) ) . '</p></div>';
 	}
 
-	//inspired by woocommerce
-	function create_files() {
-		$upload_dir      = wp_upload_dir();
-
-		wp_mkdir_p( $upload_dir['basedir'] . '/pojo_forms_uploads');
-
-		$files = array(
-			array(
-				'base' 		=> $upload_dir['basedir'] . '/pojo_forms_uploads',
-				'file' 		=> 'index.html',
-				'content' 	=> ''
-			),
-			array(
-				'base' 		=> $upload_dir['basedir'] . '/pojo_forms_uploads',
-				'file' 		=> '.htaccess',
-				'content' 	=> 'deny from all'
-			)
-		);
-
-		foreach ( $files as $file ) {
-			if ( wp_mkdir_p( $file['base'] ) && ! file_exists( trailingslashit( $file['base'] ) . $file['file'] ) ) {
-				if ( $file_handle = @fopen( trailingslashit( $file['base'] ) . $file['file'], 'w' ) ) {
-					fwrite( $file_handle, $file['content'] );
-					fclose( $file_handle );
-				}
-			}
-		}
-	}
-
 	protected function __construct() {
-		register_activation_hook( __FILE__, array( &$this, 'create_files' ) );
+		include( 'classes/class-pojo-forms-helpers.php' );
+		include( 'classes/class-pojo-forms-maintenance.php' );
 
+		$this->helpers = new Pojo_Forms_Helpers();
+		$this->maintenance = new Pojo_Forms_Maintenance();
+		
 		add_action( 'after_setup_theme', array( &$this, 'bootstrap' ), 100 );
 		add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ) );
-		
 	}
-	
 }
 
 /**

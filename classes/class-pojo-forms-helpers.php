@@ -45,5 +45,14 @@ class Pojo_Forms_Helpers {
 	public function get_shortcode_text( $id ) {
 		return '[pojo-form id="' . $id . '"]';
 	}
-	
+
+	public function get_upload_dir() {
+		$wp_upload_dir = wp_upload_dir();
+		$path = $wp_upload_dir['basedir'] . '/pojo_forms';
+
+		// Make sure the /pojo_forms folder is created
+		wp_mkdir_p( $path );
+
+		return apply_filters( 'pojo_forms_upload_folder', $path );
+	}
 }
