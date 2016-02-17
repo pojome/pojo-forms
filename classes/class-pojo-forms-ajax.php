@@ -76,6 +76,7 @@ class Pojo_Forms_Ajax {
 				}
 				
 				$file_types_meta = explode(',' ,$field['file_types'] );
+				$file_types_meta = array_map( 'trim', $file_types_meta );
 				$ext = @pathinfo( $_FILES[$field_name]["name"], PATHINFO_EXTENSION);
 
 				if ( !in_array( $ext, $file_types_meta ) && empty( $return_array['fields'] ) )
