@@ -368,8 +368,8 @@ class Pojo_Forms_Shortcode {
 			return '';
 
 		$recaptcha_html = '';
-		$enable_recaptcha = atmb_get_field( 'form_recaptcha_enable_recaptcha', $form->ID );
-		if ( $enable_recaptcha ) {
+		$enable_recaptcha = atmb_get_field( 'form_recaptcha_enable', $form->ID );
+		if ( 'enable' === $enable_recaptcha ) {
 			$recaptcha_site_key = atmb_get_field( 'form_recaptcha_recaptcha_site_key', $form->ID );
 			$recaptcha_html = '<div class="field-group column-12"><div class="g-recaptcha" data-sitekey="' . $recaptcha_site_key . '"></div></div>';
 		}
