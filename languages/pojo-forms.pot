@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-22 17:00+0200\n"
+"POT-Creation-Date: 2016-02-22 18:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,49 +55,49 @@ msgid ""
 "of loaded extensions with phpinfo() may help."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:89
+#: classes/class-pojo-forms-ajax.php:92
 msgid "This file type is not allowed."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:95
+#: classes/class-pojo-forms-ajax.php:101
 msgid "This file size is to big, try smaller one."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:117
+#: classes/class-pojo-forms-ajax.php:123
 msgid "There was an error while trying uploading your file."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:120
+#: classes/class-pojo-forms-ajax.php:126
 msgid "Upload directory is not writable, or does not exist."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:136 classes/class-pojo-forms-cpt.php:319
+#: classes/class-pojo-forms-ajax.php:142 classes/class-pojo-forms-cpt.php:319
 #, php-format
 msgid "New message from \"%s\""
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:181 classes/class-pojo-forms-cpt.php:354
+#: classes/class-pojo-forms-ajax.php:187 classes/class-pojo-forms-cpt.php:354
 msgid "Time"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:185 classes/class-pojo-forms-cpt.php:75
+#: classes/class-pojo-forms-ajax.php:191 classes/class-pojo-forms-cpt.php:75
 #: classes/class-pojo-forms-cpt.php:353
 msgid "Date"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:189 classes/class-pojo-forms-cpt.php:355
+#: classes/class-pojo-forms-ajax.php:195 classes/class-pojo-forms-cpt.php:355
 msgid "Page URL"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:201 classes/class-pojo-forms-cpt.php:356
+#: classes/class-pojo-forms-ajax.php:207 classes/class-pojo-forms-cpt.php:356
 msgid "User Agent"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:213 classes/class-pojo-forms-cpt.php:357
+#: classes/class-pojo-forms-ajax.php:219 classes/class-pojo-forms-cpt.php:357
 msgid "Remote IP"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:217
+#: classes/class-pojo-forms-ajax.php:223
 msgid "Powered by http://pojo.me/"
 msgstr ""
 
@@ -349,7 +349,7 @@ msgid "Write here the allowed file types, comma seperated: example: jpg, gif."
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:214
-msgid "Select max upload file size"
+msgid "Maximum upload file size"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:217
