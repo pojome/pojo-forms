@@ -88,6 +88,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 ### 1.3.0 - 19/02/2016 ###
 * New! - Added upload file field (Thanks to [Yehuda Hassine](https://github.com/yehudah))
+* New! - Added reCAPTCHA validation (Thanks to [Yehuda Hassine](https://github.com/yehudah))
 
 ### 1.2.2 - 08/02/2016 ###
 * Tested up to WordPress v4.4

@@ -370,8 +370,21 @@ class Pojo_Forms_Shortcode {
 		$recaptcha_html = '';
 		$recaptcha = atmb_get_field( 'form_recaptcha_enable', $form->ID );
 		if ( 'enable' === $recaptcha ) {
+			$recaptcha_html .= '<div class="field-group column-12">';
+			
 			$recaptcha_site_key = atmb_get_field( 'form_recaptcha_site_key', $form->ID );
-			$recaptcha_html = '<div class="field-group column-12"><div class="g-recaptcha" data-sitekey="' . $recaptcha_site_key . '"></div></div>';
+			$recaptcha_secret_key = atmb_get_field( 'form_recaptcha_secret_key', $form->ID );
+			
+			
+			if ( empty( $recaptcha_site_key ) ) {
+				$recaptcha_html .= __( 'ERROR for site owner: Invalid site key', 'pojo-forms' );
+			} elseif ( empty( $recaptcha_secret_key ) ) {
+				$recaptcha_html .= __( 'ERROR for site owner: Invalid secret key', 'pojo-forms' );
+			} else {
+				$recaptcha_html .= '<div class="g-recaptcha" data-sitekey="' . $recaptcha_site_key . '"></div>';
+			}
+
+			$recaptcha_html .= '</div>';
 		}
 
 		$forms_html = '<div class="columns">';
