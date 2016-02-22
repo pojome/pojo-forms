@@ -4,111 +4,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Forms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-17 10:31+0200\n"
-"PO-Revision-Date: 2016-02-17 10:39+0200\n"
-"Last-Translator: Ariel Klikstein <a@arielk.net>\n"
+"POT-Creation-Date: 2016-02-21 21:33+0200\n"
+"PO-Revision-Date: 2016-02-21 21:48+0200\n"
+"Last-Translator: Yehuda Hassine <yehuda@myinbox.in>\n"
 "Language-Team: Pojo Them <aryodigital@gmail.com>\n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_n:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../classes/class-pojo-forms-ajax.php:59
-msgid "There is no error, the file uploaded with success."
-msgstr "אין שגיאה, הקובץ עלה בהצלחה."
-
-#: ../classes/class-pojo-forms-ajax.php:60
-msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini."
-msgstr "הקובץ שהועלה חורג מההנחיה upload_max_filesize בקובץ php.ini."
-
-#: ../classes/class-pojo-forms-ajax.php:61
-msgid ""
-"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
-"the HTML form."
-msgstr "הקובץ שהועלה חורג ההנחיה MAX_FILE_SIZE שצוין בטופס HTML."
-
-#: ../classes/class-pojo-forms-ajax.php:62
-msgid "The uploaded file was only partially uploaded."
-msgstr "הקובץ שהועלה הועלה באופן חלקי בלבד."
-
-#: ../classes/class-pojo-forms-ajax.php:63
-msgid "No file was uploaded."
-msgstr "הקובץ לא הועלה."
-
-#: ../classes/class-pojo-forms-ajax.php:64
-msgid "Missing a temporary folder."
-msgstr "חסרה תקייה זמנית"
-
-#: ../classes/class-pojo-forms-ajax.php:65
-msgid "Failed to write file to disk."
-msgstr "כתיבת קובץ בדיסק נכשלה."
-
-#: ../classes/class-pojo-forms-ajax.php:66
-msgid ""
-"A PHP extension stopped the file upload. PHP does not provide a way to "
-"ascertain which extension caused the file upload to stop; examining the list "
-"of loaded extensions with phpinfo() may help."
+#: ../pojo-forms.php:59 ../pojo-forms.php:70
+msgid "Cheatin&#8217; huh?"
 msgstr ""
-"הרחבת PHP עצרה את העלאת קובץ. PHP אינה מספקת דרך לברר איזה הרחבה גרמה את "
-"העלאת קובץ ; בחינת של רשימת ההרחבות עם phpinfo() עשויה לעזור."
 
-#: ../classes/class-pojo-forms-ajax.php:82
-msgid "This file type is not allowed."
-msgstr "סוג הקובץ אינו מורשה."
-
-#: ../classes/class-pojo-forms-ajax.php:88
-msgid "This file size is to big, try smaller one."
-msgstr "גודל הקובץ שהועלה גדול ממה שהוגדר לטופס זה, נסה לעלות קובץ קטן יותר."
-
-#: ../classes/class-pojo-forms-ajax.php:108
-msgid "There was an error while trying uploading your file."
-msgstr "קרתה שגיאה בניסיון לעלות את הקובץ."
-
-#: ../classes/class-pojo-forms-ajax.php:111
-msgid "Upload directory is not writable, or does not exist."
-msgstr "אין הרשאת כתיבה לספריית ההעלאות, או שהיא לא קיימת."
-
-#: ../classes/class-pojo-forms-ajax.php:121
-#: ../classes/class-pojo-forms-cpt.php:319
+#: ../pojo-forms.php:161
 #, php-format
-msgid "New message from \"%s\""
-msgstr "הודעה חדשה מאת \"%s\""
+msgid ""
+"<a href=\"%s\" target=\"_blank\">Pojo Theme</a> is not active. Please "
+"activate any theme by Pojo.me before you are using \"Pojo Forms\" plugin."
+msgstr ""
+"<a href=\"%s\" target=\"_blank\">ערכת עיצוב של Pojo.me</a> אינה פעילה. יש "
+"להפעיל ערכת עיצוב של Pojo.me לפני שמשתמשים בתוסף  \"Pojo Forms\"."
 
-#: ../classes/class-pojo-forms-ajax.php:166
-#: ../classes/class-pojo-forms-cpt.php:354
-msgid "Time"
-msgstr "זמן"
-
-#: ../classes/class-pojo-forms-ajax.php:170
-#: ../classes/class-pojo-forms-cpt.php:75
-#: ../classes/class-pojo-forms-cpt.php:353
-msgid "Date"
-msgstr "תאריך"
-
-#: ../classes/class-pojo-forms-ajax.php:174
-#: ../classes/class-pojo-forms-cpt.php:355
-msgid "Page URL"
-msgstr "קישור לעמוד"
-
-#: ../classes/class-pojo-forms-ajax.php:186
-#: ../classes/class-pojo-forms-cpt.php:356
-msgid "User Agent"
-msgstr "פרטי משתמש"
-
-#: ../classes/class-pojo-forms-ajax.php:198
-#: ../classes/class-pojo-forms-cpt.php:357
-msgid "Remote IP"
-msgstr "כתובת IP השולח"
-
-#: ../classes/class-pojo-forms-ajax.php:202
-msgid "Powered by http://pojo.me/"
-msgstr "מופעל על ידי http://pojo.me/"
+#: ../pojo-forms.php:165
+#, php-format
+msgid ""
+"The Pojo Forms is not supported by this version of %s. Please <a href=\"%s"
+"\">upgrade the theme to its latest version</a>."
+msgstr ""
+"תוסף הטפסים אינו נתמך בגרסה זו של ערכת העיצוב %s. יש <a href=\"%s\">לשדרג את "
+"ערכת העיצוב לגרסה האחרונה</a>."
 
 #: ../classes/class-pojo-forms-akismet.php:17
 msgid "Spam Filter"
@@ -144,9 +75,154 @@ msgstr "תוכן"
 msgid "Akismet Options"
 msgstr "אפשרויות Akismet"
 
-#: ../classes/class-pojo-forms-cpt.php:9 ../classes/class-pojo-forms-cpt.php:21
+#: ../classes/class-pojo-forms-ajax.php:49
+msgid "The secret parameter is missing."
+msgstr "פרמטר מפתח סודי חסר."
+
+#: ../classes/class-pojo-forms-ajax.php:50
+msgid "The secret parameter is invalid or malformed."
+msgstr "פרמטר מפתח סודי אינו חוקי או פגום."
+
+#: ../classes/class-pojo-forms-ajax.php:51
+msgid "The response parameter is missing."
+msgstr "פרמטר התגובה חסר."
+
+#: ../classes/class-pojo-forms-ajax.php:52
+msgid "The response parameter is invalid or malformed."
+msgstr "פרמטר התגובה אינו חוקי או פגום."
+
+#: ../classes/class-pojo-forms-ajax.php:102
+msgid "There is no error, the file uploaded with success."
+msgstr "אין שגיאה, הקובץ עלה בהצלחה."
+
+#: ../classes/class-pojo-forms-ajax.php:103
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini."
+msgstr "הקובץ שהועלה חורג מההנחיה upload_max_filesize בקובץ php.ini."
+
+#: ../classes/class-pojo-forms-ajax.php:104
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form."
+msgstr "הקובץ שהועלה חורג ההנחיה MAX_FILE_SIZE שצוין בטופס HTML."
+
+#: ../classes/class-pojo-forms-ajax.php:105
+msgid "The uploaded file was only partially uploaded."
+msgstr "הקובץ שהועלה הועלה באופן חלקי בלבד."
+
+#: ../classes/class-pojo-forms-ajax.php:106
+msgid "No file was uploaded."
+msgstr "הקובץ לא הועלה."
+
+#: ../classes/class-pojo-forms-ajax.php:107
+msgid "Missing a temporary folder."
+msgstr "חסרה תקייה זמנית"
+
+#: ../classes/class-pojo-forms-ajax.php:108
+msgid "Failed to write file to disk."
+msgstr "כתיבת קובץ בדיסק נכשלה."
+
+#: ../classes/class-pojo-forms-ajax.php:109
+msgid ""
+"A PHP extension stopped the file upload. PHP does not provide a way to "
+"ascertain which extension caused the file upload to stop; examining the list "
+"of loaded extensions with phpinfo() may help."
+msgstr ""
+"הרחבת PHP עצרה את העלאת קובץ. PHP אינה מספקת דרך לברר איזה הרחבה גרמה את "
+"העלאת קובץ ; בחינת של רשימת ההרחבות עם phpinfo() עשויה לעזור."
+
+#: ../classes/class-pojo-forms-ajax.php:130
+msgid "This file type is not allowed."
+msgstr "סוג הקובץ אינו מורשה."
+
+#: ../classes/class-pojo-forms-ajax.php:136
+msgid "This file size is to big, try smaller one."
+msgstr "גודל הקובץ שהועלה גדול ממה שהוגדר לטופס זה, נסה לעלות קובץ קטן יותר."
+
+#: ../classes/class-pojo-forms-ajax.php:158
+msgid "There was an error while trying uploading your file."
+msgstr "קרתה שגיאה בניסיון לעלות את הקובץ."
+
+#: ../classes/class-pojo-forms-ajax.php:161
+msgid "Upload directory is not writable, or does not exist."
+msgstr "אין הרשאת כתיבה לספריית ההעלאות, או שהיא לא קיימת."
+
+#: ../classes/class-pojo-forms-ajax.php:171
+#: ../classes/class-pojo-forms-cpt.php:319
+#, php-format
+msgid "New message from \"%s\""
+msgstr "הודעה חדשה מאת \"%s\""
+
+#: ../classes/class-pojo-forms-ajax.php:216
+#: ../classes/class-pojo-forms-cpt.php:354
+msgid "Time"
+msgstr "זמן"
+
+#: ../classes/class-pojo-forms-ajax.php:220
+#: ../classes/class-pojo-forms-cpt.php:75
+#: ../classes/class-pojo-forms-cpt.php:353
+msgid "Date"
+msgstr "תאריך"
+
+#: ../classes/class-pojo-forms-ajax.php:224
+#: ../classes/class-pojo-forms-cpt.php:355
+msgid "Page URL"
+msgstr "קישור לעמוד"
+
+#: ../classes/class-pojo-forms-ajax.php:236
+#: ../classes/class-pojo-forms-cpt.php:356
+msgid "User Agent"
+msgstr "פרטי משתמש"
+
+#: ../classes/class-pojo-forms-ajax.php:248
+#: ../classes/class-pojo-forms-cpt.php:357
+msgid "Remote IP"
+msgstr "כתובת IP השולח"
+
+#: ../classes/class-pojo-forms-ajax.php:252
+msgid "Powered by http://pojo.me/"
+msgstr "מופעל על ידי http://pojo.me/"
+
+#: ../classes/class-pojo-forms-messages.php:13
+msgid "Your details were sent successfully!"
+msgstr "הפרטים נשלחו בהצלחה!"
+
+#: ../classes/class-pojo-forms-messages.php:14
+msgid "This form has an error, please fix it!"
+msgstr "בטופס זה ישנה שגיאה, יש לתקן אותה!"
+
+#: ../classes/class-pojo-forms-messages.php:15
+msgid "This field is required"
+msgstr "שדה חובה"
+
+#: ../classes/class-pojo-forms-messages.php:16
+msgid "Invalid form."
+msgstr "טופס אינו תקין."
+
+#: ../classes/class-pojo-forms-messages.php:22
+msgid "Unknown"
+msgstr "לא ידוע"
+
+#: ../classes/class-pojo-forms-widget.php:14
+msgid "Title:"
+msgstr "כותרת:"
+
+#: ../classes/class-pojo-forms-widget.php:25
+msgid "Choose Form:"
+msgstr "בחירת טופס:"
+
+#: ../classes/class-pojo-forms-widget.php:34
+msgid "Create a Form"
+msgstr "יצירת טופס"
+
+#: ../classes/class-pojo-forms-widget.php:41
+#: ../classes/class-pojo-forms-cpt.php:15
+msgid "All Forms"
+msgstr "כל הטפסים"
+
 #: ../classes/class-pojo-forms-widget.php:47
 #: ../classes/class-pojo-forms-widget.php:48
+#: ../classes/class-pojo-forms-cpt.php:9
+#: ../classes/class-pojo-forms-cpt.php:21
 msgid "Forms"
 msgstr "טפסים"
 
@@ -164,18 +240,13 @@ msgid "Add New Form"
 msgstr "הוספת טופס חדש"
 
 #: ../classes/class-pojo-forms-cpt.php:13
-#: ../classes/class-pojo-forms-shortcode.php:395
+#: ../classes/class-pojo-forms-shortcode.php:405
 msgid "Edit Form"
 msgstr "עריכת טופס"
 
 #: ../classes/class-pojo-forms-cpt.php:14
 msgid "New Form"
 msgstr "טופס חדש"
-
-#: ../classes/class-pojo-forms-cpt.php:15
-#: ../classes/class-pojo-forms-widget.php:41
-msgid "All Forms"
-msgstr "כל הטפסים"
 
 #: ../classes/class-pojo-forms-cpt.php:16
 msgid "View Form"
@@ -253,7 +324,7 @@ msgid "Shortcode"
 msgstr "שורטקוד"
 
 #: ../classes/class-pojo-forms-cpt.php:84
-#: ../classes/class-pojo-forms-cpt.php:696
+#: ../classes/class-pojo-forms-cpt.php:732
 msgid "Preview"
 msgstr "תצוגה מקדימה"
 
@@ -394,47 +465,47 @@ msgid "Width"
 msgstr "רוחב"
 
 #: ../classes/class-pojo-forms-cpt.php:246
-#: ../classes/class-pojo-forms-cpt.php:568
+#: ../classes/class-pojo-forms-cpt.php:604
 msgid "100%"
 msgstr ""
 
 #: ../classes/class-pojo-forms-cpt.php:247
-#: ../classes/class-pojo-forms-cpt.php:569
+#: ../classes/class-pojo-forms-cpt.php:605
 msgid "83%"
 msgstr ""
 
 #: ../classes/class-pojo-forms-cpt.php:248
-#: ../classes/class-pojo-forms-cpt.php:570
+#: ../classes/class-pojo-forms-cpt.php:606
 msgid "75%"
 msgstr ""
 
 #: ../classes/class-pojo-forms-cpt.php:249
-#: ../classes/class-pojo-forms-cpt.php:571
+#: ../classes/class-pojo-forms-cpt.php:607
 msgid "66%"
 msgstr ""
 
 #: ../classes/class-pojo-forms-cpt.php:250
-#: ../classes/class-pojo-forms-cpt.php:572
+#: ../classes/class-pojo-forms-cpt.php:608
 msgid "50%"
 msgstr ""
 
 #: ../classes/class-pojo-forms-cpt.php:251
-#: ../classes/class-pojo-forms-cpt.php:573
+#: ../classes/class-pojo-forms-cpt.php:609
 msgid "33%"
 msgstr ""
 
 #: ../classes/class-pojo-forms-cpt.php:252
-#: ../classes/class-pojo-forms-cpt.php:574
+#: ../classes/class-pojo-forms-cpt.php:610
 msgid "25%"
 msgstr ""
 
 #: ../classes/class-pojo-forms-cpt.php:253
-#: ../classes/class-pojo-forms-cpt.php:575
+#: ../classes/class-pojo-forms-cpt.php:611
 msgid "20%"
 msgstr ""
 
 #: ../classes/class-pojo-forms-cpt.php:254
-#: ../classes/class-pojo-forms-cpt.php:576
+#: ../classes/class-pojo-forms-cpt.php:612
 msgid "16%"
 msgstr ""
 
@@ -503,8 +574,8 @@ msgid "Messages"
 msgstr "הודעות"
 
 #: ../classes/class-pojo-forms-cpt.php:369
-#: ../classes/class-pojo-forms-cpt.php:457
-#: ../classes/class-pojo-forms-cpt.php:601
+#: ../classes/class-pojo-forms-cpt.php:493
+#: ../classes/class-pojo-forms-cpt.php:637
 msgid "Default"
 msgstr "ברירת מחדל"
 
@@ -533,224 +604,186 @@ msgid "Form Options"
 msgstr "אפשרויות טופס"
 
 #: ../classes/class-pojo-forms-cpt.php:420
+msgid "Enable Recaptcha for this form."
+msgstr "אפשר Recaptcha עבור טופס זה."
+
+#: ../classes/class-pojo-forms-cpt.php:427
+msgid "Recaptcha site key"
+msgstr "מפתח אתר Recaptcha"
+
+#: ../classes/class-pojo-forms-cpt.php:434
+msgid "Recaptcha secret key"
+msgstr "מפתח סודי Recaptcha"
+
+#: ../classes/class-pojo-forms-cpt.php:441
+msgid "Form reCaptcha"
+msgstr "טופס recaptcha"
+
+#: ../classes/class-pojo-forms-cpt.php:456
 msgid "Field Settings"
 msgstr "הגדרות שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:426
+#: ../classes/class-pojo-forms-cpt.php:462
 msgid "Label Align"
 msgstr "יישור כותרת"
 
-#: ../classes/class-pojo-forms-cpt.php:429
+#: ../classes/class-pojo-forms-cpt.php:465
 msgid "Top"
 msgstr "מעל השדה"
 
-#: ../classes/class-pojo-forms-cpt.php:430
+#: ../classes/class-pojo-forms-cpt.php:466
 msgid "Hide Label"
 msgstr "לא להציג"
 
-#: ../classes/class-pojo-forms-cpt.php:431
+#: ../classes/class-pojo-forms-cpt.php:467
 msgid "Side - Align Right"
 msgstr "צדדי - יישור לשמאל"
 
-#: ../classes/class-pojo-forms-cpt.php:432
+#: ../classes/class-pojo-forms-cpt.php:468
 msgid "Side - Align Left"
 msgstr "צדדי - יישור לימין"
 
-#: ../classes/class-pojo-forms-cpt.php:439
+#: ../classes/class-pojo-forms-cpt.php:475
 msgid "Field Size"
 msgstr "גודל שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:442
-#: ../classes/class-pojo-forms-cpt.php:554
+#: ../classes/class-pojo-forms-cpt.php:478
+#: ../classes/class-pojo-forms-cpt.php:590
 msgid "Small"
 msgstr "קטן"
 
-#: ../classes/class-pojo-forms-cpt.php:443
-#: ../classes/class-pojo-forms-cpt.php:555
+#: ../classes/class-pojo-forms-cpt.php:479
+#: ../classes/class-pojo-forms-cpt.php:591
 msgid "Medium"
 msgstr "בינוני"
 
-#: ../classes/class-pojo-forms-cpt.php:444
-#: ../classes/class-pojo-forms-cpt.php:556
+#: ../classes/class-pojo-forms-cpt.php:480
+#: ../classes/class-pojo-forms-cpt.php:592
 msgid "Large"
 msgstr "גדול"
 
-#: ../classes/class-pojo-forms-cpt.php:445
-#: ../classes/class-pojo-forms-cpt.php:557
+#: ../classes/class-pojo-forms-cpt.php:481
+#: ../classes/class-pojo-forms-cpt.php:593
 msgid "XL"
 msgstr "גדול יותר"
 
-#: ../classes/class-pojo-forms-cpt.php:446
-#: ../classes/class-pojo-forms-cpt.php:558
+#: ../classes/class-pojo-forms-cpt.php:482
+#: ../classes/class-pojo-forms-cpt.php:594
 msgid "XXL"
 msgstr "ענק"
 
-#: ../classes/class-pojo-forms-cpt.php:453
+#: ../classes/class-pojo-forms-cpt.php:489
 msgid "Field Style"
 msgstr "סגנון שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:458
-#: ../classes/class-pojo-forms-cpt.php:602
+#: ../classes/class-pojo-forms-cpt.php:494
+#: ../classes/class-pojo-forms-cpt.php:638
 msgid "Custom Style"
 msgstr "סגנון מותאם אישית"
 
-#: ../classes/class-pojo-forms-cpt.php:466
+#: ../classes/class-pojo-forms-cpt.php:502
 msgid "Label Size"
 msgstr "גודל כותרת"
 
-#: ../classes/class-pojo-forms-cpt.php:467
+#: ../classes/class-pojo-forms-cpt.php:503
 msgid "13px"
 msgstr ""
 
-#: ../classes/class-pojo-forms-cpt.php:474
+#: ../classes/class-pojo-forms-cpt.php:510
 msgid "Label Color"
 msgstr "צבע כותרת"
 
-#: ../classes/class-pojo-forms-cpt.php:483
+#: ../classes/class-pojo-forms-cpt.php:519
 msgid "Input Color"
 msgstr "צבע טקסט שדה"
 
-#: ../classes/class-pojo-forms-cpt.php:492
-#: ../classes/class-pojo-forms-cpt.php:619
+#: ../classes/class-pojo-forms-cpt.php:528
+#: ../classes/class-pojo-forms-cpt.php:655
 msgid "Background Color"
 msgstr "צבע רקע"
 
-#: ../classes/class-pojo-forms-cpt.php:501
-#: ../classes/class-pojo-forms-cpt.php:628
+#: ../classes/class-pojo-forms-cpt.php:537
+#: ../classes/class-pojo-forms-cpt.php:664
 msgid "Background Opacity"
 msgstr "שקיפות רקע"
 
-#: ../classes/class-pojo-forms-cpt.php:512
-#: ../classes/class-pojo-forms-cpt.php:639
+#: ../classes/class-pojo-forms-cpt.php:548
+#: ../classes/class-pojo-forms-cpt.php:675
 msgid "Border Color"
 msgstr "צבע בורדר"
 
-#: ../classes/class-pojo-forms-cpt.php:521
-#: ../classes/class-pojo-forms-cpt.php:648
+#: ../classes/class-pojo-forms-cpt.php:557
+#: ../classes/class-pojo-forms-cpt.php:684
 msgid "Border Width"
 msgstr "רוחב מסגרת"
 
-#: ../classes/class-pojo-forms-cpt.php:529
-#: ../classes/class-pojo-forms-cpt.php:656
+#: ../classes/class-pojo-forms-cpt.php:565
+#: ../classes/class-pojo-forms-cpt.php:692
 msgid "Border Radius"
 msgstr "עיגול מסגרת"
 
-#: ../classes/class-pojo-forms-cpt.php:538
+#: ../classes/class-pojo-forms-cpt.php:574
 msgid "Button Settings"
 msgstr "הגדרות כפתור"
 
-#: ../classes/class-pojo-forms-cpt.php:544
+#: ../classes/class-pojo-forms-cpt.php:580
 msgid "Button Text"
 msgstr "שדה כפתור"
 
-#: ../classes/class-pojo-forms-cpt.php:545
-#: ../classes/class-pojo-forms-cpt.php:546
+#: ../classes/class-pojo-forms-cpt.php:581
+#: ../classes/class-pojo-forms-cpt.php:582
 msgid "Send"
 msgstr "שליחה"
 
-#: ../classes/class-pojo-forms-cpt.php:551
+#: ../classes/class-pojo-forms-cpt.php:587
 msgid "Button Size"
 msgstr "גודל כפתור"
 
-#: ../classes/class-pojo-forms-cpt.php:565
+#: ../classes/class-pojo-forms-cpt.php:601
 msgid "Button Area Width"
 msgstr "רוחב אזור כפתור"
 
-#: ../classes/class-pojo-forms-cpt.php:583
+#: ../classes/class-pojo-forms-cpt.php:619
 msgid "Button Align"
 msgstr "יישור כפתור"
 
-#: ../classes/class-pojo-forms-cpt.php:586
+#: ../classes/class-pojo-forms-cpt.php:622
 msgid "None"
 msgstr "ללא"
 
-#: ../classes/class-pojo-forms-cpt.php:587
+#: ../classes/class-pojo-forms-cpt.php:623
 msgid "Center"
 msgstr "אמצע"
 
-#: ../classes/class-pojo-forms-cpt.php:588
+#: ../classes/class-pojo-forms-cpt.php:624
 msgid "Right"
 msgstr "שמאל"
 
-#: ../classes/class-pojo-forms-cpt.php:589
+#: ../classes/class-pojo-forms-cpt.php:625
 msgid "Left"
 msgstr "ימין"
 
-#: ../classes/class-pojo-forms-cpt.php:590
+#: ../classes/class-pojo-forms-cpt.php:626
 msgid "Block"
 msgstr "בלוק"
 
-#: ../classes/class-pojo-forms-cpt.php:597
+#: ../classes/class-pojo-forms-cpt.php:633
 msgid "Button Style"
 msgstr "סגנון כפתור"
 
-#: ../classes/class-pojo-forms-cpt.php:610
+#: ../classes/class-pojo-forms-cpt.php:646
 msgid "Text Color"
 msgstr "צבע טקסט"
 
-#: ../classes/class-pojo-forms-cpt.php:665
+#: ../classes/class-pojo-forms-cpt.php:701
 msgid "Form Style"
 msgstr "סגנון טופס"
 
-#: ../classes/class-pojo-forms-cpt.php:692
+#: ../classes/class-pojo-forms-cpt.php:728
 msgid ""
 "Copy and paste this shortcode into your Text editor or use with Form Widget."
 msgstr ""
 "יש להעתיק ולהדביק את השורטקוד לתוך עורך הטקסט, או להשתמש בוידג'ט טפסים."
-
-#: ../classes/class-pojo-forms-messages.php:13
-msgid "Your details were sent successfully!"
-msgstr "הפרטים נשלחו בהצלחה!"
-
-#: ../classes/class-pojo-forms-messages.php:14
-msgid "This form has an error, please fix it!"
-msgstr "בטופס זה ישנה שגיאה, יש לתקן אותה!"
-
-#: ../classes/class-pojo-forms-messages.php:15
-msgid "This field is required"
-msgstr "שדה חובה"
-
-#: ../classes/class-pojo-forms-messages.php:16
-msgid "Invalid form."
-msgstr "טופס אינו תקין."
-
-#: ../classes/class-pojo-forms-messages.php:22
-msgid "Unknown"
-msgstr "לא ידוע"
-
-#: ../classes/class-pojo-forms-widget.php:14
-msgid "Title:"
-msgstr "כותרת:"
-
-#: ../classes/class-pojo-forms-widget.php:25
-msgid "Choose Form:"
-msgstr "בחירת טופס:"
-
-#: ../classes/class-pojo-forms-widget.php:34
-msgid "Create a Form"
-msgstr "יצירת טופס"
-
-#: ../pojo-forms.php:54 ../pojo-forms.php:65
-msgid "Cheatin&#8217; huh?"
-msgstr ""
-
-#: ../pojo-forms.php:157
-#, php-format
-msgid ""
-"<a href=\"%s\" target=\"_blank\">Pojo Theme</a> is not active. Please "
-"activate any theme by Pojo.me before you are using \"Pojo Forms\" plugin."
-msgstr ""
-"<a href=\"%s\" target=\"_blank\">ערכת עיצוב של Pojo.me</a> אינה פעילה. יש "
-"להפעיל ערכת עיצוב של Pojo.me לפני שמשתמשים בתוסף  \"Pojo Forms\"."
-
-#: ../pojo-forms.php:161
-#, php-format
-msgid ""
-"The Pojo Forms is not supported by this version of %s. Please <a href=\"%s"
-"\">upgrade the theme to its latest version</a>."
-msgstr ""
-"תוסף הטפסים אינו נתמך בגרסה זו של ערכת העיצוב %s. יש <a href=\"%s\">לשדרג את "
-"ערכת העיצוב לגרסה האחרונה</a>."
 
 #~ msgctxt "button-align"
 #~ msgid "None"
