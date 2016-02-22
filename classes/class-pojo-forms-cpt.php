@@ -412,47 +412,6 @@ class Pojo_Forms_CPT {
 		return $meta_boxes;
 	}
 
-	public function register_form_recaptcha_metabox( $meta_boxes = array() ) {
-		$fields = array();
-
-		$fields[] = array(
-			'id' => 'enable',
-			'title' => __( 'Enable reCAPTCHA for this form', 'pojo-forms' ),
-			'type' => Pojo_MetaBox::FIELD_SELECT,
-			'classes' => array( 'select-show-or-hide-fields' ),
-			'options' => array(
-				'' => __( 'Disable', 'pojo' ),
-				'enable' => __( 'Enable', 'pojo' ),
-			),
-			'std' => '',
-		);
-
-		$fields[] = array(
-			'id' => 'site_key',
-			'title' => __( 'reCAPTCHA site key', 'pojo-forms' ),
-			'classes_field' => array( 'large-text' ),
-			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
-		);
-
-		$fields[] = array(
-			'id' => 'secret_key',
-			'title' => __( 'reCAPTCHA secret key', 'pojo-forms' ),
-			'classes_field' => array( 'large-text' ),
-			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
-		);
-
-		$meta_boxes[] = array(
-			'id' => 'pojo-forms-recaptcha',
-			'title' => __( 'Form reCAPTCHA', 'pojo-forms' ),
-			'post_types' => array( 'pojo_forms' ),
-			'context' => 'side',
-			'prefix' => 'form_recaptcha_',
-			'fields' => $fields,
-		);
-
-		return $meta_boxes;
-	}
-
 	public function register_form_style_metabox( $meta_boxes = array() ) {
 		$fields = array();
 		
@@ -762,7 +721,6 @@ class Pojo_Forms_CPT {
 
 		add_filter( 'pojo_meta_boxes', array( &$this, 'register_form_fields_metabox' ), 30 );
 		add_filter( 'pojo_meta_boxes', array( &$this, 'register_form_options_metabox' ), 40 );
-		add_filter( 'pojo_meta_boxes', array( &$this, 'register_form_recaptcha_metabox' ), 45 );
 		add_filter( 'pojo_meta_boxes', array( &$this, 'register_form_style_metabox' ), 50 );
 		add_filter( 'post_row_actions', array( &$this, 'post_row_actions' ), 10, 2 );
 		

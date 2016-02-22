@@ -42,58 +42,10 @@ class Pojo_Forms_Ajax {
 			$return_array['message'] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::INVALID_FORM );
 			wp_send_json_error( $return_array );
 		}
-
-		$recaptcha = atmb_get_field( 'form_recaptcha_enable', $form->ID );
-		if ( 'enable' === $recaptcha ) {
-			if ( empty( $_POST['g-recaptcha-response'] ) ) {
-				$return_array['message'] = __( 'The Captcha field cannot be blank. Please enter a value‏.', 'pojo-forms' );
-				wp_send_json_error( $return_array );
-			}
-
-			$recaptcha_errors = array(
-				'missing-input-secret' => __( 'The secret parameter is missing.', 'pojo-forms' ),
-				'invalid-input-secret' => __( 'The secret parameter is invalid or malformed.', 'pojo-forms' ),
-				'missing-input-response' => __( 'The response parameter is missing.', 'pojo-forms' ),
-				'invalid-input-response' => __( 'The response parameter is invalid or malformed.', 'pojo-forms' ),
-			);
-
-			$recaptcha_response = $_POST['g-recaptcha-response'];
-			$recaptcha_secret = atmb_get_field( 'form_recaptcha_recaptcha_secret_key', $form->ID );
-			$client_ip = POJO_FORMS()->helpers->get_client_ip();
-
-			$request = array(
-				'body' => array(
-					'secret' => $recaptcha_secret,
-					'response' => $recaptcha_response,
-					'remoteip' => $client_ip,
-				),
-			);
-
-			$response = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $request );
-
-			$response_code = wp_remote_retrieve_response_code( $response );
-			if ( 200 !== $response_code ) {
-				$return_array['message'] = sprintf( __( 'Can not connect to the reCAPTCHA server (%d).', 'pojo-forms' ), $response_code );
-
-				wp_send_json_error( $return_array );
-			}
-
-			$body = wp_remote_retrieve_body( $response );
-			$result = json_decode( $body, true );
-
-			if ( ! $result['success'] ) {
-				$return_array['message'] = __( 'Invalid Form', 'pojo-forms' );
-
-				$result_errors = array_flip( $result['error-codes'] );
-				foreach ( $recaptcha_errors as $error_key => $error_desc ) {
-					if ( isset( $result_errors[ $error_key ] ) ) {
-						$return_array['message'] = $recaptcha_errors[ $error_key ];
-						break;
-					}
-				}
-				wp_send_json_error( $return_array );
-			}
-		}
+		
+		// It's private used.
+		// Please do not use this action for this moment.
+		do_action( '__pojo_forms_mail_validation', $form->ID );
 			
 
 		$this->_files = array();
