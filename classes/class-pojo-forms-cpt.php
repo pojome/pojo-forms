@@ -205,7 +205,7 @@ class Pojo_Forms_CPT {
 			'id' => 'file_types',
 			'title' => __( 'Allowed file types', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_TEXT,
-			'desc' => __( 'Write here the allowed file types, comma seperated: jpg, gif, pdf,', 'pojo-forms' ),
+			'desc' => __( 'Write here the allowed file types, comma seperated: jpg, gif, pdf', 'pojo-forms' ),
 			'std' => '',
 		);		
 
