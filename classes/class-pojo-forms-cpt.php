@@ -215,7 +215,7 @@ class Pojo_Forms_CPT {
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => $this->_get_upload_file_size_options(),
 			'desc' => __( 'The file sizes listed here, are the one allowed by your hosting. for bigger upload size contact them.', 'pojo-forms' ),
-			'std' => '6',
+			'std' => '1',
 		);
 		// End custom elements per field type
 
