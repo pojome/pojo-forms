@@ -107,6 +107,7 @@ class Pojo_Forms_Shortcode {
 			case 'url' : 
 			case 'tel' : 
 			case 'number' :
+			case 'file' :
 				
 				$field_attributes = array(
 					'type' => $field['type'],
@@ -215,10 +216,11 @@ class Pojo_Forms_Shortcode {
 					
 					$options[] = sprintf(
 						'<div class="field-list-item">
-							<input %3$s value="%2$s"%4$s />
-							<label for="%1$s">%2$s</label>
+							<input %4$s value="%2$s"%5$s />
+							<label for="%1$s">%3$s</label>
 						</div>',
 						$field_attributes['id'],
+						esc_attr( $choice ),
 						$choice,
 						pojo_array_to_attributes( $field_attributes ), 
 						( $checked ) ? ' checked' : ''
@@ -267,8 +269,8 @@ class Pojo_Forms_Shortcode {
 				
 				break;
 		}
-		
-		return $field_html;
+
+		return apply_filters( 'pojo_forms_field_' . $field['type'] . '_html_output', $field_html );
 	}
 
 	public function _get_button_html( $form_id ) {
@@ -365,8 +367,18 @@ class Pojo_Forms_Shortcode {
 		if ( empty( $rows ) )
 			return '';
 
+		$enable_recaptcha = atmb_get_field( 'form_recaptcha_enable_recaptcha', $form->ID );
+
+		if ( $enable_recaptcha ) {
+			$recaptcha_site_key = atmb_get_field( 'form_recaptcha_recaptcha_site_key', $form->ID );
+			$recaptcha_html = '<div class="field-group column-12"><div class="g-recaptcha" data-sitekey="' . $recaptcha_site_key . '"></div></div>';
+		} else {
+			$recaptcha_html = '';
+		}
+
 		$forms_html = '<div class="columns">';
 		$forms_html .= implode( "\n", $rows );
+		$forms_html .= $recaptcha_html;
 		$forms_html .= $this->_get_button_html( $form->ID );
 		$forms_html .= '</div>';
 		

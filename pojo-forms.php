@@ -4,7 +4,7 @@ Plugin Name: Pojo Forms
 Description: Pojo Forms allows you to create any form you want with a simple drag and drop interface.
 Plugin URI: http://pojo.me/
 Author: Pojo Team
-Version: 1.2.0
+Version: 1.2.2
 Author URI: http://pojo.me/
 Text Domain: pojo-forms
 Domain Path: /languages/
@@ -39,6 +39,11 @@ final class Pojo_Forms {
 	 * @var Pojo_Forms_Ajax
 	 */
 	public $ajax;
+
+	/**
+	 * @var Pojo_Forms_Maintenance
+	 */
+	public $maintenance;
 
 	/**
 	 * Throw error on object clone
@@ -94,6 +99,9 @@ final class Pojo_Forms {
 	public function enqueue_scripts() {
 		wp_register_script( 'pojo-forms', POJO_FORMS_ASSETS_URL . 'js/app.min.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'pojo-forms' );
+		wp_enqueue_script( 'recaptcha-api', "https://www.google.com/recaptcha/api.js" );
+
+		do_action('pojo_forms_load_front_assets');
 	}
 
 	public function admin_enqueue_scripts() {
@@ -102,6 +110,7 @@ final class Pojo_Forms {
 		
 		wp_register_script( 'pojo-admin-forms', POJO_FORMS_ASSETS_URL . 'js/admin.min.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'pojo-admin-forms' );
+
 	}
 	
 	public function bootstrap() {
@@ -115,17 +124,15 @@ final class Pojo_Forms {
 			add_action( 'admin_notices', array( &$this, 'print_update_error' ) );
 			return;
 		}
-
-		include( 'classes/class-pojo-forms-helpers.php' );
+		
 		include( 'classes/class-pojo-forms-messages.php' );
 		include( 'classes/class-pojo-forms-cpt.php' );
 		include( 'classes/class-pojo-forms-shortcode.php' );
 		include( 'classes/class-pojo-forms-ajax.php' );
-
-		$this->cpt       = new Pojo_Forms_CPT();
+		
+		$this->cpt = new Pojo_Forms_CPT();
 		$this->shortcode = new Pojo_Forms_Shortcode();
-		$this->helpers   = new Pojo_Forms_Helpers();
-		$this->ajax      = new Pojo_Forms_Ajax();
+		$this->ajax = new Pojo_Forms_Ajax();
 
 		add_action( 'pojo_widgets_registered', array( &$this, 'register_widget' ) );
 		add_action( 'pojo_builder_widgets', array( &$this, 'register_widget_builder' ) );
@@ -159,10 +166,15 @@ final class Pojo_Forms {
 	}
 
 	protected function __construct() {
+		include( 'classes/class-pojo-forms-helpers.php' );
+		include( 'classes/class-pojo-forms-maintenance.php' );
+
+		$this->helpers = new Pojo_Forms_Helpers();
+		$this->maintenance = new Pojo_Forms_Maintenance();
+		
 		add_action( 'after_setup_theme', array( &$this, 'bootstrap' ), 100 );
 		add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ) );
 	}
-	
 }
 
 /**
