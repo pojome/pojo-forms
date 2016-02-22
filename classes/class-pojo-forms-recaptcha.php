@@ -63,7 +63,7 @@ class Pojo_Forms_ReCAPTCHA {
 			);
 
 			$recaptcha_response = $_POST['g-recaptcha-response'];
-			$recaptcha_secret = atmb_get_field( 'form_recaptcha_recaptcha_secret_key', $form_id );
+			$recaptcha_secret = atmb_get_field( 'form_recaptcha_secret_key', $form_id );
 			$client_ip = POJO_FORMS()->helpers->get_client_ip();
 
 			$request = array(

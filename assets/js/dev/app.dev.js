@@ -47,19 +47,19 @@
 					.find( 'span.form-help-inline' )
 					.remove();
 
-				var formData = new FormData($thisForm[0]);
-				console.log(formData);
-				formData.append('action', 'pojo_form_contact_submit');
+				var formData = new FormData( $thisForm[ 0 ] );
+				formData.append( 'action', 'pojo_form_contact_submit' );
 
-			    $.ajax({
-			        url: Pojo.ajaxurl,
-			        type: $thisForm.attr("method"),
-			        dataType: 'json',
-			        data: formData,
-			        processData: false,
-			        contentType: false,
-			        success: function (response, status) {
-						if ( !response.data.hide_form || ! response.success ) {
+				$.ajax( {
+					url: Pojo.ajaxurl,
+					type: 'POST',
+					dataType: 'json',
+					data: formData,
+					processData: false,
+					contentType: false,
+
+					success: function( response, status ) {
+						//if ( ! response.success ) {
 							$submitButton
 								.html( $submitButton.text() )
 								.removeAttr( 'disabled' );
@@ -67,23 +67,25 @@
 							$thisForm
 								.animate( { opacity: '1' }, 100 )
 								.removeClass( 'form-waiting' );
-						}
+						//}
 
-						if ( ! response.success ) {
-							$.each( response.data.fields, function( key, title ) {
-								$thisForm
-									.find( 'div.field-group.' + prefixFieldWrap + key )
-									.addClass( 'error' )
-									//.find( 'div.controls')
-									.append( '<span class="help-inline form-help-inline">' + title + '</span>' );
-							} );
+						if ( !response.success ) {
+							if ( response.data.fields ) {
+								$.each( response.data.fields, function( key, title ) {
+									$thisForm
+										.find( 'div.field-group.' + prefixFieldWrap + key )
+										.addClass( 'error' )
+										//.find( 'div.controls')
+										.append( '<span class="help-inline form-help-inline">' + title + '</span>' );
+								} );
+							}
 							$thisForm.append( '<div class="form-message form-message-danger">' + response.data.message + '</div>' );
 						} else {
 							self.cache.$document.trigger( 'pojo_forms_form_submitted', $thisForm );
-							
-							if ( ! response.data.hide_form ) {
-								$thisForm.trigger( 'reset' );
-							}
+
+							//if ( ! response.data.hide_form ) {
+							$thisForm.trigger( 'reset' );
+							//}
 
 							if ( '' !== response.data.message ) {
 								$thisForm.append( '<div class="form-message form-message-success">' + response.data.message + '</div>' );
@@ -92,12 +94,12 @@
 								location.href = response.data.link;
 							}
 						}
-			        },
-			        error: function (xhr, desc, err) {
-						$thisForm.append( '<div class="form-message form-message-danger">' + desc + '</div>' );
+					},
 
-			        }
-			    });        
+					error: function( xhr, desc, err ) {
+						$thisForm.append( '<div class="form-message form-message-danger">' + desc + '</div>' );
+					}
+				} );        
 
 				return false;
 			} );
