@@ -82,10 +82,11 @@ class Pojo_Forms_Ajax {
 				}
 
 				// File type validation
+				$file_extension = pathinfo( $file['name'], PATHINFO_EXTENSION );
+				
 				if ( ! empty( $field['file_types'] ) ) {
 					$file_types_meta = explode( ',', $field['file_types'] );
 					$file_types_meta = array_map( 'trim', $file_types_meta );
-					$file_extension = pathinfo( $file['name'], PATHINFO_EXTENSION );
 
 					if ( ! in_array( $file_extension, $file_types_meta ) && empty( $return_array['fields'] ) ) {
 						$return_array['fields'][ $field_name ] = __( 'This file type is not allowed.', 'pojo-forms' );
