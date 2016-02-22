@@ -43,12 +43,18 @@ class Pojo_Forms_Ajax {
 			wp_send_json_error( $return_array );
 		}
 
-		if ( isset( $_POST['g-recaptcha-response'] ) ) {
+		$recaptcha = atmb_get_field( 'form_recaptcha_enable', $form->ID );
+		if ( 'enable' === $recaptcha ) {
+			if ( empty( $_POST['g-recaptcha-response'] ) ) {
+				$return_array['message'] = __( 'The Captcha field cannot be blank. Please enter a value‏.', 'pojo-forms' );
+				wp_send_json_error( $return_array );
+			}
+
 			$recaptcha_errors = array(
-				'missing-input-secret' => __('The secret parameter is missing.', 'pojo-forms' ),
-				'invalid-input-secret' => __('The secret parameter is invalid or malformed.', 'pojo-forms' ),
-				'missing-input-response' => __('The response parameter is missing.', 'pojo-forms' ),
-				'invalid-input-response' => __('The response parameter is invalid or malformed.', 'pojo-forms' ),
+				'missing-input-secret' => __( 'The secret parameter is missing.', 'pojo-forms' ),
+				'invalid-input-secret' => __( 'The secret parameter is invalid or malformed.', 'pojo-forms' ),
+				'missing-input-response' => __( 'The response parameter is missing.', 'pojo-forms' ),
+				'invalid-input-response' => __( 'The response parameter is invalid or malformed.', 'pojo-forms' ),
 			);
 
 			$recaptcha_response = $_POST['g-recaptcha-response'];
@@ -60,7 +66,7 @@ class Pojo_Forms_Ajax {
 					'secret' => $recaptcha_secret,
 					'response' => $recaptcha_response,
 					'remoteip' => $client_ip,
-				)
+				),
 			);
 
 			$response = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $request );
@@ -68,10 +74,10 @@ class Pojo_Forms_Ajax {
 			$response_code = wp_remote_retrieve_response_code( $response );
 			if ( 200 !== $response_code ) {
 				$return_array['message'] = sprintf( __( 'Can not connect to the reCAPTCHA server (%d).', 'pojo-forms' ), $response_code );
-				
+
 				wp_send_json_error( $return_array );
 			}
-			
+
 			$body = wp_remote_retrieve_body( $response );
 			$result = json_decode( $body, true );
 
@@ -87,7 +93,8 @@ class Pojo_Forms_Ajax {
 				}
 				wp_send_json_error( $return_array );
 			}
-		}		
+		}
+			
 
 		$this->_files = array();
 
