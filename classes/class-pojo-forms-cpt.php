@@ -211,7 +211,7 @@ class Pojo_Forms_CPT {
 
 		$repeater_fields[] = array(
 			'id' => 'file_sizes',
-			'title' => __( 'Select max upload file size', 'pojo-forms' ),
+			'title' => __( 'Maximum upload file size', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => $this->_get_upload_file_size_options(),
 			'desc' => __( 'The file sizes listed here, are the one allowed by your hosting. for bigger upload size contact them.', 'pojo-forms' ),
@@ -699,7 +699,7 @@ class Pojo_Forms_CPT {
 	}
 
 	private function _get_upload_file_size_options() {
-		$max_file_size = 52; //MB
+		$max_file_size = wp_max_upload_size() / pow( 1024, 2 ); //MB
 		
 		$sizes = array();
 		for ( $file_size = 1; $file_size <= $max_file_size; $file_size++ ) {
