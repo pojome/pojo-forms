@@ -16,8 +16,8 @@ class Pojo_Forms_ReCAPTCHA {
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'classes' => array( 'select-show-or-hide-fields' ),
 			'options' => array(
-				'' => __( 'Disable', 'pojo' ),
-				'enable' => __( 'Enable', 'pojo' ),
+				'' => __( 'Disable', 'pojo-forms' ),
+				'enable' => __( 'Enable', 'pojo-forms' ),
 			),
 			'std' => '',
 		);
@@ -52,9 +52,9 @@ class Pojo_Forms_ReCAPTCHA {
 		$recaptcha = atmb_get_field( 'form_recaptcha_enable', $form_id );
 		if ( 'enable' === $recaptcha ) {
 			if ( empty( $_POST['g-recaptcha-response'] ) ) {
-				wp_send_json_error( array( 'message' => __( 'The Captcha field cannot be blank. Please enter a value‏.', 'pojo-forms' ) ) );
+				wp_send_json_error( array( 'message' => __( 'The Captcha field cannot be blank. Please enter a value.', 'pojo-forms' ) ) );
 			}
-
+			
 			$recaptcha_errors = array(
 				'missing-input-secret' => __( 'The secret parameter is missing.', 'pojo-forms' ),
 				'invalid-input-secret' => __( 'The secret parameter is invalid or malformed.', 'pojo-forms' ),

@@ -87,6 +87,10 @@
 							$thisForm.trigger( 'reset' );
 							//}
 
+							if ( undefined !== typeof grecaptcha ) {
+								grecaptcha.reset();
+							}
+
 							if ( '' !== response.data.message ) {
 								$thisForm.append( '<div class="form-message form-message-success">' + response.data.message + '</div>' );
 							}
