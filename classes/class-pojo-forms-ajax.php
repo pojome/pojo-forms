@@ -81,13 +81,18 @@ class Pojo_Forms_Ajax {
 					$return_array['fields'][ $field_name ] = $file_upload_error[ $error_code ];
 				}
 
-				$file_types_meta = explode( ',', $field['file_types'] );
-				$file_types_meta = array_map( 'trim', $file_types_meta );
-				$file_extension = pathinfo( $file['name'], PATHINFO_EXTENSION );
+				// File type validation
+				if ( ! empty( $field['file_types'] ) ) {
+					$file_types_meta = explode( ',', $field['file_types'] );
+					$file_types_meta = array_map( 'trim', $file_types_meta );
+					$file_extension = pathinfo( $file['name'], PATHINFO_EXTENSION );
 
-				if ( ! in_array( $file_extension, $file_types_meta ) && empty( $return_array['fields'] ) ) {
-					$return_array['fields'][ $field_name ] = __( 'This file type is not allowed.', 'pojo-forms' );
+					if ( ! in_array( $file_extension, $file_types_meta ) && empty( $return_array['fields'] ) ) {
+						$return_array['fields'][ $field_name ] = __( 'This file type is not allowed.', 'pojo-forms' );
+					}
 				}
+				
+				// File size validation
 				$file_size_meta = $field['file_sizes'] * pow( 1024, 2 );
 				$upload_file_size = $file['size'];
 
