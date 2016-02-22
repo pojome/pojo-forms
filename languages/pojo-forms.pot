@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-22 18:36+0200\n"
+"POT-Creation-Date: 2016-02-22 19:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,49 +55,49 @@ msgid ""
 "of loaded extensions with phpinfo() may help."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:92
+#: classes/class-pojo-forms-ajax.php:94
 msgid "This file type is not allowed."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:101
+#: classes/class-pojo-forms-ajax.php:103
 msgid "This file size is to big, try smaller one."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:123
+#: classes/class-pojo-forms-ajax.php:125
 msgid "There was an error while trying uploading your file."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:126
+#: classes/class-pojo-forms-ajax.php:128
 msgid "Upload directory is not writable, or does not exist."
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:142 classes/class-pojo-forms-cpt.php:319
+#: classes/class-pojo-forms-ajax.php:144 classes/class-pojo-forms-cpt.php:319
 #, php-format
 msgid "New message from \"%s\""
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:187 classes/class-pojo-forms-cpt.php:354
+#: classes/class-pojo-forms-ajax.php:189 classes/class-pojo-forms-cpt.php:354
 msgid "Time"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:191 classes/class-pojo-forms-cpt.php:75
+#: classes/class-pojo-forms-ajax.php:193 classes/class-pojo-forms-cpt.php:75
 #: classes/class-pojo-forms-cpt.php:353
 msgid "Date"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:195 classes/class-pojo-forms-cpt.php:355
+#: classes/class-pojo-forms-ajax.php:197 classes/class-pojo-forms-cpt.php:355
 msgid "Page URL"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:207 classes/class-pojo-forms-cpt.php:356
+#: classes/class-pojo-forms-ajax.php:209 classes/class-pojo-forms-cpt.php:356
 msgid "User Agent"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:219 classes/class-pojo-forms-cpt.php:357
+#: classes/class-pojo-forms-ajax.php:221 classes/class-pojo-forms-cpt.php:357
 msgid "Remote IP"
 msgstr ""
 
-#: classes/class-pojo-forms-ajax.php:223
+#: classes/class-pojo-forms-ajax.php:225
 msgid "Powered by http://pojo.me/"
 msgstr ""
 
@@ -293,7 +293,7 @@ msgid "File"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:131
-msgid "Field Label"
+msgid "Field Label (Required)"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:138
@@ -345,7 +345,7 @@ msgid "Allowed file types"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:208
-msgid "Write here the allowed file types, comma seperated: example: jpg, gif."
+msgid "Write here the allowed file types, comma seperated: jpg, gif, pdf"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:214
@@ -508,7 +508,7 @@ msgid "Field Settings"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:426
-msgid "Label Align"
+msgid "Label"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:429
@@ -681,56 +681,68 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:15
-msgid "Enable reCAPTCHA for this form"
+#: classes/class-pojo-forms-recaptcha.php:16
+msgid "What is reCAPTCHA"
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:19
+#: classes/class-pojo-forms-recaptcha.php:17
+#, php-format
+msgid ""
+"<a href=\"%s\">reCAPTCHA is a free service by Google</a> that protects your "
+"website from spam and abuse. It does this while letting your valid users "
+"pass through with ease."
+msgstr ""
+
+#: classes/class-pojo-forms-recaptcha.php:22
+msgid "Enable reCAPTCHA"
+msgstr ""
+
+#: classes/class-pojo-forms-recaptcha.php:26
 msgid "Disable"
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:20
+#: classes/class-pojo-forms-recaptcha.php:27
 msgid "Enable"
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:27
+#: classes/class-pojo-forms-recaptcha.php:34
 msgid "reCAPTCHA site key"
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:34
+#: classes/class-pojo-forms-recaptcha.php:41
 msgid "reCAPTCHA secret key"
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:41
-msgid "Form reCAPTCHA"
-msgstr ""
-
-#: classes/class-pojo-forms-recaptcha.php:55
-msgid "The Captcha field cannot be blank. Please enter a value."
-msgstr ""
-
-#: classes/class-pojo-forms-recaptcha.php:59
-msgid "The secret parameter is missing."
-msgstr ""
-
-#: classes/class-pojo-forms-recaptcha.php:60
-msgid "The secret parameter is invalid or malformed."
-msgstr ""
-
-#: classes/class-pojo-forms-recaptcha.php:61
-msgid "The response parameter is missing."
+#: classes/class-pojo-forms-recaptcha.php:48
+msgid "reCAPTCHA Options"
 msgstr ""
 
 #: classes/class-pojo-forms-recaptcha.php:62
+msgid "The Captcha field cannot be blank. Please enter a value."
+msgstr ""
+
+#: classes/class-pojo-forms-recaptcha.php:66
+msgid "The secret parameter is missing."
+msgstr ""
+
+#: classes/class-pojo-forms-recaptcha.php:67
+msgid "The secret parameter is invalid or malformed."
+msgstr ""
+
+#: classes/class-pojo-forms-recaptcha.php:68
+msgid "The response parameter is missing."
+msgstr ""
+
+#: classes/class-pojo-forms-recaptcha.php:69
 msgid "The response parameter is invalid or malformed."
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:81
+#: classes/class-pojo-forms-recaptcha.php:88
 #, php-format
 msgid "Can not connect to the reCAPTCHA server (%d)."
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:88
+#: classes/class-pojo-forms-recaptcha.php:95
 msgid "Invalid Form"
 msgstr ""
 
