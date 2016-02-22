@@ -115,7 +115,7 @@ class Pojo_Forms_Ajax {
 
 						if ( false !== $move_new_file ) {
 							// Set correct file permissions.
-							$perms = 0400;
+							$perms = 0644;
 							@ chmod( $new_file, $perms );
 							
 							$this->_files[ $field_label ] = $new_file;
