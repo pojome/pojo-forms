@@ -43,10 +43,6 @@ class Pojo_Forms_Ajax {
 			wp_send_json_error( $return_array );
 		}
 		
-		// It's private used.
-		// Please do not use this action for this moment.
-		do_action( '__pojo_forms_mail_validation', $form->ID );
-		
 
 		$this->_files = array();
 
@@ -126,6 +122,12 @@ class Pojo_Forms_Ajax {
 				}
 			}
 		} // End foreach
+
+		
+		// It's private used.
+		// Please do not use this action for this moment.
+		do_action( '__pojo_forms_mail_validation', $form->ID );
+		
 
 		if ( empty( $return_array['fields'] ) ) {
 			$email_to = trim( atmb_get_field( 'form_email_to', $form->ID ) );
