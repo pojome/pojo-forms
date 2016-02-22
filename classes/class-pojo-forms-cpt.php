@@ -128,7 +128,7 @@ class Pojo_Forms_CPT {
 
 		$repeater_fields[] = array(
 			'id' => 'name',
-			'title' => __( 'Field Label', 'pojo-forms' ),
+			'title' => __( 'Field Label (Required)', 'pojo-forms' ),
 			'std' => '',
 		);
 		

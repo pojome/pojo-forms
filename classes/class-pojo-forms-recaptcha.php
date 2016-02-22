@@ -10,9 +10,16 @@ class Pojo_Forms_ReCAPTCHA {
 	public function register_form_recaptcha_metabox( $meta_boxes = array() ) {
 		$fields = array();
 
-		$fields[] = array(
+        $fields[] = array(
+            'id' => 'recaptcha_description',
+            'type' => Pojo_MetaBox::FIELD_RAW_HTML,
+            'title' => __( 'What is reCAPTCHA', 'pojo-forms' ),
+            'raw' => sprintf( __( '<a href="%s">reCAPTCHA is a free service by Google</a> that protects your website from spam and abuse. It does this while letting your valid users pass through with ease.', 'pojo-forms' ), 'https://www.google.com/recaptcha/' ),
+        );
+
+        $fields[] = array(
 			'id' => 'enable',
-			'title' => __( 'Enable reCAPTCHA for this form', 'pojo-forms' ),
+			'title' => __( 'Enable reCAPTCHA', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'classes' => array( 'select-show-or-hide-fields' ),
 			'options' => array(
@@ -38,7 +45,7 @@ class Pojo_Forms_ReCAPTCHA {
 
 		$meta_boxes[] = array(
 			'id' => 'pojo-forms-recaptcha',
-			'title' => __( 'Form reCAPTCHA', 'pojo-forms' ),
+			'title' => __( 'reCAPTCHA Options', 'pojo-forms' ),
 			'post_types' => array( 'pojo_forms' ),
 			'context' => 'side',
 			'prefix' => 'form_recaptcha_',
