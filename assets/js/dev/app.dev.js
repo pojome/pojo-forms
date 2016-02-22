@@ -59,6 +59,10 @@
 					contentType: false,
 
 					success: function( response, status ) {
+						if ( undefined !== typeof grecaptcha ) {
+							grecaptcha.reset();
+						}
+						
 						//if ( ! response.success ) {
 							$submitButton
 								.html( $submitButton.text() )
@@ -86,10 +90,6 @@
 							//if ( ! response.data.hide_form ) {
 							$thisForm.trigger( 'reset' );
 							//}
-
-							if ( undefined !== typeof grecaptcha ) {
-								grecaptcha.reset();
-							}
 
 							if ( '' !== response.data.message ) {
 								$thisForm.append( '<div class="form-message form-message-success">' + response.data.message + '</div>' );
