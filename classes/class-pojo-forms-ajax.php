@@ -44,12 +44,11 @@ class Pojo_Forms_Ajax {
 		}
 
 		if ( isset( $_POST['g-recaptcha-response'] ) ) {
-
 			$recaptcha_errors = array(
 				'missing-input-secret' => __('The secret parameter is missing.', 'pojo-forms' ),
 				'invalid-input-secret' => __('The secret parameter is invalid or malformed.', 'pojo-forms' ),
 				'missing-input-response' => __('The response parameter is missing.', 'pojo-forms' ),
-				'invalid-input-response' => __('The response parameter is invalid or malformed.', 'pojo-forms' )
+				'invalid-input-response' => __('The response parameter is invalid or malformed.', 'pojo-forms' ),
 			);
 
 			$recaptcha_response = $_POST['g-recaptcha-response'];
@@ -60,30 +59,34 @@ class Pojo_Forms_Ajax {
 				'body' => array(
 					'secret' => $recaptcha_secret,
 					'response' => $recaptcha_response,
-					'remoteip' => $client_ip
+					'remoteip' => $client_ip,
 				)
 			);
 
 			$response = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $request );
 
-			if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
-				$body = wp_remote_retrieve_body( $response );
-				$result = json_decode( $body, true );
+			$response_code = wp_remote_retrieve_response_code( $response );
+			if ( 200 !== $response_code ) {
+				$return_array['message'] = sprintf( __( 'Can not connect to the reCAPTCHA server (%d).', 'pojo-forms' ), $response_code );
+				
+				wp_send_json_error( $return_array );
+			}
+			
+			$body = wp_remote_retrieve_body( $response );
+			$result = json_decode( $body, true );
 
-				if ( !$result['success'] ) {
-					$result_errors = array_flip( $result['error-codes'] );
-					
-					$errors = array();
-					foreach ($recaptcha_errors as $error_key => $error_desc) {
-						if ( isset( $result_errors[$error_key] ) ) {
-							$errors[] = $recaptcha_errors[$error_key];
-						}
+			if ( ! $result['success'] ) {
+				$return_array['message'] = __( 'Invalid Form', 'pojo-forms' );
+
+				$result_errors = array_flip( $result['error-codes'] );
+				foreach ( $recaptcha_errors as $error_key => $error_desc ) {
+					if ( isset( $result_errors[ $error_key ] ) ) {
+						$return_array['message'] = $recaptcha_errors[ $error_key ];
+						break;
 					}
-
-					$return_array['message'] = $errors;
-					wp_send_json_error( $return_array );
 				}
-			} 
+				wp_send_json_error( $return_array );
+			}
 		}		
 
 		$this->_files = array();
@@ -91,6 +94,7 @@ class Pojo_Forms_Ajax {
 		foreach ( $repeater_fields as $field_index => $field ) {
 			$field_name = 'form_field_' . ( $field_index + 1 );
 			$field_label = $field['name'];
+			
 			// TODO: Valid by field type
 			if ( $field['required'] && empty( $_POST[ $field_name ] ) && $field['type'] != 'file' ) {
 				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
