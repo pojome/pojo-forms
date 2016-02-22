@@ -42,55 +42,18 @@ class Pojo_Forms_Ajax {
 			$return_array['message'] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::INVALID_FORM );
 			wp_send_json_error( $return_array );
 		}
-
-		if ( isset( $_POST['g-recaptcha-response'] ) ) {
-
-			$recaptcha_errors = array(
-				'missing-input-secret' => __('The secret parameter is missing.', 'pojo-forms' ),
-				'invalid-input-secret' => __('The secret parameter is invalid or malformed.', 'pojo-forms' ),
-				'missing-input-response' => __('The response parameter is missing.', 'pojo-forms' ),
-				'invalid-input-response' => __('The response parameter is invalid or malformed.', 'pojo-forms' )
-			);
-
-			$recaptcha_response = $_POST['g-recaptcha-response'];
-			$recaptcha_secret = atmb_get_field( 'form_recaptcha_recaptcha_secret_key', $form->ID );
-			$client_ip = POJO_FORMS()->helpers->get_client_ip();
-
-			$request = array(
-				'body' => array(
-					'secret' => $recaptcha_secret,
-					'response' => $recaptcha_response,
-					'remoteip' => $client_ip
-				)
-			);
-
-			$response = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $request );
-
-			if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
-				$body = wp_remote_retrieve_body( $response );
-				$result = json_decode( $body, true );
-
-				if ( !$result['success'] ) {
-					$result_errors = array_flip( $result['error-codes'] );
-					
-					$errors = array();
-					foreach ($recaptcha_errors as $error_key => $error_desc) {
-						if ( isset( $result_errors[$error_key] ) ) {
-							$errors[] = $recaptcha_errors[$error_key];
-						}
-					}
-
-					$return_array['message'] = $errors;
-					wp_send_json_error( $return_array );
-				}
-			} 
-		}		
+		
+		// It's private used.
+		// Please do not use this action for this moment.
+		do_action( '__pojo_forms_mail_validation', $form->ID );
+			
 
 		$this->_files = array();
 
 		foreach ( $repeater_fields as $field_index => $field ) {
 			$field_name = 'form_field_' . ( $field_index + 1 );
 			$field_label = $field['name'];
+			
 			// TODO: Valid by field type
 			if ( $field['required'] && empty( $_POST[ $field_name ] ) && $field['type'] != 'file' ) {
 				$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
