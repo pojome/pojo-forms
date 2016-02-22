@@ -417,7 +417,7 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'enable',
-			'title' => __( 'Enable reCAPTCHA for this form.', 'pojo-forms' ),
+			'title' => __( 'Enable reCAPTCHA for this form', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'' => __( 'Disable', 'pojo' ),
