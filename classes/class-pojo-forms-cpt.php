@@ -417,7 +417,7 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'enable',
-			'title' => __( 'Enable Recaptcha for this form.', 'pojo-forms' ),
+			'title' => __( 'Enable reCAPTCHA for this form.', 'pojo-forms' ),
 			'type' => Pojo_MetaBox::FIELD_SELECT,
 			'options' => array(
 				'' => __( 'Disable', 'pojo' ),
@@ -428,23 +428,23 @@ class Pojo_Forms_CPT {
 
 		$fields[] = array(
 			'id' => 'site_key',
-			'title' => __( 'Recaptcha site key', 'pojo-forms' ),
+			'title' => __( 'reCAPTCHA site key', 'pojo-forms' ),
 			'classes_field' => array( 'large-text' ),
 			'type' => Pojo_MetaBox::FIELD_TEXT,
 		);
 
 		$fields[] = array(
 			'id' => 'secret_key',
-			'title' => __( 'Recaptcha secret key', 'pojo-forms' ),
+			'title' => __( 'reCAPTCHA secret key', 'pojo-forms' ),
 			'classes_field' => array( 'large-text' ),
 			'type' => Pojo_MetaBox::FIELD_TEXT,
 		);
 
 		$meta_boxes[] = array(
 			'id' => 'pojo-forms-recaptcha',
-			'title' => __( 'Form reCaptcha', 'pojo-forms' ),
+			'title' => __( 'Form reCAPTCHA', 'pojo-forms' ),
 			'post_types' => array( 'pojo_forms' ),
-			'context' => 'normal',
+			'context' => 'side',
 			'prefix' => 'form_recaptcha_',
 			'fields' => $fields,
 		);
