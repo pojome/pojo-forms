@@ -99,7 +99,7 @@ final class Pojo_Forms {
 	public function enqueue_scripts() {
 		wp_register_script( 'pojo-forms', POJO_FORMS_ASSETS_URL . 'js/app.min.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'pojo-forms' );
-		wp_enqueue_script( 'recaptcha-api', "https://www.google.com/recaptcha/api.js" );
+		wp_enqueue_script( 'recaptcha-api', 'https://www.google.com/recaptcha/api.js' );
 
 		do_action('pojo_forms_load_front_assets');
 	}
