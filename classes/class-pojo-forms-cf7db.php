@@ -12,8 +12,8 @@ class Pojo_Forms_CF7DB {
 			}
 			
 			// Skip that (Will be add from `uploaded_files` later)
-			if ( isset( $field[ $field['title'] ] ) )
-				continue;
+			//if ( isset( $field[ $field['title'] ] ) )
+			//	continue;
 
 			$posted_data[ $field['title'] ] = $field['value'];
 		}
@@ -21,7 +21,8 @@ class Pojo_Forms_CF7DB {
 		$data = (object) array(
 			'title' => get_the_title( $form_id ),
 			'posted_data' => $posted_data,
-			'uploaded_files' => $files
+			//'uploaded_files' => $files,
+			'uploaded_files' => array(),
 		);
 
 		// Call hook to submit data
