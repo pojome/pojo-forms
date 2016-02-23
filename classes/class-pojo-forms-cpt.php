@@ -121,7 +121,7 @@ class Pojo_Forms_CPT {
 				'dropdown' => __( 'Drop-down', 'pojo-forms' ),
 				'number' => __( 'Number', 'pojo-forms' ),
 				'url' => __( 'URL', 'pojo-forms' ),
-				'file' => __( 'File', 'pojo-forms' ),
+				'file' => __( 'File Upload', 'pojo-forms' ),
 			),
 			'std' => 'text',
 		);
