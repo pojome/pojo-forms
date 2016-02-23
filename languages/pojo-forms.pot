@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-22 19:34+0200\n"
+"POT-Creation-Date: 2016-02-23 13:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -289,7 +289,7 @@ msgid "URL"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:124
-msgid "File"
+msgid "File Upload"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:131
