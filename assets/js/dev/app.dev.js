@@ -59,9 +59,9 @@
 					contentType: false,
 
 					success: function( response, status ) {
-						if ( undefined !== typeof grecaptcha ) {
-							grecaptcha.reset();
-						}
+						//if ( undefined !== typeof grecaptcha ) {
+						//	grecaptcha.reset();
+						//}
 						
 						//if ( ! response.success ) {
 							$submitButton
