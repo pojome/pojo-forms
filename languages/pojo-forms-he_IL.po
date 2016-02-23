@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Forms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-22 19:35+0200\n"
-"PO-Revision-Date: 2016-02-22 19:56+0200\n"
+"POT-Creation-Date: 2016-02-23 14:32+0200\n"
+"PO-Revision-Date: 2016-02-23 14:32+0200\n"
 "Last-Translator: Ariel Klikstein <a@arielk.net>\n"
 "Language-Team: Pojo Them <aryodigital@gmail.com>\n"
 "Language: he_IL\n"
@@ -139,8 +139,7 @@ msgid "Akismet Options"
 msgstr "אפשרויות Akismet"
 
 #: classes/class-pojo-forms-cpt.php:9 classes/class-pojo-forms-cpt.php:21
-#: classes/class-pojo-forms-widget.php:47
-#: classes/class-pojo-forms-widget.php:48
+#: classes/class-pojo-forms-widget.php:47 classes/class-pojo-forms-widget.php:48
 msgid "Forms"
 msgstr "טפסים"
 
@@ -215,9 +214,9 @@ msgid "Form submitted."
 msgstr "הטופס נשלח"
 
 #: classes/class-pojo-forms-cpt.php:59
-#, fuzzy, php-format
+#, php-format
 msgid "Post scheduled for: <strong>%1$s</strong>."
-msgstr "הוספת פוסט"
+msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:61
 msgid "M j, Y @ G:i"
@@ -295,8 +294,8 @@ msgid "URL"
 msgstr "קישור URL"
 
 #: classes/class-pojo-forms-cpt.php:124
-msgid "File"
-msgstr "קובץ"
+msgid "File Upload"
+msgstr "העלאת קובץ"
 
 #: classes/class-pojo-forms-cpt.php:131
 msgid "Field Label (Required)"
@@ -668,8 +667,7 @@ msgstr "סגנון טופס"
 #: classes/class-pojo-forms-cpt.php:692
 msgid ""
 "Copy and paste this shortcode into your Text editor or use with Form Widget."
-msgstr ""
-"יש להעתיק ולהדביק את השורטקוד לתוך עורך הטקסט, או להשתמש בוידג'ט טפסים."
+msgstr "יש להעתיק ולהדביק את השורטקוד לתוך עורך הטקסט, או להשתמש בוידג'ט טפסים."
 
 #: classes/class-pojo-forms-messages.php:13
 msgid "Your details were sent successfully!"
@@ -699,8 +697,8 @@ msgstr "מה זה reCAPTCHA‪?‬"
 #, php-format
 msgid ""
 "<a href=\"%s\">reCAPTCHA is a free service by Google</a> that protects your "
-"website from spam and abuse. It does this while letting your valid users "
-"pass through with ease."
+"website from spam and abuse. It does this while letting your valid users pass "
+"through with ease."
 msgstr ""
 "‏<a href=\"%s\">reCAPTCHA הוא שירות חופשי של Google</a> שמגן על האתר שלך מפני "
 "ספאם ושימוש לרעה. הוא עושה זאת תוך מתן אפשרות למשתמשים שלך לעבור את זה בקלות."
@@ -799,6 +797,9 @@ msgid ""
 msgstr ""
 "תוסף הטפסים אינו נתמך בגרסה זו של ערכת העיצוב %s. יש <a href=\"%s\">לשדרג את "
 "ערכת העיצוב לגרסה האחרונה</a>."
+
+#~ msgid "File"
+#~ msgstr "קובץ"
 
 #~ msgid "Field Label"
 #~ msgstr "כותרת שדה"
