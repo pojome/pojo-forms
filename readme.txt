@@ -26,7 +26,7 @@ Pojo Forms is the ultimate form creation solution for WordPress sites that work 
 * Drop-down (Select)
 * Number
 * Button
-* File
+* Upload File
 
 Here are just a few of the things you will find in Pojo Forms:
 
