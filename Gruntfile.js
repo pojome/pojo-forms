@@ -195,6 +195,7 @@ module.exports = function(grunt) {
 		wp_readme_to_markdown: {
 			github: {
 				options: {
+					wordpressPluginSlug: 'pojo-forms',
 					gruntDependencyStatusUrl: 'https://david-dm.org/pojome/pojo-forms'
 				},
 				files: {
