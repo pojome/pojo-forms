@@ -122,6 +122,10 @@ class Pojo_Forms_Shortcode {
 					$field_attributes['min'] = $field['number_min'];
 					$field_attributes['max'] = $field['number_max'];
 				}
+				
+				if ( 'tel' === $field['type'] ) {
+					$field_attributes['pattern'] = '^[0-9\.\+\-]+$‏';
+				}
 	
 				// Remove empty values
 				$field_attributes = array_filter( $field_attributes );
