@@ -78,6 +78,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 == Changelog ==
 
+= 1.3.2 - 08/03/2016 =
+* New! - Added html5 validation in Telephone field
+
 = 1.3.1 - 23/02/2016 =
 * Fixed! - Error from reCAPTCHA when is not defined
 

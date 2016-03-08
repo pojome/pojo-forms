@@ -1,5 +1,5 @@
 # Pojo Forms #
-[![Dependency Status](https://david-dm.org/pojome/pojo-forms/dev-status.svg)](https://david-dm.org/pojome/pojo-forms#info=devDependencies) [![WordPress](https://img.shields.io/wordpress/v/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/r/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/v/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Dependency Status](https://david-dm.org/pojome/pojo-forms/dev-status.svg)](https://david-dm.org/pojome/pojo-forms#info=devDependencies) [![WordPress](https://img.shields.io/wordpress/v/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/r/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/v/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 **Contributors:** pojo.me, KingYes, ariel.k  
 **Tags:** contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,  
@@ -85,6 +85,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 
 ## Changelog ##
+
+### 1.3.2 - 08/03/2016 ###
+* New! - Added html5 validation in Telephone field
 
 ### 1.3.1 - 23/02/2016 ###
 * Fixed! - Error from reCAPTCHA when is not defined
