@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-forms 1.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-06 16:34+0200\n"
+"POT-Creation-Date: 2016-03-08 14:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,7 +151,7 @@ msgid "Add New Form"
 msgstr ""
 
 #: classes/class-pojo-forms-cpt.php:13
-#: classes/class-pojo-forms-shortcode.php:416
+#: classes/class-pojo-forms-shortcode.php:421
 msgid "Edit Form"
 msgstr ""
 
@@ -746,11 +746,15 @@ msgstr ""
 msgid "Invalid Form"
 msgstr ""
 
-#: classes/class-pojo-forms-shortcode.php:380
+#: classes/class-pojo-forms-shortcode.php:128
+msgid "Only phone numbers allowed."
+msgstr ""
+
+#: classes/class-pojo-forms-shortcode.php:385
 msgid "ERROR for site owner: Invalid site key"
 msgstr ""
 
-#: classes/class-pojo-forms-shortcode.php:382
+#: classes/class-pojo-forms-shortcode.php:387
 msgid "ERROR for site owner: Invalid secret key"
 msgstr ""
 
