@@ -124,7 +124,7 @@ class Pojo_Forms_Shortcode {
 				}
 				
 				if ( 'tel' === $field['type'] ) {
-					$field_attributes['pattern'] = '^[0-9\.\+\-]+$‏';
+					$field_attributes['pattern'] = '^[0-9\.\+\-\(\)\*\#]+$‏';
 				}
 	
 				// Remove empty values
