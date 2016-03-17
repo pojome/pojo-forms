@@ -3,8 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Pojo_Forms_ReCAPTCHA {
 
-	public function enqueue_scripts() {
-		wp_enqueue_script( 'recaptcha-api', 'https://www.google.com/recaptcha/api.js' );
+	public function register_scripts() {
+		wp_register_script( 'recaptcha-api', 'https://www.google.com/recaptcha/api.js', array(), false, true );
 	}
 
 	public function register_form_recaptcha_metabox( $meta_boxes = array() ) {
@@ -31,15 +31,37 @@ class Pojo_Forms_ReCAPTCHA {
 
 		$fields[] = array(
 			'id' => 'site_key',
-			'title' => __( 'reCAPTCHA site key', 'pojo-forms' ),
+			'title' => __( 'Site key', 'pojo-forms' ),
 			'classes_field' => array( 'large-text' ),
 			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
 		);
 
 		$fields[] = array(
 			'id' => 'secret_key',
-			'title' => __( 'reCAPTCHA secret key', 'pojo-forms' ),
+			'title' => __( 'Secret key', 'pojo-forms' ),
 			'classes_field' => array( 'large-text' ),
+			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
+		);
+
+		$fields[] = array(
+			'id' => 'style',
+			'title' => _x( 'Style', 'pojo-forms-recaptcha', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'' => __( 'Light', 'pojo-forms' ),
+				'dark' => __( 'Dark', 'pojo-forms' ),
+			),
+			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
+		);
+
+		$fields[] = array(
+			'id' => 'size',
+			'title' => __( 'Size', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'' => __( 'Normal', 'pojo-forms' ),
+				'compact' => __( 'Compact', 'pojo-forms' ),
+			),
 			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
 		);
 
@@ -108,7 +130,7 @@ class Pojo_Forms_ReCAPTCHA {
 
 	public function __construct() {
 		// Enqueue Scripts
-		add_action( 'pojo_forms_load_front_assets', array( &$this, 'enqueue_scripts' ) );
+		add_action( 'pojo_forms_load_front_assets', array( &$this, 'register_scripts' ) );
 		
 		// Register Fields in the Metabox
 		add_filter( 'pojo_meta_boxes', array( &$this, 'register_form_recaptcha_metabox' ), 45 );

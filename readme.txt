@@ -79,6 +79,8 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 == Changelog ==
 
 = 1.3.3 - 17/03/2016 =
+* New! - Added reCAPTCHA Style and Size options
+* Tweak! - Enqueue reCAPTCHA API just when is needed
 * Fixed! - Upload file in non-required field
 
 = 1.3.2 - 08/03/2016 =
