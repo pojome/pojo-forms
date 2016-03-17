@@ -386,6 +386,8 @@ class Pojo_Forms_Shortcode {
 			} elseif ( empty( $recaptcha_secret_key ) ) {
 				$recaptcha_html .= __( 'ERROR for site owner: Invalid secret key', 'pojo-forms' );
 			} else {
+				wp_enqueue_script( 'recaptcha-api' );
+				
 				$recaptcha_attributes = array(
 					'class' => 'g-recaptcha',
 					'data-sitekey' => $recaptcha_site_key,

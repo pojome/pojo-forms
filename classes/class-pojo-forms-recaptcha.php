@@ -3,8 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Pojo_Forms_ReCAPTCHA {
 
-	public function enqueue_scripts() {
-		wp_enqueue_script( 'recaptcha-api', 'https://www.google.com/recaptcha/api.js' );
+	public function register_scripts() {
+		wp_register_script( 'recaptcha-api', 'https://www.google.com/recaptcha/api.js', array(), false, true );
 	}
 
 	public function register_form_recaptcha_metabox( $meta_boxes = array() ) {
@@ -130,7 +130,7 @@ class Pojo_Forms_ReCAPTCHA {
 
 	public function __construct() {
 		// Enqueue Scripts
-		add_action( 'pojo_forms_load_front_assets', array( &$this, 'enqueue_scripts' ) );
+		add_action( 'pojo_forms_load_front_assets', array( &$this, 'register_scripts' ) );
 		
 		// Register Fields in the Metabox
 		add_filter( 'pojo_meta_boxes', array( &$this, 'register_form_recaptcha_metabox' ), 45 );
