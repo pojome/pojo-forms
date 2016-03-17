@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Forms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-23 14:32+0200\n"
-"PO-Revision-Date: 2016-02-23 14:32+0200\n"
+"POT-Creation-Date: 2016-03-17 13:48+0200\n"
+"PO-Revision-Date: 2016-03-17 13:51+0200\n"
 "Last-Translator: Ariel Klikstein <a@arielk.net>\n"
 "Language-Team: Pojo Them <aryodigital@gmail.com>\n"
 "Language: he_IL\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_n:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
@@ -58,49 +58,49 @@ msgstr ""
 "הרחבת ה PHP עצרה את העלאת הקבצים. PHP אינו מספק דרך לברר איזו בעיה גרמה "
 "להעלאת קבצים לעצור; יש לבדוק את רשימת סיומות הנטענות עם phpinfo()."
 
-#: classes/class-pojo-forms-ajax.php:94
+#: classes/class-pojo-forms-ajax.php:99
 msgid "This file type is not allowed."
 msgstr "סוג הקובץ הזה אינו מאושר להעלאה."
 
-#: classes/class-pojo-forms-ajax.php:103
+#: classes/class-pojo-forms-ajax.php:108
 msgid "This file size is to big, try smaller one."
 msgstr " הקובץ שהועלה גדול מדי, נסה קטן יותר."
 
-#: classes/class-pojo-forms-ajax.php:125
+#: classes/class-pojo-forms-ajax.php:130
 msgid "There was an error while trying uploading your file."
 msgstr "אירעה שגיאה בעת ניסיון העלאת הקובץ שלך."
 
-#: classes/class-pojo-forms-ajax.php:128
+#: classes/class-pojo-forms-ajax.php:133
 msgid "Upload directory is not writable, or does not exist."
 msgstr "תיקיית הקבצים בשרת אינה ניתנת לכתיבה או שאינה קיימת."
 
-#: classes/class-pojo-forms-ajax.php:144 classes/class-pojo-forms-cpt.php:319
+#: classes/class-pojo-forms-ajax.php:149 classes/class-pojo-forms-cpt.php:319
 #, php-format
 msgid "New message from \"%s\""
 msgstr "הודעה חדשה מאת \"%s\""
 
-#: classes/class-pojo-forms-ajax.php:189 classes/class-pojo-forms-cpt.php:354
+#: classes/class-pojo-forms-ajax.php:194 classes/class-pojo-forms-cpt.php:354
 msgid "Time"
 msgstr "זמן"
 
-#: classes/class-pojo-forms-ajax.php:193 classes/class-pojo-forms-cpt.php:75
+#: classes/class-pojo-forms-ajax.php:198 classes/class-pojo-forms-cpt.php:75
 #: classes/class-pojo-forms-cpt.php:353
 msgid "Date"
 msgstr "תאריך"
 
-#: classes/class-pojo-forms-ajax.php:197 classes/class-pojo-forms-cpt.php:355
+#: classes/class-pojo-forms-ajax.php:202 classes/class-pojo-forms-cpt.php:355
 msgid "Page URL"
 msgstr "קישור לעמוד"
 
-#: classes/class-pojo-forms-ajax.php:209 classes/class-pojo-forms-cpt.php:356
+#: classes/class-pojo-forms-ajax.php:214 classes/class-pojo-forms-cpt.php:356
 msgid "User Agent"
 msgstr "פרטי משתמש"
 
-#: classes/class-pojo-forms-ajax.php:221 classes/class-pojo-forms-cpt.php:357
+#: classes/class-pojo-forms-ajax.php:226 classes/class-pojo-forms-cpt.php:357
 msgid "Remote IP"
 msgstr "כתובת IP השולח"
 
-#: classes/class-pojo-forms-ajax.php:225
+#: classes/class-pojo-forms-ajax.php:230
 msgid "Powered by http://pojo.me/"
 msgstr "מופעל על ידי http://pojo.me/"
 
@@ -156,7 +156,7 @@ msgid "Add New Form"
 msgstr "הוספת טופס חדש"
 
 #: classes/class-pojo-forms-cpt.php:13
-#: classes/class-pojo-forms-shortcode.php:416
+#: classes/class-pojo-forms-shortcode.php:436
 msgid "Edit Form"
 msgstr "עריכת טופס"
 
@@ -517,7 +517,7 @@ msgstr "הגדרות שדה"
 
 #: classes/class-pojo-forms-cpt.php:426
 msgid "Label"
-msgstr ""
+msgstr "כותרת שדה"
 
 #: classes/class-pojo-forms-cpt.php:429
 msgid "Top"
@@ -716,51 +716,80 @@ msgid "Enable"
 msgstr "לאפשר"
 
 #: classes/class-pojo-forms-recaptcha.php:34
-msgid "reCAPTCHA site key"
+msgid "Site key"
 msgstr ""
 
 #: classes/class-pojo-forms-recaptcha.php:41
-msgid "reCAPTCHA secret key"
+msgid "Secret key"
 msgstr ""
 
 #: classes/class-pojo-forms-recaptcha.php:48
+msgctxt "pojo-forms-recaptcha"
+msgid "Style"
+msgstr "סגנון"
+
+#: classes/class-pojo-forms-recaptcha.php:51
+msgid "Light"
+msgstr "בהיר"
+
+#: classes/class-pojo-forms-recaptcha.php:52
+msgid "Dark"
+msgstr "כהה"
+
+#: classes/class-pojo-forms-recaptcha.php:59
+msgid "Size"
+msgstr "גודל"
+
+#: classes/class-pojo-forms-recaptcha.php:62
+msgid "Normal"
+msgstr "רגיל"
+
+#: classes/class-pojo-forms-recaptcha.php:63
+msgid "Compact"
+msgstr "קומפקטי"
+
+#: classes/class-pojo-forms-recaptcha.php:70
 msgid "reCAPTCHA Options"
 msgstr "אפשרויות reCAPTCHA"
 
-#: classes/class-pojo-forms-recaptcha.php:62
+#: classes/class-pojo-forms-recaptcha.php:84
 msgid "The Captcha field cannot be blank. Please enter a value."
 msgstr "שדה Captcha לא יכול להיות ריק. אנא הכנס ערך."
 
-#: classes/class-pojo-forms-recaptcha.php:66
+#: classes/class-pojo-forms-recaptcha.php:88
 msgid "The secret parameter is missing."
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:67
+#: classes/class-pojo-forms-recaptcha.php:89
 msgid "The secret parameter is invalid or malformed."
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:68
+#: classes/class-pojo-forms-recaptcha.php:90
 msgid "The response parameter is missing."
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:69
+#: classes/class-pojo-forms-recaptcha.php:91
 msgid "The response parameter is invalid or malformed."
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:88
+#: classes/class-pojo-forms-recaptcha.php:110
 #, php-format
 msgid "Can not connect to the reCAPTCHA server (%d)."
 msgstr ""
 
-#: classes/class-pojo-forms-recaptcha.php:95
+#: classes/class-pojo-forms-recaptcha.php:117
 msgid "Invalid Form"
 msgstr "הטופס אינו תקין"
 
-#: classes/class-pojo-forms-shortcode.php:380
+#: classes/class-pojo-forms-shortcode.php:128
+msgid "Only phone numbers allowed."
+msgstr "ניתן להזין רק מספרי טלפון."
+
+#: classes/class-pojo-forms-shortcode.php:385
 msgid "ERROR for site owner: Invalid site key"
 msgstr "שגיאה עבור בעל אתר: מפתח אתר לא חוקי"
 
-#: classes/class-pojo-forms-shortcode.php:382
+#: classes/class-pojo-forms-shortcode.php:387
 msgid "ERROR for site owner: Invalid secret key"
 msgstr "שגיאה עבור בעל אתר: מפתח סודי לא חוקי"
 
