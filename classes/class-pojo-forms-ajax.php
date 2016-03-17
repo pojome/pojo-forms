@@ -67,13 +67,18 @@ class Pojo_Forms_Ajax {
 					UPLOAD_ERR_CANT_WRITE => __( 'Failed to write file to disk.', 'pojo-forms' ),
 					UPLOAD_ERR_EXTENSION => __( 'A PHP extension stopped the file upload. PHP does not provide a way to ascertain which extension caused the file upload to stop; examining the list of loaded extensions with phpinfo() may help.', 'pojo-forms' ),
 				);
-				
-				$file = $_FILES[ $field_name ];
 
 				// The file is required?
-				if ( $field['required'] && UPLOAD_ERR_NO_FILE === $file['error'] ) {
-					$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
+				$is_file_uploaded = isset( $_FILES[ $field_name ] ) && UPLOAD_ERR_NO_FILE !== $_FILES[ $field_name ]['error'];
+				if ( ! $is_file_uploaded ) {
+					if ( $field['required'] ) {
+						$return_array['fields'][ $field_name ] = Pojo_Forms_Messages::get_message( $form->ID, Pojo_Forms_Messages::FIELD_REQUIRED );
+					}
+					
+					continue;
 				}
+
+				$file = $_FILES[ $field_name ];
 				
 				// Has any error with upload the file?
 				if ( $file['error'] > UPLOAD_ERR_OK && UPLOAD_ERR_NO_FILE !== $file['error'] && empty( $return_array['fields'] ) ) {
@@ -132,7 +137,7 @@ class Pojo_Forms_Ajax {
 		} // End foreach
 
 		
-		// It's private used.
+		// This action for private used.
 		// Please do not use this action for this moment.
 		do_action( '__pojo_forms_mail_validation', $form->ID );
 		
