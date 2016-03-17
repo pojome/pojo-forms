@@ -31,15 +31,37 @@ class Pojo_Forms_ReCAPTCHA {
 
 		$fields[] = array(
 			'id' => 'site_key',
-			'title' => __( 'reCAPTCHA site key', 'pojo-forms' ),
+			'title' => __( 'Site key', 'pojo-forms' ),
 			'classes_field' => array( 'large-text' ),
 			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
 		);
 
 		$fields[] = array(
 			'id' => 'secret_key',
-			'title' => __( 'reCAPTCHA secret key', 'pojo-forms' ),
+			'title' => __( 'Secret key', 'pojo-forms' ),
 			'classes_field' => array( 'large-text' ),
+			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
+		);
+
+		$fields[] = array(
+			'id' => 'style',
+			'title' => _x( 'Style', 'pojo-forms-recaptcha', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'' => __( 'Light', 'pojo-forms' ),
+				'dark' => __( 'Dark', 'pojo-forms' ),
+			),
+			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
+		);
+
+		$fields[] = array(
+			'id' => 'size',
+			'title' => __( 'Size', 'pojo-forms' ),
+			'type' => Pojo_MetaBox::FIELD_SELECT,
+			'options' => array(
+				'' => __( 'Normal', 'pojo-forms' ),
+				'compact' => __( 'Compact', 'pojo-forms' ),
+			),
 			'show_on' => array( 'form_recaptcha_enable' => 'enable' ),
 		);
 
