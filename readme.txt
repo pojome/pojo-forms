@@ -1,20 +1,20 @@
 === Pojo Forms ===
-Contributors: pojo.me, KingYes, ariel.k
+Contributors: pojo.me, KingYes, ariel.k, ramiy
 Tags: contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,
 Requires at least: 4.1
-Tested up to: 4.4.2
-Stable tag: 1.3.3
+Tested up to: 4.5
+Stable tag: 1.4.0
 License: GPLv2 or later
 
 Pojo Forms allows you to create any form you want with a simple drag and drop interface.
 
 == Description ==
 
-**Please Note:** This plugin is for [Pojo Framework][1] users only.
+**Please Note:** This plugin is for [Pojo Framework](http://pojo.me/?utm_source=wp-repo&utm_medium=link&utm_campaign=forms) users only.
 
 Pojo Forms is the ultimate form creation solution for WordPress sites that work with Pojo Framework. It allows you to easily and quickly design complex forms through a drag and drop interface and all this with no CSS knowledge or coding required.
 
-<strong>Field Type (HTML5):</strong>
+= Field Type (HTML5) =
 
 * Text
 * Textarea
@@ -45,16 +45,13 @@ You can place any form in any page or widget by embedding it in the Text Editor 
 
 <code>[pojo-form id="ID"]</code>
 
-**Contributions:**
+= Contributions =
 
-Would you like to like to contribute to Pojo Forms? You are more than welcome to submit your requests on the [GitHub repo][2]. Also, if you have any notes about the code, please open a ticket on this issue tracker.
-
- [1]: http://pojo.me/?utm_source=wp-repo&utm_medium=link&utm_campaign=forms
- [2]: https://github.com/pojome/pojo-forms
+Would you like to like to contribute to Pojo Forms? You are more than welcome to submit your requests to our [GitHub repo](https://github.com/pojome/pojo-forms). Also, if you have any notes about the code, please open a ticket on this issue tracker.
 
 == Installation ==
 
-**Automatic Installation**
+= Automatic Installation =
 
 1. Install using the WordPress built-in Plugin installer > Add New
 1. Activate the plugin through the 'Plugins' menu in WordPress
@@ -62,7 +59,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 1. Drag and drop the widget and set it
 1. Enjoy!
 
-**Manual Installation**
+= Manual Installation =
 
 1. Extract the zip file and just drop the contents in the <code>wp-content/plugins/</code> directory of your WordPress installation
 1. Activate the plugin through the 'Plugins' menu in WordPress
@@ -77,6 +74,12 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 3. Form style options
 
 == Changelog ==
+
+= 1.4.0 - 30/05/2016 =
+* Prevent direct access to directories
+* Remove po/mo files from the plugin
+* Use [translate.wordpress.org](https://translate.wordpress.org/) to translate the plugin
+* Tested up to WordPress 4.5
 
 = 1.3.3 - 17/03/2016 =
 * New! - Added reCAPTCHA Style and Size options
@@ -94,7 +97,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 * New! - Added reCAPTCHA validation (Thanks to [Yehuda Hassine](https://github.com/yehudah))
 
 = 1.2.2 - 08/02/2016 =
-* Tested up to WordPress v4.4
+* Tested up to WordPress 4.4
 
 = 1.2.1 - 07/02/2016 =
 * New! - Added filter `pojo_forms_email_credit` to change the credit line
