@@ -85,7 +85,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 ### 1.4.0 - 30/05/2016 ###
 * Prevent direct access to directories
 * Remove po/mo files from the plugin
-* Use <a href="https://translate.wordpress.org/">translate.wordpress.org</a> to translate the plugin
+* Use [translate.wordpress.org](https://translate.wordpress.org/) to translate the plugin
 
 ### 1.3.3 - 17/03/2016 ###
 * New! - Added reCAPTCHA Style and Size options
