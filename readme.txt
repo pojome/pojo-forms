@@ -79,6 +79,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 * Prevent direct access to directories
 * Remove po/mo files from the plugin
 * Use [translate.wordpress.org](https://translate.wordpress.org/) to translate the plugin
+* Tested up to WordPress 4.5
 
 = 1.3.3 - 17/03/2016 =
 * New! - Added reCAPTCHA Style and Size options
@@ -96,7 +97,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 * New! - Added reCAPTCHA validation (Thanks to [Yehuda Hassine](https://github.com/yehudah))
 
 = 1.2.2 - 08/02/2016 =
-* Tested up to WordPress v4.4
+* Tested up to WordPress 4.4
 
 = 1.2.1 - 07/02/2016 =
 * New! - Added filter `pojo_forms_email_credit` to change the credit line
