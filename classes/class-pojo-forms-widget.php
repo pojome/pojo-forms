@@ -37,7 +37,7 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 		}
 
 		$this->_form_fields[] = array(
-			'id' => 'lbl_no_found',
+			'id' => 'lbl_link_all_forms',
 			'title' => sprintf( '<a href="%s">%s</a>', admin_url( 'edit.php?post_type=pojo_forms' ), __( 'All Forms', 'pojo-forms' ) ),
 			'type' => 'label',
 		);
