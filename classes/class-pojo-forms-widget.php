@@ -16,10 +16,16 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 			'filter' => 'sanitize_text_field',
 		);
 		
-		$options = POJO_FORMS()->helpers->get_all_forms();
-		if ( ! empty( $options ) ) {
-			$std = array_keys( $options );
+		$all_forms = POJO_FORMS()->helpers->get_all_forms();
+		if ( ! empty( $all_forms ) ) {
+			$std = array_keys( $all_forms );
 			$std = array_shift( $std );
+			
+			$options = array(
+				'' => __( 'Select Form', 'pojo-forms' ),
+			);
+			$options = array_merge( $options, $all_forms );
+			
 			$this->_form_fields[] = array(
 				'id' => 'form',
 				'title' => __( 'Choose Form:', 'pojo-forms' ),
