@@ -22,7 +22,7 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 			$std = array_shift( $std );
 			
 			$options = array(
-				'' => __( 'Select Form', 'pojo-forms' ),
+				'' => __( '- Select Form -', 'pojo-forms' ),
 			);
 			$options = array_merge( $options, $all_forms );
 			
