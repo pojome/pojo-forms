@@ -5,7 +5,7 @@
 **Tags:** contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,  
 **Requires at least:** 4.1  
 **Tested up to:** 4.4.2  
-**Stable tag:** 1.3.4  
+**Stable tag:** 1.3.5  
 **License:** GPLv2 or later  
 
 Pojo Forms allows you to create any form you want with a simple drag and drop interface.
