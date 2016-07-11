@@ -116,7 +116,7 @@
 		}
 	};
 
-	$( document ).ready( function( $ ) {
+	$( function( $ ) {
 		Pojo_Forms_App.init();
 	} );
 
