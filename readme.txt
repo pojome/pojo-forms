@@ -78,6 +78,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 == Changelog ==
 
+= 1.3.6 - 12/07/2016 =
+* Tweak! - Added handle multiple reCAPTCHA instances
+
 = 1.3.5 - 20/06/2016 =
 * Fixed! - Bug from the latest release
 

@@ -389,7 +389,7 @@ class Pojo_Forms_Shortcode {
 				wp_enqueue_script( 'recaptcha-api' );
 				
 				$recaptcha_attributes = array(
-					'class' => 'g-recaptcha',
+					'class' => 'pojo-g-recaptcha',
 					'data-sitekey' => $recaptcha_site_key,
 				);
 				

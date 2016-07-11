@@ -119,5 +119,13 @@
 	$( function( $ ) {
 		Pojo_Forms_App.init();
 	} );
-
+	
 }( jQuery ) );
+
+// Handle multiple reCAPTCHA instances
+var pojoOnloadReCAPTCHACallback = function() {
+	jQuery( '.pojo-g-recaptcha' ).each( function() {
+		var $thisForm = jQuery( this );
+		grecaptcha.render( $thisForm[0], $thisForm.data() );
+	} );
+};
