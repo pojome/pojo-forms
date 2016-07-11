@@ -4,7 +4,7 @@
 /* global jQuery */
 
 ;( function( $ ) {
-	'use strict';
+	'use strict';	
 
 	var Pojo_Forms_App = {
 		cache: {
@@ -114,10 +114,21 @@
 			this.buildElements();
 			this.bindEvents();
 		}
-	};
+	};		
 
 	$( document ).ready( function( $ ) {
-		Pojo_Forms_App.init();
+		Pojo_Forms_App.init();		
 	} );
 
 }( jQuery ) );
+
+var onloadCallback = function() {
+	jQuery( '.g-recaptcha' ).each( function() {
+		var id = jQuery( this ).prop( 'id' );
+		var sitekey = jQuery( this ).data( 'sitekey' );
+		
+        grecaptcha.render( id, {
+          'sitekey' : sitekey
+        } );    		
+	} );
+};
