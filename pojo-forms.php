@@ -7,8 +7,8 @@ Author: Pojo Team
 Version: 1.3.5
 Author URI: http://pojo.me/
 Text Domain: pojo-forms
-Domain Path: /languages/
 */
+
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 define( 'POJO_FORMS__FILE__', __FILE__ );
@@ -80,7 +80,7 @@ final class Pojo_Forms {
 	}
 
 	public function load_textdomain() {
-		load_plugin_textdomain( 'pojo-forms', false, basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'pojo-forms' );
 	}
 	
 	public function register_widget() {

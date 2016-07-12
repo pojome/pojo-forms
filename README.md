@@ -4,7 +4,7 @@
 **Contributors:** pojo.me, KingYes, ariel.k  
 **Tags:** contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,  
 **Requires at least:** 4.1  
-**Tested up to:** 4.4.2  
+**Tested up to:** 4.5  
 **Stable tag:** 1.3.5  
 **License:** GPLv2 or later  
 
@@ -86,8 +86,10 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 ## Changelog ##
 
-### 1.3.6 - 12/07/2016 ###
+### 1.4.0 - 12/07/2016 ###
 * Tweak! - Added handle multiple reCAPTCHA instances
+* Tweak! - All translates moved to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/pojo-forms), thanks to [ramiy](https://generatewp.com/)
+* Tested up to WordPress v4.5
 
 ### 1.3.5 - 20/06/2016 ###
 * Fixed! - Bug from the latest release
