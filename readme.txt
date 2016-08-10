@@ -2,7 +2,7 @@
 Contributors: pojo.me, KingYes, ariel.k
 Tags: contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,
 Requires at least: 4.1
-Tested up to: 4.5
+Tested up to: 4.6
 Stable tag: 1.4.0
 License: GPLv2 or later
 
@@ -77,6 +77,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 3. Form style options
 
 == Changelog ==
+
+= 1.4.1 - 10/08/2016 =
+* Fixed! - Regex for html5 validation in Telephone field
 
 = 1.4.0 - 12/07/2016 =
 * Tweak! - Added handle multiple reCAPTCHA instances

@@ -4,7 +4,7 @@
 **Contributors:** pojo.me, KingYes, ariel.k  
 **Tags:** contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,  
 **Requires at least:** 4.1  
-**Tested up to:** 4.5  
+**Tested up to:** 4.6  
 **Stable tag:** 1.4.0  
 **License:** GPLv2 or later  
 
@@ -86,6 +86,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 ## Changelog ##
 
+### 1.4.1 - 10/08/2016 ###
+* Fixed! - Regex for html5 validation in Telephone field
+
 ### 1.4.0 - 12/07/2016 ###
 * Tweak! - Added handle multiple reCAPTCHA instances
 * Tweak! - All translates moved to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/pojo-forms), thanks to [ramiy](https://generatewp.com/)
@@ -125,22 +128,22 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 * New! - Added form-id class for element form
 * Tweak! - Added limit from name default
 
-### 1.1.2 ###
+### 1.1.2 - 21/07/2015 ###
 * Fixed! - Removed reply-to name field was added in v1.1.0 (conflict with Hebrew language)
 
-### 1.1.1 ###
+### 1.1.1 - 20/07/2015 ###
 * Tweak! - change some translate string
 * Fixed! - unselectable item in dropdown
 
-### 1.1.0 ###
+### 1.1.0 - 20/07/2015###
 * New! - Added [CF7DB](https://wordpress.org/plugins/contact-form-7-to-database-extension/) support
 * New! - Added reply-to name 
 * Tweak! - Drop-down new option: Set the First Option as unselected 
 * Tweak! - Improved upgrade old pojo themes
 * Fixed! - min/max numbers
 
-### 1.0.1 ###
+### 1.0.1 - 13/07/2015 ###
 * Fixed! - problem with multiple email addresses
 
-### 1.0.0 ###
+### 1.0.0 - 12/07/2015 ###
 * Initial Public Release!
