@@ -2,8 +2,8 @@
 Contributors: pojo.me, KingYes, ariel.k
 Tags: contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,
 Requires at least: 4.1
-Tested up to: 4.4.2
-Stable tag: 1.3.3
+Tested up to: 4.5
+Stable tag: 1.4.0
 License: GPLv2 or later
 
 Pojo Forms allows you to create any form you want with a simple drag and drop interface.
@@ -77,6 +77,17 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 3. Form style options
 
 == Changelog ==
+
+= 1.4.0 - 12/07/2016 =
+* Tweak! - Added handle multiple reCAPTCHA instances
+* Tweak! - All translates moved to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/pojo-forms), thanks to [ramiy](https://generatewp.com/)
+* Tested up to WordPress v4.5
+
+= 1.3.5 - 20/06/2016 =
+* Fixed! - Bug from the latest release
+
+= 1.3.4 - 19/06/2016 =
+* Tweak! - Added empty select for widget
 
 = 1.3.3 - 17/03/2016 =
 * New! - Added reCAPTCHA Style and Size options

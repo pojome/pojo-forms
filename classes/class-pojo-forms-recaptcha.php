@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Pojo_Forms_ReCAPTCHA {
 
 	public function register_scripts() {
-		wp_register_script( 'recaptcha-api', 'https://www.google.com/recaptcha/api.js', array(), false, true );
+		wp_register_script( 'recaptcha-api', 'https://www.google.com/recaptcha/api.js?onload=pojoOnloadReCAPTCHACallback&render=explicit', array(), false, true );
 	}
 
 	public function register_form_recaptcha_metabox( $meta_boxes = array() ) {

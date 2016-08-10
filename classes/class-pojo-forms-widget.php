@@ -16,15 +16,18 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 			'filter' => 'sanitize_text_field',
 		);
 		
-		$options = POJO_FORMS()->helpers->get_all_forms();
-		if ( ! empty( $options ) ) {
-			$std = array_keys( $options );
-			$std = array_shift( $std );
+		$all_forms = POJO_FORMS()->helpers->get_all_forms();
+		if ( ! empty( $all_forms ) ) {
+			$options = array(
+				'' => __( '- Select Form -', 'pojo-forms' ),
+			);
+			$options += $all_forms;
+			
 			$this->_form_fields[] = array(
 				'id' => 'form',
 				'title' => __( 'Choose Form:', 'pojo-forms' ),
 				'type' => 'select',
-				'std' => $std,
+				'std' => '',
 				'options' => $options,
 				'filter' => array( &$this, '_valid_by_options' ),
 			);
@@ -37,7 +40,7 @@ class Pojo_Forms_Widget extends Pojo_Widget_Base {
 		}
 
 		$this->_form_fields[] = array(
-			'id' => 'lbl_no_found',
+			'id' => 'lbl_link_all_forms',
 			'title' => sprintf( '<a href="%s">%s</a>', admin_url( 'edit.php?post_type=pojo_forms' ), __( 'All Forms', 'pojo-forms' ) ),
 			'type' => 'label',
 		);
