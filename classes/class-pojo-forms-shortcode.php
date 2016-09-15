@@ -117,6 +117,9 @@ class Pojo_Forms_Shortcode {
 					'style' => implode( ';', $field_style_inline ),
 					'placeholder' => esc_attr( $field['placeholder'] ),
 				);
+
+				if ( $field['required'] )
+					$field_attributes['aria-required'] = 'true';
 				
 				if ( 'number' === $field['type'] ) {
 					$field_attributes['min'] = $field['number_min'];
@@ -155,6 +158,9 @@ class Pojo_Forms_Shortcode {
 					'class' => implode( ' ', $field_classes ),
 					'style' => implode( ';', $field_style_inline ),
 				);
+
+				if ( $field['required'] )
+					$field_attributes['aria-required'] = 'true';
 				
 				if ( $field['multiple'] )
 					$field_attributes['multiple'] = 'multiple';
@@ -200,6 +206,9 @@ class Pojo_Forms_Shortcode {
 					'class' => implode( ' ', $field_classes ),
 					'style' => implode( ';', $field_style_inline ),
 				);
+
+				if ( $field['required'] )
+					$field_attributes['aria-required'] = 'true';
 
 				// Remove empty values
 				$field_attributes = array_filter( $field_attributes );
@@ -254,6 +263,9 @@ class Pojo_Forms_Shortcode {
 					'rows' => '3',
 					'placeholder' =>  esc_attr( $field['placeholder'] ),
 				);
+
+				if ( $field['required'] )
+					$field_attributes['aria-required'] = 'true';
 
 				if ( ! empty( $field['textarea_rows'] ) )
 					$field_attributes['rows'] = $field['textarea_rows'];
@@ -439,7 +451,7 @@ class Pojo_Forms_Shortcode {
 		}
 		
 		$forms_html = sprintf(
-			'<form class="pojo-form pojo-form-%3$d pojo-form-ajax form-align-%1$s"%2$s action="" method="post" role="form">
+			'<form class="pojo-form pojo-form-%3$d pojo-form-ajax form-align-%1$s"%2$s action="" method="post">
 			<input type="hidden" name="action" value="pojo_form_contact_submit" />
 			<input type="hidden" name="form_id" value="%3$d" />
 			%4$s

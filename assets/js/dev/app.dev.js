@@ -21,7 +21,6 @@
 			
 			$( 'form.pojo-form.pojo-form-ajax' ).on( 'submit', function() {
 				var $thisForm = $( this ),
-					serializeForm = $thisForm.serialize(),
 					prefixFieldWrap = $thisForm.data( 'prefix' ) || '',
 					$submitButton = $thisForm.find( 'div.form-actions button.submit' );
 
@@ -45,7 +44,9 @@
 					.find( 'div.field-group' )
 					.removeClass( 'error' )
 					.find( 'span.form-help-inline' )
-					.remove();
+					.remove()
+					.end()
+					.find( ':input' ).attr( 'aria-invalid', 'false' );
 
 				var formData = new FormData( $thisForm[ 0 ] );
 				formData.append( 'action', 'pojo_form_contact_submit' );
@@ -73,17 +74,18 @@
 								.removeClass( 'form-waiting' );
 						//}
 
-						if ( !response.success ) {
+						if ( ! response.success ) {
 							if ( response.data.fields ) {
 								$.each( response.data.fields, function( key, title ) {
 									$thisForm
 										.find( 'div.field-group.' + prefixFieldWrap + key )
 										.addClass( 'error' )
 										//.find( 'div.controls')
-										.append( '<span class="help-inline form-help-inline">' + title + '</span>' );
+										.append( '<span class="help-inline form-help-inline" role="alert">' + title + '</span>' )
+										.find( ':input' ).attr( 'aria-invalid', 'true' );
 								} );
 							}
-							$thisForm.append( '<div class="form-message form-message-danger">' + response.data.message + '</div>' );
+							$thisForm.append( '<div class="form-message form-message-danger" role="alert">' + response.data.message + '</div>' );
 						} else {
 							self.cache.$document.trigger( 'pojo_forms_form_submitted', $thisForm );
 
@@ -92,7 +94,7 @@
 							//}
 
 							if ( '' !== response.data.message ) {
-								$thisForm.append( '<div class="form-message form-message-success">' + response.data.message + '</div>' );
+								$thisForm.append( '<div class="form-message form-message-success" role="alert">' + response.data.message + '</div>' );
 							}
 							if ( '' !== response.data.link ) {
 								location.href = response.data.link;
@@ -101,7 +103,7 @@
 					},
 
 					error: function( xhr, desc, err ) {
-						$thisForm.append( '<div class="form-message form-message-danger">' + desc + '</div>' );
+						$thisForm.append( '<div class="form-message form-message-danger" role="alert">' + desc + '</div>' );
 					}
 				} );        
 
