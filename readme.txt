@@ -78,7 +78,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 == Changelog ==
 = 1.4.2 - 18/09/2016 =
-* Tweak! - Improving accessibility by added ARIA tags for required fields and 'role="alert"' for messages
+* Tweak! - Improving accessibility by added ARIA tags for required fields and `role="alert"` for messages
 
 = 1.4.1 - 10/08/2016 =
 * Fix! - Regex for html5 validation in Telephone field

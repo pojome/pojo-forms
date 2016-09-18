@@ -85,9 +85,11 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 
 ## Changelog ##
+### 1.4.2 - 18/09/2016 ###
+* Tweak! - Improving accessibility by added ARIA tags for required fields and `role="alert"` for messages
 
 ### 1.4.1 - 10/08/2016 ###
-* Fixed! - Regex for html5 validation in Telephone field
+* Fix! - Regex for html5 validation in Telephone field
 
 ### 1.4.0 - 12/07/2016 ###
 * Tweak! - Added handle multiple reCAPTCHA instances
@@ -95,7 +97,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 * Tested up to WordPress v4.5
 
 ### 1.3.5 - 20/06/2016 ###
-* Fixed! - Bug from the latest release
+* Fix! - Bug from the latest release
 
 ### 1.3.4 - 19/06/2016 ###
 * Tweak! - Added empty select for widget
@@ -103,13 +105,13 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 ### 1.3.3 - 17/03/2016 ###
 * New! - Added reCAPTCHA Style and Size options
 * Tweak! - Enqueue reCAPTCHA API just when is needed
-* Fixed! - Upload file in non-required field
+* Fix! - Upload file in non-required field
 
 ### 1.3.2 - 08/03/2016 ###
 * New! - Added html5 validation in Telephone field
 
 ### 1.3.1 - 23/02/2016 ###
-* Fixed! - Error from reCAPTCHA when is not defined
+* Fix! - Error from reCAPTCHA when is not defined
 
 ### 1.3.0 - 23/02/2016 ###
 * New! - Added upload file field (Thanks to [Yehuda Hassine](https://github.com/yehudah))
@@ -129,21 +131,21 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 * Tweak! - Added limit from name default
 
 ### 1.1.2 - 21/07/2015 ###
-* Fixed! - Removed reply-to name field was added in v1.1.0 (conflict with Hebrew language)
+* Fix! - Removed reply-to name field was added in v1.1.0 (conflict with Hebrew language)
 
 ### 1.1.1 - 20/07/2015 ###
 * Tweak! - change some translate string
-* Fixed! - unselectable item in dropdown
+* Fix! - unselectable item in dropdown
 
 ### 1.1.0 - 20/07/2015###
 * New! - Added [CF7DB](https://wordpress.org/plugins/contact-form-7-to-database-extension/) support
 * New! - Added reply-to name 
 * Tweak! - Drop-down new option: Set the First Option as unselected 
 * Tweak! - Improved upgrade old pojo themes
-* Fixed! - min/max numbers
+* Fix! - min/max numbers
 
 ### 1.0.1 - 13/07/2015 ###
-* Fixed! - problem with multiple email addresses
+* Fix! - problem with multiple email addresses
 
 ### 1.0.0 - 12/07/2015 ###
 * Initial Public Release!
