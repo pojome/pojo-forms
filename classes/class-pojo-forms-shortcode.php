@@ -456,12 +456,10 @@ class Pojo_Forms_Shortcode {
 			<input type="hidden" name="form_id" value="%3$d" />
 			%4$s
 			%5$s
-			%6$s
 			</form>',
 			$form_align_text,
 			! empty( $form_style_inline ) ? ' style="' . implode( ';', $form_style_inline ) . '"' : '',
 			$form->ID,
-			wp_nonce_field( 'contact-form-send-' . $form->ID, '_nonce', true, false ),
 			$forms_html,
 			$edit_form_link
 		);

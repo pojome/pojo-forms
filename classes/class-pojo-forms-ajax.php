@@ -32,7 +32,7 @@ class Pojo_Forms_Ajax {
 
 		$form = get_post( absint( $_POST['form_id'] ) );
 		
-		if ( ! $form || 'pojo_forms' !== $form->post_type || ! isset( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'contact-form-send-' . $form->ID ) ) {
+		if ( ! $form || 'pojo_forms' !== $form->post_type  ) {
 			$return_array['message'] = Pojo_Forms_Messages::get_default_message( Pojo_Forms_Messages::INVALID_FORM );
 			wp_send_json_error( $return_array );
 		}

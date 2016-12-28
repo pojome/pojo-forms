@@ -85,6 +85,10 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 
 ## Changelog ##
+
+### 1.4.3 - 28/12/2016 ###
+* Fix! - Remove nonce field (Fix some cache plugins)
+
 ### 1.4.2 - 18/09/2016 ###
 * Tweak! - Improving accessibility by added ARIA tags for required fields and `role="alert"` for messages
 
