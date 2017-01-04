@@ -4,7 +4,7 @@
 **Contributors:** pojo.me, KingYes, ariel.k  
 **Tags:** contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,  
 **Requires at least:** 4.1  
-**Tested up to:** 4.6  
+**Tested up to:** 4.7  
 **Stable tag:** 1.4.3  
 **License:** GPLv2 or later  
 
@@ -85,6 +85,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 
 ## Changelog ##
+
+### 1.4.4 - 04/01/2017 ###
+* Fix! - Email referrer link
 
 ### 1.4.3 - 28/12/2016 ###
 * Fix! - Remove nonce field (Fix some cache plugins)
