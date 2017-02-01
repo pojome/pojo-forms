@@ -60,9 +60,10 @@
 					contentType: false,
 
 					success: function( response, status ) {
-						//if ( undefined !== typeof grecaptcha ) {
-						//	grecaptcha.reset();
-						//}
+						var grecaptcha = window.grecaptcha || undefined;
+						if ( undefined !== typeof grecaptcha ) {
+							grecaptcha.reset();
+						}
 						
 						//if ( ! response.success ) {
 							$submitButton

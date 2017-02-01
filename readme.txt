@@ -78,6 +78,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 == Changelog ==
 
+= 1.4.5 - 01/02/2017 =
+* Fix! - Resend form when reCAPTCHA is sent
+
 = 1.4.4 - 04/01/2017 =
 * Fix! - Email referrer link
 
