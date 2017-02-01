@@ -3,7 +3,7 @@
 	"slug": "pojo-forms",
 	"homepage": "http://pojo.me/",
 	"description": "...",
-	"version": "1.4.4",
+	"version": "1.4.5",
 	"devDependencies": {
 		"grunt": "~0.4.5",
 		"grunt-checktextdomain": "~1.0.0",
