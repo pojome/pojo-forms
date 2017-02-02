@@ -18,7 +18,7 @@
 
 		bindEvents: function() {
 			var self = this;
-			
+
 			$( 'form.pojo-form.pojo-form-ajax' ).on( 'submit', function() {
 				var $thisForm = $( this ),
 					prefixFieldWrap = $thisForm.data( 'prefix' ) || '',
@@ -61,7 +61,7 @@
 
 					success: function( response, status ) {
 						var grecaptcha = window.grecaptcha || undefined;
-						if ( undefined !== typeof grecaptcha ) {
+						if ( grecaptcha && grecaptcha.reset ) {
 							grecaptcha.reset();
 						}
 						

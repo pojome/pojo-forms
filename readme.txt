@@ -78,6 +78,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 == Changelog ==
 
+= 1.4.6 - 02/02/2017 =
+* Fix! - Error from reCAPTCHA when is not defined
+
 = 1.4.5 - 01/02/2017 =
 * Fix! - Resend form when reCAPTCHA has already been sent
 

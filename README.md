@@ -1,7 +1,7 @@
-# Pojo Forms #
-[![Dependency Status](https://david-dm.org/pojome/pojo-forms/dev-status.svg)](https://david-dm.org/pojome/pojo-forms#info=devDependencies) [![WordPress](https://img.shields.io/wordpress/v/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/r/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/v/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
+# Pojo Forms [![Dependency Status](https://david-dm.org/pojome/pojo-forms/dev-status.svg)](https://david-dm.org/pojome/pojo-forms#info=devDependencies) [![WordPress](https://img.shields.io/wordpress/v/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/r/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/v/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/pojo-forms.svg?style=flat-square)](https://wordpress.org/plugins/pojo-forms/) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
-**Contributors:** pojo.me, KingYes, ariel.k  
+
+**Contributors:** [pojo.me](https://profiles.wordpress.org/pojo.me), [KingYes](https://profiles.wordpress.org/KingYes), [ariel.k](https://profiles.wordpress.org/ariel.k)  
 **Tags:** contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,  
 **Requires at least:** 4.1  
 **Tested up to:** 4.7  
@@ -74,17 +74,14 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 
 ## Screenshots ##
 
-### 1. Forms admin page ###
-![Forms admin page](http://s.wordpress.org/extend/plugins/pojo-forms/screenshot-1.png)
-
-### 2. Form builder ###
-![Form builder](http://s.wordpress.org/extend/plugins/pojo-forms/screenshot-2.png)
-
-### 3. Form style options ###
-![Form style options](http://s.wordpress.org/extend/plugins/pojo-forms/screenshot-3.png)
-
+1. Forms admin page
+2. Form builder
+3. Form style options
 
 ## Changelog ##
+
+### 1.4.6 - 02/02/2017 ###
+* Fix! - Error from reCAPTCHA when is not defined
 
 ### 1.4.5 - 01/02/2017 ###
 * Fix! - Resend form when reCAPTCHA has already been sent
