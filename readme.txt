@@ -79,7 +79,7 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 == Changelog ==
 
 = 1.4.7 - 05/03/2017 =
-* Tweak! - Added shortcode field in Email-To option
+* Tweak! - Added shortcode field support in Email-To option
 
 = 1.4.6 - 02/02/2017 =
 * Fix! - Error from reCAPTCHA when is not defined
