@@ -2,7 +2,7 @@
 Contributors: pojo.me, KingYes, ariel.k
 Tags: contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,
 Requires at least: 4.1
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 1.4.7
 License: GPLv2 or later
 
