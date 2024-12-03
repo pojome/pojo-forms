@@ -4,8 +4,8 @@
 **Contributors:** [pojo.me](https://profiles.wordpress.org/pojo.me), [KingYes](https://profiles.wordpress.org/KingYes), [ariel.k](https://profiles.wordpress.org/ariel.k)  
 **Tags:** contact, contact form, contact form builder ,contact form plugin, custom form, feedback, form, forms, form builder, forms plugin,  
 **Requires at least:** 4.1  
-**Tested up to:** 4.7  
-**Stable tag:** 1.4.7  
+**Tested up to:** 6.7  
+**Stable tag:** 1.4.8  
 **License:** GPLv2 or later  
 
 Pojo Forms allows you to create any form you want with a simple drag and drop interface.
@@ -79,6 +79,9 @@ Would you like to like to contribute to Pojo Forms? You are more than welcome to
 3. Form style options
 
 ## Changelog ##
+
+### 1.4.8 - 03/12/2024 ###
+* Security Fix: Add validation in the preview form
 
 ### 1.4.7 - 05/03/2017 ###
 * Tweak! - Added shortcode field support in Email-To option
