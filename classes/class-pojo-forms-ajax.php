@@ -13,7 +13,7 @@ class Pojo_Forms_Ajax {
 		
 		$embed = new Pojo_Embed_Template();
 		echo $embed->get_header();
-		echo do_shortcode( POJO_FORMS()->helpers->get_shortcode_text( $_POST['id'] ) );
+		echo do_shortcode( POJO_FORMS()->helpers->get_shortcode_text( absint( $_POST['id'] ) ) );
 		echo $embed->get_footer();
 		
 		die();
